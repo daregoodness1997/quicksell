@@ -1,7 +1,13 @@
 import React from 'react';
 
-const index = () => {
-  return <div>index</div>;
+const TopNav = () => {
+  return (
+    <div className='top-navigation'>
+      <div>Quicksell</div>
+      <nav>Navigation</nav>
+      <div>CTA</div>
+    </div>
+  );
 };
 
-export default index;
+export default TopNav;

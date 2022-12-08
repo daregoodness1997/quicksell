@@ -67,16 +67,23 @@ button:focus-visible {
 body {
   padding: 0;
   margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(260.92deg, #2b2e32 19.77%, #16171b 56.89%);
+  background-image: url('./assets/background.png');
 }
 
 /* Top Navigation */
 
 .top-navigation {
   padding: 1rem 3.2rem;
-  background-color: #181818;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100vw;
+}
+
+.left-navigation {
+  display: flex;
+  align-items: center;
 }

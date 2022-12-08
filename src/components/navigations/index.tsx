@@ -12,9 +12,9 @@ const navItems = [
   { name: 'Donation', link: '/' },
   { name: 'About', link: '/' },
   { name: 'Support', link: '/' },
-  { name: 'Marketplace', link: '/' },
-  { name: 'Reserving', link: '/' },
-  { name: 'Brokering', link: '/' },
+  // { name: 'Marketplace', link: '/' },
+  // { name: 'Reserving', link: '/' },
+  // { name: 'Brokering', link: '/' },
 ];
 
 const TopNav = () => {
@@ -23,9 +23,15 @@ const TopNav = () => {
       <div className='left-navigation'>
         <img src='assets/img/qc-logo.png' />
         <nav>
-          {/* {navItems.map(item => (
-            <Link to={item.link}>{item.name}</Link>
-          ))} */}
+          {navItems.map(item => (
+            <a
+              href={item.link}
+              className='nav-item'
+              // to={item.link}
+            >
+              {item.name}
+            </a>
+          ))}
         </nav>
       </div>
       <div>CTA</div>

@@ -68,8 +68,16 @@ body {
   padding: 0;
   margin: 0;
   min-height: 100vh;
-  background: linear-gradient(260.92deg, #2b2e32 19.77%, #16171b 56.89%);
-  background-image: url('./assets/background.png');
+  /* background: linear-gradient(260.92deg, #2b2e32 19.77%, #16171b 56.89%);
+  background-image: url('./assets/background.png'); */
+
+  background: linear-gradient(
+      160.92deg,
+      rgba(42, 45, 50, 0.8) 19.77%,
+      rgba(22, 23, 27, 0.5) 56.89%
+    ),
+    url(./assets/background.png);
+  background-size: cover;
 }
 
 /* Top Navigation */
@@ -86,4 +94,19 @@ body {
 .left-navigation {
   display: flex;
   align-items: center;
+}
+
+.left-navigation nav {
+  margin-left: 8px;
+}
+
+.nav-item {
+  color: #fff;
+  display: inline-block;
+  padding: 10px;
+  transition: color 200ms ease-in-out;
+}
+
+.nav-item:hover {
+  color: #6fcf97;
 }

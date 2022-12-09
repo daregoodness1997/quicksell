@@ -1,19 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Button from '../button';
 
 const navItems = [
   { name: 'Home', link: '/' },
-  { name: 'Trade', link: '/' },
-  { name: 'Keys', link: '/' },
-  { name: 'Giveaways', link: '/' },
-  { name: 'Raffles', link: '/' },
-  { name: 'Auctions', link: '/' },
-  { name: 'Premium', link: '/' },
-  { name: 'Donation', link: '/' },
-  { name: 'About', link: '/' },
-  { name: 'Support', link: '/' },
-  // { name: 'Marketplace', link: '/' },
+  { name: 'Trade', link: '/trade' },
+  { name: 'Keys', link: '/keys' },
+  { name: 'Giveaways', link: '/giveaways' },
+  { name: 'Raffles', link: '/raffles' },
+  { name: 'Auctions', link: '/auctions' },
+  { name: 'Premium', link: '/premium' },
+  { name: 'Donation', link: '/donations' },
+  { name: 'About', link: '/about' },
+  { name: 'Support', link: '/support' },
+  { name: 'Marketplace', link: '/marketplace' },
   // { name: 'Reserving', link: '/' },
   // { name: 'Brokering', link: '/' },
 ];
@@ -25,13 +25,13 @@ const TopNav = () => {
         <img src='assets/img/qc-logo.png' />
         <nav>
           {navItems.map(item => (
-            <a
-              href={item.link}
+            <NavLink
+              to={item.link}
               className='nav-item'
               // to={item.link}
             >
               {item.name}
-            </a>
+            </NavLink>
           ))}
         </nav>
       </div>

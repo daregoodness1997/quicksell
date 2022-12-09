@@ -110,3 +110,110 @@ body {
 .nav-item:hover {
   color: #6fcf97;
 }
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  align-items: center;
+}
+
+.btn-wrapper {
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+}
+
+.btn {
+  position: relative;
+  padding: 9px 15px;
+  background: url(assets/img/btn-bg.png) center center no-repeat;
+  background-size: 100% 100%;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  /*border: 2px solid #6FCF97;*/
+  border-radius: 30px;
+  color: #6fcf97;
+  text-transform: uppercase;
+  min-width: 160px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.btn:before {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 12px;
+  height: 12px;
+  -webkit-transform: skew(40deg, 0deg);
+  -ms-transform: skew(40deg, 0deg);
+  transform: skew(40deg, 0deg);
+  border: 2.51957px solid #6fcf97;
+  border-radius: 1.67972px;
+  left: -20px;
+  bottom: 0px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+.btn:after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 12px;
+  height: 12px;
+  -webkit-transform: skew(40deg, 0deg);
+  -ms-transform: skew(40deg, 0deg);
+  transform: skew(40deg, 0deg);
+  border: 2.51957px solid #6fcf97;
+  border-radius: 1.67972px;
+  right: -20px;
+  top: 0px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+.btn:hover {
+  border-color: #fff;
+  color: #fff;
+}
+.btn:hover:before,
+.btn:hover:after {
+  border-radius: 20px;
+  -webkit-transform: skew(0deg, 0deg);
+  -ms-transform: skew(0deg, 0deg);
+  transform: skew(0deg, 0deg);
+  border-color: #fff;
+}
+.btn img {
+  width: 18px;
+  margin-right: 8px;
+}
+.btn span {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+}
+
+.flex {
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}

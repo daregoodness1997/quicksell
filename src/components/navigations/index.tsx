@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Button from '../button';
 
 const navItems = [
   { name: 'Home', link: '/' },
@@ -34,7 +35,10 @@ const TopNav = () => {
           ))}
         </nav>
       </div>
-      <div>CTA</div>
+      <div className='button-group'>
+        <div>EN</div>
+        <Button />
+      </div>
     </div>
   );
 };

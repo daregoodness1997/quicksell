@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
 import './App.css';
-import { TopNav } from './components';
 import AppRoute from './route';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 function App() {
   const [count, setCount] = useState(0);

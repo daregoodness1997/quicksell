@@ -1,12 +1,22 @@
 import React from 'react';
 
-const TradeCard = () => {
+interface Props {
+  name?: string;
+  imageUrl?: string;
+  keys?: string;
+  refs?: string;
+  color?: string;
+}
+
+const TradeCard: React.FC<Props> = ({ name, imageUrl, keys, refs, color }) => {
   return (
     <div className='card trade-card'>
       <img src='assets/img/qc-logo.png' alt='' />
-      <p>Haunted Einstein</p>
-      <h3>18 Keys 240 Refs</h3>
-      <div className='indicator'></div>
+      <p>{name}</p>
+      <h3>
+        {keys} Keys {refs} Refs
+      </h3>
+      <div className={`indicator ${color}`}></div>
     </div>
   );
 };

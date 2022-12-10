@@ -59,6 +59,7 @@ body {
     ),
     url(./assets/background.png);
   background-size: cover;
+  background-repeat: repeat-y;
 }
 
 p,
@@ -75,13 +76,13 @@ h6 {
 /* Global styles */
 
 .container {
-  padding: 1rem 3.2rem;
+  padding: 1rem 6rem;
 }
 
 /* Top Navigation */
 
 .top-navigation {
-  padding: 1rem 3.2rem;
+  padding: 1rem 6rem;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -279,7 +280,7 @@ h6 {
 }
 
 .hero {
-  padding: 0rem 3.2rem;
+  padding: 0rem 6rem;
   align-items: flex-start;
 
   & .content-box {
@@ -306,10 +307,38 @@ h6 {
 
 .features {
   margin-top: 16rem;
+  padding-top: 3.2rem;
   padding-bottom: 4.8rem;
+  background-color: #1f2124;
+  text-align: center;
 
   & .slider-box {
     margin-top: 3.2rem;
+  }
+
+  & .trade {
+    margin: 8rem auto;
+
+    & h2 {
+      font-size: 2rem;
+    }
+
+    & p {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+
+    & .content {
+      text-align: left;
+      margin-top: 6rem;
+
+      & h3 {
+        font-size: 1.8rem;
+      }
+      & p {
+        font-size: 0.9rem;
+      }
+    }
   }
 }
 

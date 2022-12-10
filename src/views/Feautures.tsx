@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
+import { Button } from '../components';
 import { TradeCard } from '../components/cards';
 
 const Feautures = () => {
@@ -57,6 +58,30 @@ const Feautures = () => {
           <TradeCard />
           <TradeCard />
         </Slider>
+      </div>
+
+      {/* Trade Section */}
+      <div className='trade'>
+        <div className='trade-header'>
+          <h2>Trade anywhere with great value</h2>
+          <p>
+            Store prices are up to 30% cheaper, and there are no hidden charges
+            or suprises.
+          </p>
+        </div>
+
+        <div className='content flex '>
+          <div className='box-1'>
+            <h3>Trade</h3>
+            <p>
+              Simply select the items you want to uptrade the choose the items
+              you want to receive then your trade goes through instantly
+            </p>
+            <div className='bottom-wrapper'>
+              <Button />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

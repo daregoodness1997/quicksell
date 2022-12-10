@@ -53,8 +53,8 @@ body {
   background-image: url('./assets/background.png'); */
 
   background: linear-gradient(
-      160.92deg,
-      rgba(42, 45, 50, 0.8) 19.77%,
+      180.92deg,
+      rgba(16, 17, 19, 0.8) 19.77%,
       rgba(22, 23, 27, 0.5) 56.89%
     ),
     url(./assets/background.png);
@@ -285,4 +285,21 @@ h6 {
   & .content-box {
     margin-top: 100px;
   }
+}
+
+.product {
+  background: url('./assets/img/Hexagon.png') no-repeat;
+  background-position: center;
+  background-size: 58%;
+  margin-top: 16rem;
+  height: 100vh;
+  text-align: center;
+  & img {
+    width: 80%;
+    display: block;
+    margin-top: 2rem;
+  }
+}
+.green-text {
+  color: #6fcf97;
 }

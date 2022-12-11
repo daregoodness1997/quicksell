@@ -13,6 +13,7 @@ const Feautures = () => {
     slidesToShow: 6,
     slidesToScroll: 1,
     autoplay: true,
+    speed: 2000,
     autoplaySpeed: 2000,
     pauseOnHover: true,
     responsive: [
@@ -49,6 +50,7 @@ const Feautures = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
+    speed: 2000,
     autoplaySpeed: 2000,
     pauseOnHover: true,
     responsive: [

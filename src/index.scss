@@ -380,9 +380,11 @@ h6 {
   border-radius: 4px;
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 400px;
+  height: 200px;
   text-align: left;
-  gap: 10px;
+  gap: 12px;
 
   & .auction-name {
     font-weight: bold;
@@ -391,6 +393,10 @@ h6 {
 
   & .auction-flex {
     gap: 6px;
+
+    & small {
+      font-size: 0.6rem;
+    }
   }
 
   & .auction-flex-sub {
@@ -399,7 +405,7 @@ h6 {
     gap: 10px;
   }
   & .img-container {
-    width: 40%;
+    width: 50%;
     height: 100%;
     background: #00000033;
     display: grid;
@@ -419,6 +425,14 @@ h6 {
     color: #fb8200;
   }
 
+  & .bottom {
+    margin-top: 0.5rem;
+
+    &.-text {
+      margin-top: -0.4rem;
+    }
+  }
+
   & .bottom-wrapper {
     margin-top: 1rem;
     & .auction-avatar {
@@ -426,5 +440,21 @@ h6 {
       height: 24px;
       border-radius: 100%;
     }
+
+    & button {
+      background-color: transparent;
+      border: 1.2px solid #6fcf97;
+      border-radius: 4px;
+      padding: 4px 12px;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(0.9);
+      }
+    }
   }
+}
+
+.header {
+  margin-top: 4rem;
 }

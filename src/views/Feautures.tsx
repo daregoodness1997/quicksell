@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 import { Button } from '../components';
 import { TradeCard } from '../components/cards';
 import AuctionCard from '../components/cards/AuctionCard';
+import GiveawayCard from '../components/cards/GiveawayCard';
 
 const Feautures = () => {
   const settings = {
@@ -136,7 +137,7 @@ const Feautures = () => {
         </div>
 
         <div className='header flex'>
-          <h3>Features</h3>
+          <h3>Featured Auctions</h3>
           <Link to='/trade' className='green-text'>
             See All Items
           </Link>
@@ -151,6 +152,37 @@ const Feautures = () => {
             <AuctionCard />
             <AuctionCard />
             <AuctionCard />
+          </Slider>
+        </div>
+      </div>
+
+      {/* Giveways Section */}
+
+      <div className='sub-section giveaways'>
+        <div className='trade-header'>
+          <h2>Giveaways</h2>
+          <p>
+            You can enter giveaways and also give out items to the community
+            that you do not need
+          </p>
+        </div>
+
+        <div className='header flex'>
+          <h3>Featured Giveaways</h3>
+          <Link to='/trade' className='green-text'>
+            See All Items
+          </Link>
+        </div>
+
+        <div className='slider-box'>
+          <Slider {...settings}>
+            <GiveawayCard />
+            <GiveawayCard />
+            <GiveawayCard />
+            <GiveawayCard />
+            <GiveawayCard />
+            <GiveawayCard />
+            <GiveawayCard />
           </Slider>
         </div>
       </div>

@@ -79,6 +79,10 @@ h6 {
   padding: 1rem 6rem;
 }
 
+.space-between {
+  justify-content: space-between;
+  width: 100%;
+}
 /* Top Navigation */
 
 .top-navigation {
@@ -375,14 +379,24 @@ h6 {
   color: #fff;
   border-radius: 4px;
   display: flex;
-  width: 360px;
-  height: 160px;
+  align-items: center;
+  width: 400px;
   text-align: left;
-  gap: 12px;
+  gap: 10px;
 
   & .auction-name {
     font-weight: bold;
     text-transform: uppercase;
+  }
+
+  & .auction-flex {
+    gap: 6px;
+  }
+
+  & .auction-flex-sub {
+    color: #787885;
+    display: flex;
+    gap: 10px;
   }
   & .img-container {
     width: 40%;
@@ -393,10 +407,24 @@ h6 {
   }
 
   & small {
+    font-size: 0.75rem;
   }
   & h5 {
     margin-top: -6px;
     font-size: 1.2rem;
     font-weight: bold;
+  }
+
+  & .instant-buy {
+    color: #fb8200;
+  }
+
+  & .bottom-wrapper {
+    margin-top: 1rem;
+    & .auction-avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 100%;
+    }
   }
 }

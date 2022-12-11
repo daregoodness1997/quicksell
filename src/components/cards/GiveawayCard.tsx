@@ -8,9 +8,15 @@ interface Props {
   color?: string;
 }
 
-const TradeCard: React.FC<Props> = ({ name, imageUrl, keys, refs, color }) => {
+const GiveawayCard: React.FC<Props> = ({
+  name,
+  imageUrl,
+  keys,
+  refs,
+  color,
+}) => {
   return (
-    <div className='card trade-card'>
+    <div className='card giveaway-card'>
       <img src='assets/img/qc-logo.png' alt='' />
       <p>{name}</p>
       <h3>
@@ -21,4 +27,4 @@ const TradeCard: React.FC<Props> = ({ name, imageUrl, keys, refs, color }) => {
   );
 };
 
-export default TradeCard;
+export default GiveawayCard;

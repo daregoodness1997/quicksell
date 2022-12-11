@@ -3,12 +3,50 @@ import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import { Button } from '../components';
 import { TradeCard } from '../components/cards';
+import AuctionCard from '../components/cards/AuctionCard';
+import GiveawayCard from '../components/cards/GiveawayCard';
 
 const Feautures = () => {
   const settings = {
     dots: true,
     infinite: true,
     slidesToShow: 6,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 6,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
+  const auctionSettings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
@@ -61,7 +99,7 @@ const Feautures = () => {
       </div>
 
       {/* Trade Section */}
-      <div className='trade'>
+      <div className='sub-section'>
         <div className='trade-header'>
           <h2>Trade anywhere with great value</h2>
           <p>
@@ -81,6 +119,71 @@ const Feautures = () => {
               <Button />
             </div>
           </div>
+          <div className='box-1'>
+            <img src='assets/img/trades-mockup.png' alt='Trades Mockup' />
+          </div>
+        </div>
+      </div>
+
+      {/* Auctions Section */}
+
+      <div className='sub-section'>
+        <div className='trade-header'>
+          <h2>Auctions</h2>
+          <p>
+            You can always auction your items and get the best offers and sell
+            to the highest bidder
+          </p>
+        </div>
+
+        <div className='header flex'>
+          <h3>Featured Auctions</h3>
+          <Link to='/trade' className='green-text'>
+            See All Items
+          </Link>
+        </div>
+
+        <div className='slider-box'>
+          <Slider {...auctionSettings}>
+            <AuctionCard />
+            <AuctionCard />
+            <AuctionCard />
+            <AuctionCard />
+            <AuctionCard />
+            <AuctionCard />
+            <AuctionCard />
+          </Slider>
+        </div>
+      </div>
+
+      {/* Giveways Section */}
+
+      <div className='sub-section giveaways'>
+        <div className='trade-header'>
+          <h2>Giveaways</h2>
+          <p>
+            You can enter giveaways and also give out items to the community
+            that you do not need
+          </p>
+        </div>
+
+        <div className='header flex'>
+          <h3>Featured Giveaways</h3>
+          <Link to='/trade' className='green-text'>
+            See All Items
+          </Link>
+        </div>
+
+        <div className='slider-box'>
+          <Slider {...settings}>
+            <GiveawayCard />
+            <GiveawayCard />
+            <GiveawayCard />
+            <GiveawayCard />
+            <GiveawayCard />
+            <GiveawayCard />
+            <GiveawayCard />
+          </Slider>
         </div>
       </div>
     </div>

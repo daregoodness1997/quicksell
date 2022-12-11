@@ -127,33 +127,88 @@ h6 {
   position: relative;
 }
 
-.btn {
-  position: relative;
-  padding: 9px 15px;
-  background: url(assets/img/btn-bg.png) center center no-repeat;
-  background-size: 100% 100%;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  /*border: 2px solid #6FCF97;*/
-  border-radius: 30px;
-  color: #6fcf97;
-  text-transform: uppercase;
-  width: 190px;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+// Button
 
+/* General Button Style */
+/* Button Border Style */
+/* Button hover styles */
+.button {
+  position: relative;
+  display: block;
+  background: #1e252b;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: #6fcf97;
+  border: none;
+  transition: all 0.3s ease-in-out;
+
+  & .button-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  & span,
   & img {
-    width: 18px;
-    margin-right: 8px;
+    position: relative;
+    z-index: 10;
   }
 
   & span {
-    display: block;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 15px;
   }
+
+  &:before {
+    position: absolute;
+    content: '';
+    width: 200px;
+    height: 18px;
+    left: 0px;
+    border-radius: 4px;
+    background: #1e252b;
+
+    transform: perspective(9px) rotateX(3deg);
+  }
+  &:after {
+    position: absolute;
+    content: '';
+    width: 200px;
+    left: 0px;
+    height: 18px;
+    top: 20px;
+    border-radius: 4px;
+    background: #1e252b;
+
+    transform: perspective(9px) rotateX(-3deg);
+  }
+}
+.button.border {
+  &:before {
+    border: 2.51957px solid #6fcf97;
+    border-bottom: none;
+  }
+  &:after {
+    border: 2.51957px solid #6fcf97;
+    border-top: none;
+  }
+  &:hover {
+    &:before {
+      background: #6fcf97;
+    }
+    &:after {
+      background: #6fcf97;
+    }
+    color: #fff;
+  }
+}
+
+.button-wrapper {
+  position: relative;
+
   &:before {
     position: absolute;
     display: block;
@@ -173,6 +228,7 @@ h6 {
     -o-transition: all ease 0.3s;
     transition: all ease 0.3s;
   }
+
   &:after {
     position: absolute;
     display: block;
@@ -192,19 +248,9 @@ h6 {
     -o-transition: all ease 0.3s;
     transition: all ease 0.3s;
   }
-  &:hover {
-    border-color: #fff;
-    color: #fff;
-    &:after,
-    &:before {
-      border-radius: 20px;
-      -webkit-transform: skew(0deg, 0deg);
-      -ms-transform: skew(0deg, 0deg);
-      transform: skew(0deg, 0deg);
-      border-color: #fff;
-    }
-  }
 }
+
+// end Button
 
 .flex {
   display: -moz-flex;
@@ -267,6 +313,7 @@ h6 {
 
     & .bottom-wrapper {
       margin-top: 2rem;
+      width: 200px;
     }
 
     & h1 {

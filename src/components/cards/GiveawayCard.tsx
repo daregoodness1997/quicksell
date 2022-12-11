@@ -17,6 +17,8 @@ const GiveawayCard: React.FC<Props> = ({
 }) => {
   return (
     <div className='card giveaway-card'>
+      <i className='bi bi-clock-fill green-text'></i>
+      10:00 Hours Remaining
       <img src='assets/img/qc-logo.png' alt='' />
       <p>{name}</p>
       <h3>

@@ -171,7 +171,7 @@ const Feautures = () => {
 
         <div className='header flex'>
           <h3>Featured Giveaways</h3>
-          <Link to='/trade' className='green-text'>
+          <Link to='/giveaways' className='green-text'>
             See All Items
           </Link>
         </div>

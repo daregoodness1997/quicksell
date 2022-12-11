@@ -86,12 +86,19 @@ h6 {
 /* Top Navigation */
 
 .top-navigation {
-  padding: 1rem 6rem;
+  padding: 0.4rem 6rem;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100vw;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(22, 23, 27, 0.4);
+  backdrop-filter: blur(60px);
+  z-index: 100;
 }
 
 .left-navigation {
@@ -197,17 +204,21 @@ h6 {
   }
   &:hover {
     &:before {
-      background: #6fcf97;
+      background: #0e1012;
     }
     &:after {
-      background: #6fcf97;
+      background: #0e1012;
     }
-    color: #fff;
   }
 }
 
 .button-wrapper {
   position: relative;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(0.9);
+  }
 
   &:before {
     position: absolute;
@@ -504,4 +515,10 @@ h6 {
 
 .header {
   margin-top: 4rem;
+}
+
+.giveaway-card {
+  background-color: #191b1c;
+  width: 200px;
+  padding: 1rem;
 }

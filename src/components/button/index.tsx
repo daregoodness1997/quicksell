@@ -16,7 +16,7 @@ const Button: React.FC<ButtonProps> = ({
   logo = true,
 }) => {
   return (
-    <div className={`button-wrapper ${border} ${variant}`}>
+    <div className={`button-wrapper ${border} ${size}`}>
       <button className={`button ribbon-outset border ${variant} ${size}`}>
         <div className='button-flex'>
           {logo && <img src='assets/svg/steam-icon.svg' alt={label} />}

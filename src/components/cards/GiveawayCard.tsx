@@ -1,4 +1,5 @@
 import React from 'react';
+import AvatarStack from '../avatar/AvatarStack';
 import Button from '../button';
 
 interface Props {
@@ -20,10 +21,15 @@ const GiveawayCard: React.FC<Props> = ({
     <div className='card giveaway-card'>
       <i className='bi bi-clock-fill green-text'></i>
       <small> 10:00 Hours Remaining</small>
-      <img src='assets/img/qc-logo.png' alt='' />
+      <div className='img-container'>
+        <img src='assets/img/qc-logo.png' alt={name} />
+      </div>
       <p>{name}</p>
-      <h4>Sample Auth Giveaways </h4>
-      <Button label='Enter Giveaway' logo={false} size='sm' />
+      <div className='center'>
+        <h4>Sample Auth Giveaways </h4>
+        <Button label='Enter Giveaway' logo={false} size='sm' />
+      </div>
+      <AvatarStack />
     </div>
   );
 };

@@ -118,7 +118,7 @@ const Feautures = () => {
               you want to receive then your trade goes through instantly
             </p>
             <div className='bottom-wrapper'>
-              <Button />
+              <Button label='Trade Now' />
             </div>
           </div>
           <div className='box-1'>

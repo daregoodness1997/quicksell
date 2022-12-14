@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../button';
 
 interface Props {
   name?: string;
@@ -21,10 +22,8 @@ const GiveawayCard: React.FC<Props> = ({
       <small> 10:00 Hours Remaining</small>
       <img src='assets/img/qc-logo.png' alt='' />
       <p>{name}</p>
-      <h3>
-        {keys} Keys {refs} Refs
-      </h3>
-      <div className={`indicator ${color}`}></div>
+      <h4>Sample Auth Giveaways </h4>
+      <Button label='Enter Giveaway' logo={false} size='sm' />
     </div>
   );
 };

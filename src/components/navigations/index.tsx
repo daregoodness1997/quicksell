@@ -37,7 +37,7 @@ const TopNav = () => {
       </div>
       <div className='button-group'>
         <div>EN</div>
-        <Button />
+        <Button label='Sign in with Steam' />
       </div>
     </div>
   );

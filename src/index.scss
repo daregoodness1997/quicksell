@@ -153,6 +153,38 @@ h6 {
   border: none;
   transition: all 0.3s ease-in-out;
 
+  &.sm {
+    width: 160px;
+
+    &:before {
+      position: absolute;
+      content: '';
+      width: 160px;
+      height: 18px;
+      left: 0px;
+      border-radius: 4px;
+      background: #1e252b;
+
+      transform: perspective(9px) rotateX(3deg);
+    }
+    &:after {
+      position: absolute;
+      content: '';
+      width: 160px;
+      left: 0px;
+      height: 18px;
+      top: 20px;
+      border-radius: 4px;
+      background: #1e252b;
+
+      transform: perspective(9px) rotateX(-3deg);
+    }
+
+    &.border {
+      border: none;
+    }
+  }
+
   & .button-flex {
     display: flex;
     align-items: center;
@@ -521,4 +553,13 @@ h6 {
   background-color: #191b1c;
   width: 200px;
   padding: 1rem;
+  text-align: left;
+
+  & small {
+    font-size: 0.6rem;
+  }
+
+  & h4 {
+    font-size: 0.8rem;
+  }
 }

@@ -10,7 +10,7 @@ const Hero = () => {
         </h1>
         <p>Easy and very secure way to sell your in-game items for money</p>
         <div className='bottom-wrapper'>
-          <Button />
+          <Button label='Sign in with Steam' />
         </div>
       </div>
       <div className='box-2'>

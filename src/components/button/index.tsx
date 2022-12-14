@@ -1,13 +1,38 @@
-import React from 'react';
+import React, { MouseEvent, MouseEventHandler } from 'react';
 
-const Button = () => {
+interface ButtonProps {
+  border?: string;
+  variant?: string;
+  size?: 'sm' | 'md' | 'lg';
+  label?: string;
+  logo?: boolean;
+  onClick?: (event?: any) => void;
+  loading?: boolean;
+}
+
+const Button: React.FC<ButtonProps> = ({
+  border,
+  variant,
+  size,
+  label,
+  logo = true,
+  onClick,
+  loading,
+}) => {
   return (
-    <div className='button-wrapper'>
-      <button className='button ribbon-outset border'>
-        <div className='button-flex'>
-          <img src='assets/svg/steam-icon.svg' alt='Sign in with Steam' />
-          <span>Sign in with Steam</span>
-        </div>
+    <div className={`button-wrapper ${border} ${size}`} onClick={onClick}>
+      <button
+        className={`button ribbon-outset border ${variant} ${size}`}
+        onClick={onClick}
+      >
+        {loading ? (
+          `Loading`
+        ) : (
+          <div className='button-flex'>
+            {logo && <img src='assets/svg/steam-icon.svg' alt={label} />}
+            <span>{label}</span>
+          </div>
+        )}
       </button>
     </div>
   );

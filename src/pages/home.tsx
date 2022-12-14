@@ -2,6 +2,7 @@ import React from 'react';
 import { TopNav } from '../components';
 import Feautures from '../views/Feautures';
 import Hero from '../views/Hero';
+import Keys from '../views/Keys';
 import Product from '../views/Product';
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
       <Hero />
       <Product />
       <Feautures />
+      <Keys />
     </div>
   );
 };

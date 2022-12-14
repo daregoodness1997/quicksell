@@ -1,4 +1,6 @@
 import React from 'react';
+import AvatarStack from '../avatar/AvatarStack';
+import Button from '../button';
 
 interface Props {
   name?: string;
@@ -18,13 +20,16 @@ const GiveawayCard: React.FC<Props> = ({
   return (
     <div className='card giveaway-card'>
       <i className='bi bi-clock-fill green-text'></i>
-      10:00 Hours Remaining
-      <img src='assets/img/qc-logo.png' alt='' />
+      <small> 10:00 Hours Remaining</small>
+      <div className='img-container'>
+        <img src='assets/img/qc-logo.png' alt={name} />
+      </div>
       <p>{name}</p>
-      <h3>
-        {keys} Keys {refs} Refs
-      </h3>
-      <div className={`indicator ${color}`}></div>
+      <div className='center'>
+        <h4>Sample Auth Giveaways </h4>
+        <Button label='Enter Giveaway' logo={false} size='sm' />
+      </div>
+      <AvatarStack />
     </div>
   );
 };

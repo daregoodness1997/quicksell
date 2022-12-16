@@ -4,6 +4,7 @@ import Feautures from '../views/Feautures';
 import Hero from '../views/Hero';
 import Keys from '../views/Keys';
 import Product from '../views/Product';
+import Trades from '../views/Trades';
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Product />
       <Feautures />
       <Keys />
+      <Trades />
     </div>
   );
 };

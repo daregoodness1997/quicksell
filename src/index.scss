@@ -696,3 +696,15 @@ h6 {
     margin: 0;
   }
 }
+
+.cta {
+  background-color: #2e464d;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  display: grid;
+  place-items: center;
+  & .botton-box {
+    width: 240px;
+    margin-top: 1rem;
+  }
+}

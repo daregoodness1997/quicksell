@@ -22,7 +22,9 @@ const TopNav = () => {
   return (
     <div className='top-navigation'>
       <div className='left-navigation'>
-        <img src='assets/img/qc-logo.png' />
+        <Link to='/'>
+          <img src='assets/img/qc-logo.png' />
+        </Link>
         <nav>
           {navItems.map(item => (
             <NavLink

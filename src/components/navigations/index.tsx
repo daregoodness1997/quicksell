@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Button from '../button';
 
@@ -19,13 +19,23 @@ const navItems = [
 ];
 
 const TopNav = () => {
+  const hamburgerRef = useRef();
+  const [menu, setMenu] = useState(false);
+
+  
+
   return (
     <div className='top-navigation'>
-      <div className='left-navigation'>
+      <div className={`left-navigation ${menu ? 'mobile' : ''}`}>
+        <div
+          className='burgerBtn'
+          onClick={() => setMenu(!menu)}
+          ref={hamburgerRef.current}
+        ></div>
         <Link to='/'>
           <img src='assets/img/qc-logo.png' />
         </Link>
-        <nav>
+        <nav id='nav'>
           {navItems.map(item => (
             <NavLink
               to={item.link}

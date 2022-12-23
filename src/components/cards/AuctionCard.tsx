@@ -3,12 +3,12 @@ import Skeleton from 'react-loading-skeleton';
 import SkeletalLoader from '../skeletal';
 
 interface AuctionCardProps {
-  title: string;
-  minBids: string;
-  topBids: string;
-  instantBuy: string;
-  auctionType: string;
-  duration: string;
+  title?: string;
+  minBids?: string;
+  topBids?: string;
+  instantBuy?: string;
+  auctionType?: string;
+  duration?: string;
 }
 
 const AuctionCard: React.FC<AuctionCardProps> = ({
@@ -29,33 +29,36 @@ const AuctionCard: React.FC<AuctionCardProps> = ({
       <div>
         <p className='auction-name'>
           {title || <SkeletalLoader />}
-          Haunted Einstein
+          {/* Haunted Einstein */}
         </p>
 
-        <div className='flex auction-flex'>
-          {/* {minBids ? (
+        {minBids ? (
+          <div className='flex auction-flex'>
             <div>
               <small>Top Bids</small>
               <h5>10 Keys</h5>
             </div>
-          ) : (
-            <SkeletalLoader height={'40px'} />
-          )} */}
 
-          <SkeletalLoader height={'40px'} />
-
-          <div>
-            <small>Min Bids</small>
-            <h5>10 Keys</h5>
+            <div>
+              <small>Min Bids</small>
+              <h5>10 Keys</h5>
+            </div>
+            <div className='instant-buy'>
+              <small>Top Bids</small>
+              <h5>10 Keys</h5>
+            </div>
           </div>
-          <div className='instant-buy'>
-            <small>Top Bids</small>
-            <h5>10 Keys</h5>
+        ) : (
+          <div className='flex auction-flex'>
+            <SkeletalLoader width={'64px'} height={'36px'} />
+            <SkeletalLoader width={'64px'} height={'36px'} />
+            <SkeletalLoader width={'64px'} height={'36px'} />
           </div>
-        </div>
+        )}
 
         <div className='flex bottom'>
           <div className='flex space-between'>
+            {/* <SkeletalLoader width={'300px'} height={'20px'} /> */}
             <div className='auction-flex-sub'>
               <small>Price steps</small>
               <small>No</small>

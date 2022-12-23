@@ -1,6 +1,24 @@
 import React from 'react';
+import Skeleton from 'react-loading-skeleton';
+import SkeletalLoader from '../skeletal';
 
-const AuctionCard = () => {
+interface AuctionCardProps {
+  title?: string;
+  minBids?: string;
+  topBids?: string;
+  instantBuy?: string;
+  auctionType?: string;
+  duration?: string;
+}
+
+const AuctionCard: React.FC<AuctionCardProps> = ({
+  title,
+  minBids,
+  topBids,
+  instantBuy,
+  auctionType,
+  duration,
+}) => {
   return (
     <div className='card auction-card '>
       <div className='img-container'>
@@ -9,25 +27,38 @@ const AuctionCard = () => {
 
       {/* Start Left Content */}
       <div>
-        <p className='auction-name'>Haunted Einstein</p>
+        <p className='auction-name'>
+          {title || <SkeletalLoader />}
+          {/* Haunted Einstein */}
+        </p>
 
-        <div className='flex auction-flex'>
-          <div>
-            <small>Top Bids</small>
-            <h5>10 Keys</h5>
+        {minBids ? (
+          <div className='flex auction-flex'>
+            <div>
+              <small>Top Bids</small>
+              <h5>10 Keys</h5>
+            </div>
+
+            <div>
+              <small>Min Bids</small>
+              <h5>10 Keys</h5>
+            </div>
+            <div className='instant-buy'>
+              <small>Top Bids</small>
+              <h5>10 Keys</h5>
+            </div>
           </div>
-          <div>
-            <small>Min Bids</small>
-            <h5>10 Keys</h5>
+        ) : (
+          <div className='flex auction-flex'>
+            <SkeletalLoader width={'64px'} height={'36px'} />
+            <SkeletalLoader width={'64px'} height={'36px'} />
+            <SkeletalLoader width={'64px'} height={'36px'} />
           </div>
-          <div className='instant-buy'>
-            <small>Top Bids</small>
-            <h5>10 Keys</h5>
-          </div>
-        </div>
+        )}
 
         <div className='flex bottom'>
           <div className='flex space-between'>
+            {/* <SkeletalLoader width={'300px'} height={'20px'} /> */}
             <div className='auction-flex-sub'>
               <small>Price steps</small>
               <small>No</small>

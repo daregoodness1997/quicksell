@@ -1,5 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100&display=swap');
 
+@mixin transition($params) {
+  -webkit-transition: $params;
+  -moz-transition: $params;
+  -khtml-transition: $params;
+  -o-transition: $params;
+  transition: $params;
+}
+
+@mixin scale($params) {
+  -webkit-transform: scale($params);
+  -moz-transform: scale($params);
+  -khtml-transform: scale($params);
+  -o-transform: scale($params);
+  transform: scale($params);
+}
+
+@mixin box-shadow($params) {
+  -webkit-box-shadow: $params;
+  -moz-box-shadow: $params;
+  -khtml-box-shadow: $params;
+  -o-box-shadow: $params;
+  box-shadow: $params;
+}
+
+@mixin rotate($params) {
+  -webkit-transform: rotate($params);
+  -moz-transform: rotate($params);
+  -khtml-transform: rotate($params);
+  -o-transform: rotate($params);
+  transform: rotate($params);
+}
+
+@mixin opacity($opacity) {
+  -webkit-opacity: $opacity;
+  -moz-opacity: $opacity;
+  -khtml-opacity: $opacity;
+  -o-opacity: $opacity;
+  opacity: $opacity;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -khtml-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+
 :root {
   font-family: 'Lato', Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -19,11 +67,11 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #6fcf97;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #3a8057;
 }
 
 h1 {
@@ -85,6 +133,66 @@ h6 {
 }
 /* Top Navigation */
 
+.burgerBtn {
+  border-top: 2px solid #fff;
+  height: 25px;
+  width: 30px;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 30;
+  left: 20px;
+  top: 15px;
+  transform: scale(0.65);
+  cursor: pointer;
+  @include transition(all 0.3s ease-in);
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 30px;
+    left: 0;
+    background: #fff;
+    top: 10px;
+    @include transition(all 0.3s ease-in);
+  }
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 30px;
+    left: 0;
+    background: #fff;
+    bottom: 0;
+    @include transition(all 0.3s ease-in);
+  }
+}
+
+// nav {
+//   position: absolute;
+//   z-index: 10;
+//   list-style-type: none;
+//   margin: 100px 0 0 20px;
+//   padding: 0;
+//   overflow: hidden;
+//   a {
+//     height: 30px;
+//     width: 0;
+//     margin: 30px 0;
+//     background: #eae8e5;
+//     @include transition(all 0.6s ease-in);
+//     & + a {
+//       margin-left: -40px;
+//       & + a {
+//         margin-left: -80px;
+//         & + a {
+//           margin-left: -120px;
+//         }
+//       }
+//     }
+//   }
+// }
 .top-navigation {
   padding: 0.4rem 6rem;
   color: white;
@@ -398,6 +506,9 @@ h6 {
   }
 }
 
+.box-3 {
+  width: 32%;
+}
 .hero {
   padding: 0rem 6rem;
   align-items: flex-start;
@@ -674,5 +785,133 @@ h6 {
 .keys {
   & img {
     width: 90%;
+  }
+}
+
+.trades {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: #222a30;
+  margin: 6rem 0 0;
+  gap: 8px;
+  & .trade-header {
+    text-align: center;
+  }
+
+  ul {
+    padding: 0;
+    padding-top: 1rem;
+    margin: 0;
+  }
+}
+
+.cta {
+  background-color: #2e464d;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  display: grid;
+  place-items: center;
+  & .botton-box {
+    width: 240px;
+    margin-top: 1rem;
+  }
+}
+
+.footer {
+  padding-top: 3.2rem;
+  padding-bottom: 3.2rem;
+  & .left-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 30%;
+    align-items: flex-start;
+  }
+
+  & .right-navigation {
+    width: 40%;
+
+    & .navigation {
+      display: flex;
+      gap: 10px;
+
+      & .list {
+        width: 32%;
+      }
+
+      & h5 {
+        color: #98a2b3;
+      }
+      & ul {
+        margin: 0;
+        margin-top: 0.6rem;
+        padding: 0;
+      }
+
+      & a {
+        display: block;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+        color: #fff;
+      }
+    }
+  }
+}
+
+// Trade Page
+
+.trade {
+  &-container {
+    display: flex;
+    gap: 2rem;
+  }
+  &-section {
+    padding: 1rem;
+    &.lg {
+      width: 40%;
+    }
+
+    &.sm {
+      width: 18%;
+    }
+  }
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & h3 {
+      font-size: 1.4rem;
+    }
+
+    & span {
+      font-size: 0.95rem;
+      color: #6fcf97;
+      font-weight: 600;
+    }
+  }
+}
+
+// Navigation
+
+.left-navigation.mobile {
+  #nav a {
+    width: 200px;
+    // background-color: red;
+    margin-left: 0;
+  }
+  #burgerBtn {
+    border-color: transparent;
+    &:before {
+      @include rotate(45deg);
+      width: 33px;
+      left: -2px;
+    }
+    &:after {
+      @include rotate(135deg);
+      bottom: 11px;
+      width: 33px;
+      left: -2px;
+    }
   }
 }

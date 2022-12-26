@@ -177,7 +177,7 @@ const Feautures = () => {
         </div>
 
         <div className='slider-box'>
-          <Slider {...settings}>
+          <Slider {...auctionSettings}>
             <GiveawayCard />
             <GiveawayCard />
             <GiveawayCard />

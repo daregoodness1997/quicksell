@@ -4,6 +4,12 @@ $desktop: 1260px;
 $tablet: 960px;
 $mobile: 480px;
 
+$m-01: #6fcf97;
+$m-02: #56a477;
+$m-03: #8ab39b;
+$m-04: #e0ffed;
+$m-05: #bf80a9;
+
 @mixin transition($params) {
   -webkit-transition: $params;
   -moz-transition: $params;
@@ -57,7 +63,7 @@ $mobile: 480px;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-
+  box-sizing: border-box;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
@@ -779,6 +785,11 @@ h6 {
   text-align: left;
   gap: 12px;
 
+  @include mobile {
+    width: 95%;
+    height: 240px;
+  }
+
   & .auction-name {
     font-weight: bold;
     text-transform: uppercase;
@@ -861,6 +872,10 @@ h6 {
   width: 200px;
   padding: 1rem;
   text-align: left;
+
+  @include mobile {
+    width: 80%;
+  }
 
   & .img-container {
     width: 100%;
@@ -966,6 +981,14 @@ h6 {
   background-color: #222a30;
   margin: 6rem 0 0;
   gap: 8px;
+
+  & .flex {
+    margin-top: 2rem;
+    & .box-3 {
+      width: 100%;
+      margin: 2rem 0;
+    }
+  }
   & .trade-header {
     text-align: center;
   }
@@ -983,25 +1006,46 @@ h6 {
   padding-bottom: 3rem;
   display: grid;
   place-items: center;
+  gap: 0.6rem;
+  @include mobile {
+    text-align: center;
+  }
   & .botton-box {
     width: 240px;
     margin-top: 1rem;
+
+    @include mobile {
+      width: 200px;
+    }
   }
 }
 
 .footer {
   padding-top: 3.2rem;
   padding-bottom: 3.2rem;
+
+  @include mobile {
+    flex-direction: column;
+  }
   & .left-navigation {
     display: flex;
     flex-direction: column;
     gap: 4px;
     width: 30%;
     align-items: flex-start;
+    @include mobile {
+      width: 100%;
+      padding: 1rem;
+    }
   }
 
   & .right-navigation {
     width: 40%;
+
+    @include mobile {
+      width: 100%;
+      padding: 1rem;
+    }
 
     & .navigation {
       display: flex;
@@ -1095,6 +1139,229 @@ h6 {
   height: 100vh;
   display: grid;
   place-items: center;
+
+  & .content {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.65);
+
+    .planet {
+      width: 65%;
+      height: 65%;
+      background-color: $m-02;
+      border-radius: 100%;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      transform-origin: center center;
+      box-shadow: inset 2px -10px 0px rgba(0, 0, 0, 0.1);
+      animation: planet 5s ease infinite alternate;
+
+      @keyframes planet {
+        0% {
+          transform: rotate(10deg);
+        }
+
+        100% {
+          transform: rotate(-10deg);
+        }
+      }
+
+      /* planet ring */
+      .ring {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border-radius: 100%;
+        background-color: $m-04;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform-origin: 33% center;
+        box-shadow: 2px -10px 0px rgba(0, 0, 0, 0.1),
+          inset -5px -10px 0px rgba(0, 0, 0, 0.1);
+        animation: ring 3s ease infinite;
+
+        @keyframes ring {
+          0% {
+            transform: rotateX(110deg) rotateZ(0deg) translate(-50px, 5px);
+          }
+
+          100% {
+            transform: rotateX(110deg) rotateZ(360deg) translate(-50px, 5px);
+          }
+        }
+
+        /* small ball */
+        &:before {
+          content: '';
+          position: absolute;
+          width: 10px;
+          height: 30px;
+          border-radius: 100%;
+          background-color: $m-03;
+          z-index: 2;
+          left: calc(0px - 5px);
+          box-shadow: inset -3px 3px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        /* inner ring */
+        &:after {
+          content: '';
+          position: absolute;
+          width: 240px;
+          height: 240px;
+          border-radius: 100%;
+          background-color: $m-03;
+          box-shadow: inset 2px -10px 0px rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      /* to cover the back of the ring */
+      .cover-ring {
+        position: absolute;
+        width: 100%;
+        height: 50%;
+        border-bottom-left-radius: 80%;
+        border-bottom-right-radius: 80%;
+        border-top-left-radius: 100px;
+        border-top-right-radius: 100px;
+        transform: translate(0px, -17px);
+        background-color: $m-02;
+        z-index: 2;
+        box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.1);
+      }
+
+      /* planet spots */
+      .spots {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        z-index: 2;
+
+        span {
+          width: 30px;
+          height: 30px;
+          background-color: $m-01;
+          position: absolute;
+          border-radius: 100%;
+          box-shadow: inset -2px 3px 0px rgba(0, 0, 0, 0.3);
+          animation: dots 5s ease infinite alternate;
+
+          @keyframes dots {
+            0% {
+              box-shadow: inset -3px 3px 0px rgba(0, 0, 0, 0.3);
+            }
+            100% {
+              box-shadow: inset 3px 3px 0px rgba(0, 0, 0, 0.3);
+            }
+          }
+
+          &:nth-child(1) {
+            top: 20px;
+            right: 50px;
+          }
+
+          &:nth-child(2) {
+            top: 40px;
+            left: 50px;
+            width: 15px;
+            height: 15px;
+          }
+
+          &:nth-child(3) {
+            top: 80px;
+            left: 20px;
+            width: 25px;
+            height: 25px;
+          }
+
+          &:nth-child(4) {
+            top: 80px;
+            left: 90px;
+            width: 40px;
+            height: 40px;
+          }
+
+          &:nth-child(5) {
+            top: 160px;
+            left: 70px;
+            width: 15px;
+            height: 15px;
+          }
+
+          &:nth-child(6) {
+            top: 165px;
+            left: 125px;
+            width: 10px;
+            height: 10px;
+          }
+
+          &:nth-child(7) {
+            top: 90px;
+            left: 150px;
+            width: 15px;
+            height: 15px;
+          }
+        }
+      }
+    }
+
+    p {
+      color: $m-04;
+      font-size: 14px;
+      z-index: 2;
+      position: absolute;
+      bottom: -20px;
+      animation: text 4s ease infinite;
+      width: 100px;
+      text-align: center;
+
+      @keyframes text {
+        0% {
+          transform: translateX(-30px);
+          letter-spacing: 0px;
+          color: $m-04;
+        }
+
+        25% {
+          letter-spacing: 3px;
+          color: $m-03;
+        }
+
+        50% {
+          transform: translateX(30px);
+          letter-spacing: 0px;
+          color: $m-04;
+        }
+
+        75% {
+          letter-spacing: 3px;
+          color: $m-03;
+        }
+
+        100% {
+          transform: translateX(-30px);
+          letter-spacing: 0px;
+          color: $m-04;
+        }
+      }
+    }
+  }
+}
+
+.trade-header {
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .loader {
@@ -1236,229 +1503,6 @@ h6 {
             background-color: #0077b5;
           }
         }
-      }
-    }
-  }
-}
-
-$m-01: #6fcf97;
-$m-02: #56a477;
-$m-03: #8ab39b;
-$m-04: #e0ffed;
-$m-05: #bf80a9;
-
-.content {
-  width: 300px;
-  height: 300px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: scale(0.65);
-
-  .planet {
-    width: 65%;
-    height: 65%;
-    background-color: $m-02;
-    border-radius: 100%;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    transform-origin: center center;
-    box-shadow: inset 2px -10px 0px rgba(0, 0, 0, 0.1);
-    animation: planet 5s ease infinite alternate;
-
-    @keyframes planet {
-      0% {
-        transform: rotate(10deg);
-      }
-
-      100% {
-        transform: rotate(-10deg);
-      }
-    }
-
-    /* planet ring */
-    .ring {
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      border-radius: 100%;
-      background-color: $m-04;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transform-origin: 33% center;
-      box-shadow: 2px -10px 0px rgba(0, 0, 0, 0.1),
-        inset -5px -10px 0px rgba(0, 0, 0, 0.1);
-      animation: ring 3s ease infinite;
-
-      @keyframes ring {
-        0% {
-          transform: rotateX(110deg) rotateZ(0deg) translate(-50px, 5px);
-        }
-
-        100% {
-          transform: rotateX(110deg) rotateZ(360deg) translate(-50px, 5px);
-        }
-      }
-
-      /* small ball */
-      &:before {
-        content: '';
-        position: absolute;
-        width: 10px;
-        height: 30px;
-        border-radius: 100%;
-        background-color: $m-03;
-        z-index: 2;
-        left: calc(0px - 5px);
-        box-shadow: inset -3px 3px 0px rgba(0, 0, 0, 0.2);
-      }
-
-      /* inner ring */
-      &:after {
-        content: '';
-        position: absolute;
-        width: 240px;
-        height: 240px;
-        border-radius: 100%;
-        background-color: $m-03;
-        box-shadow: inset 2px -10px 0px rgba(0, 0, 0, 0.1);
-      }
-    }
-
-    /* to cover the back of the ring */
-    .cover-ring {
-      position: absolute;
-      width: 100%;
-      height: 50%;
-      border-bottom-left-radius: 80%;
-      border-bottom-right-radius: 80%;
-      border-top-left-radius: 100px;
-      border-top-right-radius: 100px;
-      transform: translate(0px, -17px);
-      background-color: $m-02;
-      z-index: 2;
-      box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.1);
-    }
-
-    /* planet spots */
-    .spots {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      z-index: 2;
-
-      span {
-        width: 30px;
-        height: 30px;
-        background-color: $m-01;
-        position: absolute;
-        border-radius: 100%;
-        box-shadow: inset -2px 3px 0px rgba(0, 0, 0, 0.3);
-        animation: dots 5s ease infinite alternate;
-
-        @keyframes dots {
-          0% {
-            box-shadow: inset -3px 3px 0px rgba(0, 0, 0, 0.3);
-          }
-          100% {
-            box-shadow: inset 3px 3px 0px rgba(0, 0, 0, 0.3);
-          }
-        }
-
-        &:nth-child(1) {
-          top: 20px;
-          right: 50px;
-        }
-
-        &:nth-child(2) {
-          top: 40px;
-          left: 50px;
-          width: 15px;
-          height: 15px;
-        }
-
-        &:nth-child(3) {
-          top: 80px;
-          left: 20px;
-          width: 25px;
-          height: 25px;
-        }
-
-        &:nth-child(4) {
-          top: 80px;
-          left: 90px;
-          width: 40px;
-          height: 40px;
-        }
-
-        &:nth-child(5) {
-          top: 160px;
-          left: 70px;
-          width: 15px;
-          height: 15px;
-        }
-
-        &:nth-child(6) {
-          top: 165px;
-          left: 125px;
-          width: 10px;
-          height: 10px;
-        }
-
-        &:nth-child(7) {
-          top: 90px;
-          left: 150px;
-          width: 15px;
-          height: 15px;
-        }
-      }
-    }
-  }
-
-  p {
-    color: $m-04;
-    font-size: 14px;
-    z-index: 2;
-    position: absolute;
-    bottom: -20px;
-    font-family: 'Roboto Mono', monospace;
-    animation: text 4s ease infinite;
-    width: 100px;
-    text-align: center;
-
-    @keyframes text {
-      0% {
-        transform: translateX(-30px);
-        letter-spacing: 0px;
-        color: $m-04;
-      }
-
-      25% {
-        letter-spacing: 3px;
-        color: $m-03;
-      }
-
-      50% {
-        transform: translateX(30px);
-        letter-spacing: 0px;
-        color: $m-04;
-      }
-
-      75% {
-        letter-spacing: 3px;
-        color: $m-03;
-      }
-
-      100% {
-        transform: translateX(-30px);
-        letter-spacing: 0px;
-        color: $m-04;
       }
     }
   }

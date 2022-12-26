@@ -31,8 +31,8 @@ const Footer = () => {
 
       <div className='right-navigation'>
         <div className='navigation'>
-          {footerNavigation.map(({ title, links }) => (
-            <div className='list'>
+          {footerNavigation.map(({ title, links }, idx) => (
+            <div className='list' key={idx}>
               <h5>{title}</h5>
               <ul>
                 {links.map((link, idx) => (

@@ -131,10 +131,12 @@
 }
 
 #bodyContent {
-  @include transition(all 0.6s ease-in);
+  @include transition(all 0.4s ease-in-out);
+  overflow-x: hidden;
 }
 
 #bodyContent.navigation {
+  @include transition(all 0.4s ease-in-out);
   @include scale(0.85);
   position: relative;
   margin-left: 120px;

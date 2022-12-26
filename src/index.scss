@@ -993,19 +993,32 @@ h6 {
 
   & .flex {
     margin-top: 2rem;
-    & .box-3 {
-      width: 100%;
-      margin: 2rem 0;
+    @include mobile {
+      & .box-3 {
+        width: 100%;
+        margin: 2rem 0;
+      }
     }
-  }
-  & .trade-header {
-    text-align: center;
   }
 
   ul {
     padding: 0;
     padding-top: 1rem;
     margin: 0;
+  }
+}
+
+.trade-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  & h2 {
+    font-size: 1.4rem;
+  }
+  & p {
+    font-size: 90%;
   }
 }
 
@@ -1034,6 +1047,7 @@ h6 {
 .footer {
   padding-top: 3.2rem;
   padding-bottom: 3.2rem;
+  display: flex;
 
   @include mobile {
     flex-direction: column;

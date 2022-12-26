@@ -246,6 +246,10 @@ h6 {
   backdrop-filter: blur(60px);
   z-index: 100;
 
+  @include mobile {
+    padding: 0.4rem 2rem;
+  }
+
   & .button-group {
     button {
       @include mobile {

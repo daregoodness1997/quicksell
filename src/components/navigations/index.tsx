@@ -18,17 +18,37 @@ export const navItems = [
   // { name: 'Brokering', link: '/' },
 ];
 
-const TopNav = () => {
+interface TopNavProps {
+  onClick?: (event?: any) => void;
+  toggle: boolean;
+}
+
+const TopNav: React.FC<TopNavProps> = ({ onClick, toggle }) => {
   const hamburgerRef = useRef();
   const [menu, setMenu] = useState(false);
 
   return (
     <div className='top-navigation'>
-      <div className={`left-navigation ${menu ? 'mobile' : ''}`}>
+      <div className={`left-navigation ${toggle ? 'navigation' : ''}`}>
+        <button className='menu-btn'>
+          <div id='burgerBtn' onClick={onClick}></div>
+        </button>
+
         <Link to='/'>
-          <img src='assets/img/qc-logo.png' />
+          <img src='assets/img/qc-logo.png' className='logo' />
         </Link>
-        <nav id='nav'>
+        <nav>
+          {navItems.map(item => (
+            <NavLink
+              to={item.link}
+              className='nav-item'
+              // to={item.link}
+            >
+              {item.name}
+            </NavLink>
+          ))}
+        </nav>
+        <nav id='nav-links'>
           {navItems.map(item => (
             <NavLink
               to={item.link}

@@ -26,10 +26,14 @@ const Layout: React.FC<Props> = ({ children }) => {
     setLoading(false);
   }, 2000);
 
+  const width = window.innerWidth;
+
+  console.log('Width', width);
+
   useEffect(() => {
-    const mobile = window.innerWidth <= 400 ? true : false;
+    const mobile = width <= 400 ? true : false;
     setIsMobile(mobile);
-  }, [setIsMobile, isMobile]);
+  }, [setIsMobile, isMobile, window.innerWidth]);
 
   console.log(isMobile);
 
@@ -39,11 +43,12 @@ const Layout: React.FC<Props> = ({ children }) => {
         <Loader />
       ) : (
         <div>
-          {isMobile ? (
+          {/* {isMobile ? (
             <MobileNav toggle={toggle} onClick={() => setToggle(!toggle)} />
           ) : (
-            <TopNav />
-          )}
+            <TopNav onClick={() => setToggle(!toggle)} />
+          )} */}
+          <TopNav onClick={() => setToggle(!toggle)} toggle={toggle} />
           {children}
           <div id='bodyContent' className={`${toggle ? 'navigation' : ''}`}>
             <Outlet />

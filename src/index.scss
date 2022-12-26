@@ -1541,3 +1541,24 @@ h6 {
     }
   }
 }
+
+.body-navigation {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.nav-ul {
+  @include desktop {
+    display: none;
+  }
+}
+
+.menu-btn {
+  @include desktop {
+    display: none;
+  }
+}

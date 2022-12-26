@@ -28,43 +28,41 @@ const TopNav: React.FC<TopNavProps> = ({ onClick, toggle }) => {
   const [menu, setMenu] = useState(false);
 
   return (
-    <div className='top-navigation'>
-      <div className={`left-navigation ${toggle ? 'navigation' : ''}`}>
-        <button className='menu-btn'>
-          <div id='burgerBtn' onClick={onClick}></div>
-        </button>
+    <>
+      <div className='top-navigation'>
+        <div className={`left-navigation ${toggle ? 'navigation' : ''}`}>
+          <button className='menu-btn'>
+            <div id='burgerBtn' onClick={onClick}></div>
+          </button>
 
-        <Link to='/'>
-          <img src='assets/img/qc-logo.png' className='logo' />
-        </Link>
-        <nav>
-          {navItems.map(item => (
-            <NavLink
-              to={item.link}
-              className='nav-item'
-              // to={item.link}
-            >
-              {item.name}
-            </NavLink>
-          ))}
-        </nav>
-        <nav id='nav-links'>
-          {navItems.map(item => (
-            <NavLink
-              to={item.link}
-              className='nav-item'
-              // to={item.link}
-            >
-              {item.name}
-            </NavLink>
-          ))}
-        </nav>
+          <Link to='/'>
+            <img src='assets/img/qc-logo.png' className='logo' />
+          </Link>
+          <nav>
+            {navItems.map(item => (
+              <NavLink
+                to={item.link}
+                className='nav-item'
+                // to={item.link}
+              >
+                {item.name}
+              </NavLink>
+            ))}
+          </nav>
+        </div>
+        <div className='button-group'>
+          <div className='i18n-dropdown'>EN</div>
+          <Button label='Sign in with Steam' />
+        </div>
       </div>
-      <div className='button-group'>
-        <div className='i18n-dropdown'>EN</div>
-        <Button label='Sign in with Steam' />
+      <div className={`nav-ul ${toggle ? 'navigation' : ''}`}>
+        {navItems.map(item => (
+          <NavLink to={item.link} className='nav-item' onClick={onClick}>
+            {item.name}
+          </NavLink>
+        ))}
       </div>
-    </div>
+    </>
   );
 };
 

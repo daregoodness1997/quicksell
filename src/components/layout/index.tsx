@@ -42,12 +42,7 @@ const Layout: React.FC<Props> = ({ children }) => {
       {loading ? (
         <Loader />
       ) : (
-        <div>
-          {/* {isMobile ? (
-            <MobileNav toggle={toggle} onClick={() => setToggle(!toggle)} />
-          ) : (
-            <TopNav onClick={() => setToggle(!toggle)} />
-          )} */}
+        <div className={`${toggle ? 'body-navigation' : ''}`}>
           <TopNav onClick={() => setToggle(!toggle)} toggle={toggle} />
           {children}
           <div id='bodyContent' className={`${toggle ? 'navigation' : ''}`}>

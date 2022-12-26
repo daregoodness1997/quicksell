@@ -126,7 +126,8 @@ body {
   margin: 0;
   min-height: 100vh;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+  box-sizing: border-box;
 
   background: linear-gradient(
       180.92deg,
@@ -616,7 +617,9 @@ h6 {
   padding: 0rem 6rem;
   align-items: flex-start;
   @include mobile {
+    width: 100vw;
     flex-direction: column;
+    justify-content: center;
   }
 
   & .box-2 {
@@ -692,6 +695,12 @@ h6 {
   padding-bottom: 4.8rem;
   background-color: #1f2124;
   text-align: center;
+
+  & .box-1 {
+    & img {
+      display: none;
+    }
+  }
 
   @include mobile {
     margin-top: 2rem;

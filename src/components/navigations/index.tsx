@@ -22,8 +22,6 @@ const TopNav = () => {
   const hamburgerRef = useRef();
   const [menu, setMenu] = useState(false);
 
-  
-
   return (
     <div className='top-navigation'>
       <div className={`left-navigation ${menu ? 'mobile' : ''}`}>
@@ -48,7 +46,7 @@ const TopNav = () => {
         </nav>
       </div>
       <div className='button-group'>
-        <div>EN</div>
+        <div className='i18n-dropdown'>EN</div>
         <Button label='Sign in with Steam' />
       </div>
     </div>

@@ -1016,6 +1016,8 @@ h6 {
   display: grid;
   place-items: center;
   gap: 0.6rem;
+  width: 100vw;
+  overflow-x: hidden;
   @include mobile {
     text-align: center;
   }

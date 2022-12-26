@@ -37,7 +37,7 @@ const Feautures = () => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
@@ -177,7 +177,7 @@ const Feautures = () => {
         </div>
 
         <div className='slider-box'>
-          <Slider {...settings}>
+          <Slider {...auctionSettings}>
             <GiveawayCard />
             <GiveawayCard />
             <GiveawayCard />

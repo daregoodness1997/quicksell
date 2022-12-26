@@ -4,12 +4,16 @@ import TopNav from '../navigations';
 import Footer from '../navigations/Footer';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import Loader from '../loader';
+import MobileNav from '../navigations/MobileNav';
+import '../navigations/style.scss';
 
 interface Props {
   children?: React.ReactNode | undefined;
 }
 const Layout: React.FC<Props> = ({ children }) => {
   const [loading, setLoading] = useState(true);
+  const [toggle, setToggle] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -21,15 +25,29 @@ const Layout: React.FC<Props> = ({ children }) => {
   setTimeout(() => {
     setLoading(false);
   }, 2000);
+
+  useEffect(() => {
+    const mobile = window.innerWidth <= 400 ? true : false;
+    setIsMobile(mobile);
+  }, [setIsMobile, isMobile]);
+
+  console.log(isMobile);
+
   return (
     <>
       {loading ? (
         <Loader />
       ) : (
         <div>
-          <TopNav />
+          {isMobile ? (
+            <MobileNav toggle={toggle} onClick={() => setToggle(!toggle)} />
+          ) : (
+            <TopNav />
+          )}
           {children}
-          <Outlet />
+          <div id='bodyContent' className={`${toggle ? 'navigation' : ''}`}>
+            <Outlet />
+          </div>
           <Footer />
         </div>
       )}

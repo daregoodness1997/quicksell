@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Button from '../button';
 
-const navItems = [
+export const navItems = [
   { name: 'Home', link: '/' },
   { name: 'Trade', link: '/trade' },
   { name: 'Keys', link: '/keys' },
@@ -25,11 +25,6 @@ const TopNav = () => {
   return (
     <div className='top-navigation'>
       <div className={`left-navigation ${menu ? 'mobile' : ''}`}>
-        <div
-          className='burgerBtn'
-          onClick={() => setMenu(!menu)}
-          ref={hamburgerRef.current}
-        ></div>
         <Link to='/'>
           <img src='assets/img/qc-logo.png' />
         </Link>

@@ -28,14 +28,10 @@ const Layout: React.FC<Props> = ({ children }) => {
 
   const width = window.innerWidth;
 
-  console.log('Width', width);
-
   useEffect(() => {
     const mobile = width <= 400 ? true : false;
     setIsMobile(mobile);
   }, [setIsMobile, isMobile, window.innerWidth]);
-
-  console.log(isMobile);
 
   return (
     <>

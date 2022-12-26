@@ -207,30 +207,6 @@ h6 {
   }
 }
 
-// nav {
-//   position: absolute;
-//   z-index: 10;
-//   list-style-type: none;
-//   margin: 100px 0 0 20px;
-//   padding: 0;
-//   overflow: hidden;
-//   a {
-//     height: 30px;
-//     width: 0;
-//     margin: 30px 0;
-//     background: #eae8e5;
-//     @include transition(all 0.6s ease-in);
-//     & + a {
-//       margin-left: -40px;
-//       & + a {
-//         margin-left: -80px;
-//         & + a {
-//           margin-left: -120px;
-//         }
-//       }
-//     }
-//   }
-// }
 .top-navigation {
   padding: 0.4rem 6rem;
   color: white;
@@ -580,8 +556,8 @@ h6 {
 
       @include mobile {
         top: 24px;
-        left: 4px;
-        right: 6px;
+        left: 0px;
+        right: 0px;
         width: 320px;
         flex-direction: row;
         padding: 1.4rem;
@@ -1173,6 +1149,7 @@ h6 {
   height: 100vh;
   display: grid;
   place-items: center;
+  overflow: hidden;
 
   & .content {
     width: 300px;
@@ -1430,7 +1407,7 @@ h6 {
     width: $size;
     height: $size;
     z-index: 9;
-    background-image: url(https://rafaelalucas91.github.io/assets/codepen/logo_white.svg);
+    background-image: url();
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: 10px 7px;
@@ -1462,21 +1439,21 @@ h6 {
       transition: all 0.8s ease;
 
       .icon {
-        background-image: url(https://rafaelalucas91.github.io/assets/codepen/link.svg);
+        background-image: url();
       }
     }
 
     &.dribbble {
       transition: all 0.3s ease;
       .icon {
-        background-image: url(https://rafaelalucas91.github.io/assets/codepen/dribbble.svg);
+        background-image: url();
       }
     }
 
     &.linkedin {
       transition: all 0.8s ease;
       .icon {
-        background-image: url(https://rafaelalucas91.github.io/assets/codepen/linkedin.svg);
+        background-image: url();
       }
     }
   }

@@ -39,8 +39,9 @@ const TopNav: React.FC<TopNavProps> = ({ onClick, toggle }) => {
             <img src='assets/img/qc-logo.png' className='logo' />
           </Link>
           <nav>
-            {navItems.map(item => (
+            {navItems.map((item, idx) => (
               <NavLink
+                key={idx}
                 to={item.link}
                 className='nav-item'
                 // to={item.link}
@@ -56,8 +57,13 @@ const TopNav: React.FC<TopNavProps> = ({ onClick, toggle }) => {
         </div>
       </div>
       <div className={`nav-ul ${toggle ? 'navigation' : ''}`}>
-        {navItems.map(item => (
-          <NavLink to={item.link} className='nav-item' onClick={onClick}>
+        {navItems.map((item, idx) => (
+          <NavLink
+            to={item.link}
+            key={idx}
+            className='nav-item'
+            onClick={onClick}
+          >
             {item.name}
           </NavLink>
         ))}

@@ -747,6 +747,36 @@ h6 {
   align-items: center;
   width: 200px;
 
+  &.list {
+    width: 100%;
+    padding: 0.4rem;
+
+    & img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+
+    & .indicator {
+      width: 100%;
+      background-color: #9b51e0;
+      height: 4px;
+      border-radius: 4px;
+    }
+
+    & p {
+      font-size: 0.6rem;
+      margin: 0;
+    }
+    & h3 {
+      font-size: 0.75rem;
+      margin: 0;
+      padding: 0;
+      margin-top: -0.5rem;
+      font-weight: 700;
+    }
+  }
+
   @include mobile {
     width: 95%;
   }
@@ -1369,6 +1399,19 @@ h6 {
 }
 
 .trade-header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 0.8rem;
+
+  & button {
+    background-color: transparent;
+    border: none;
+    color: #6fcf97;
+  }
+
   @include mobile {
     display: flex;
     flex-direction: column;
@@ -1538,4 +1581,15 @@ h6 {
   @include desktop {
     display: none;
   }
+}
+
+.trade-container {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.4rem;
 }

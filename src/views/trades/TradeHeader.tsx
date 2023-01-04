@@ -9,7 +9,7 @@ const TradeHeader: React.FC<TradeHeaderProps> = ({ title, onReload }) => {
   return (
     <div className='trade-header'>
       <h3>{title}</h3>
-      <span>Reload</span>
+      <button onClick={onReload}>Reload</button>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-const SteamIcon = (className?: string) => {
+const SteamIcon = (className?: any) => {
   return (
     <svg
       width='18'
@@ -27,7 +27,7 @@ const SteamIcon = (className?: string) => {
     </svg>
   );
 };
-const FilterIcon = (className?: string) => {
+const FilterIcon = (className?: any) => {
   return (
     <svg
       width='19'
@@ -58,7 +58,7 @@ const FilterIcon = (className?: string) => {
     </svg>
   );
 };
-const ReloadIcon = (className?: string) => {
+const ReloadIcon = (className?: any) => {
   return (
     <svg
       width='19'
@@ -86,7 +86,7 @@ const ReloadIcon = (className?: string) => {
     </svg>
   );
 };
-const SortIcon = (className?: string) => {
+const SortIcon = (className?: any) => {
   return (
     <svg
       width='17'
@@ -102,7 +102,7 @@ const SortIcon = (className?: string) => {
     </svg>
   );
 };
-const KeyIcon = (className?: string) => {
+const KeyIcon = (className?: any) => {
   return (
     <svg
       width='14'
@@ -134,7 +134,7 @@ const KeyIcon = (className?: string) => {
     </svg>
   );
 };
-const CogIcon = (className?: string) => {
+const CogIcon = (className?: any) => {
   return (
     <svg
       width='14'

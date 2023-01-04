@@ -49,10 +49,10 @@ const Trade = () => {
         <TradeCard onTrade={true} />
         <TradeCard onTrade={true} />
       </TradeSection>
-      <TradeSection size='sm' type='exchange'>
-        <div>
-          <ExchangeView />
-          <ExchangeView />
+      <TradeSection size='sm' type='exchange' hasGrid={false}>
+        <ExchangeView />
+        <ExchangeView />
+        <div className='button'>
           <Button label='Trade Now' size='md' />
         </div>
       </TradeSection>

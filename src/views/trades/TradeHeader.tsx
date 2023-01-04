@@ -13,7 +13,7 @@ const TradeHeader: React.FC<TradeHeaderProps> = ({ title, onReload, type }) => {
     <div className='trade-heading'>
       <div className='trade-header'>
         <h4>{title}</h4>
-        <button onClick={onReload}>
+        <button onClick={onReload} className='green'>
           <ReloadIcon /> Reload
         </button>
       </div>

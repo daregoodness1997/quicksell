@@ -10,6 +10,7 @@ interface TradeSectionProps {
   onReload?: (e?: any) => void;
   children?: React.ReactNode;
   type?: string;
+  hasGrid?: boolean;
 }
 
 const TradeSection: React.FC<TradeSectionProps> = ({
@@ -19,6 +20,7 @@ const TradeSection: React.FC<TradeSectionProps> = ({
   onReload,
   children,
   type,
+  hasGrid = true,
 }) => {
   return (
     <div className={`trade-section ${size}`}>
@@ -38,7 +40,7 @@ const TradeSection: React.FC<TradeSectionProps> = ({
         </div>
       )}
 
-      <div className='trade-container grid'>{children}</div>
+      <div className={`${hasGrid && 'grid'}`}>{children}</div>
     </div>
   );
 };

@@ -6,11 +6,19 @@ interface Props {
   keys?: string;
   refs?: string;
   color?: string;
+  onTrade?: boolean;
 }
 
-const TradeCard: React.FC<Props> = ({ name, imageUrl, keys, refs, color }) => {
+const TradeCard: React.FC<Props> = ({
+  name = 'Grounding Sword',
+  imageUrl,
+  keys = '10',
+  refs = '120',
+  color,
+  onTrade,
+}) => {
   return (
-    <div className='card trade-card'>
+    <div className={`card trade-card ${onTrade && 'list'}`}>
       <img src='assets/img/qc-logo.png' alt='' />
       <p>{name}</p>
       <h3>

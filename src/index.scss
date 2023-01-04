@@ -161,6 +161,17 @@ h6 {
   }
 }
 
+.input {
+  padding: 0.5rem 0.8rem;
+  background-color: rgba(37, 37, 37, 0.6);
+  border: 0.2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+
+  &:focus {
+    border: 0.2px solid #6fcf97;
+  }
+}
+
 .space-between {
   justify-content: space-between;
   width: 100%;
@@ -750,18 +761,20 @@ h6 {
   &.list {
     width: 100%;
     padding: 0.4rem;
+    background: #1f2124;
 
     & img {
-      width: 60px;
-      height: 60px;
+      width: 100%;
+      height: 72px;
       object-fit: contain;
     }
 
     & .indicator {
       width: 100%;
       background-color: #9b51e0;
-      height: 4px;
+      height: 6px;
       border-radius: 4px;
+      margin-top: 0rem;
     }
 
     & p {
@@ -1028,7 +1041,11 @@ h6 {
   display: flex;
   flex-direction: column;
   gap: 4px;
-
+  background-color: rgba(22, 23, 27, 0.4);
+  backdrop-filter: blur(60px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
   & h2 {
     font-size: 1.4rem;
   }
@@ -1581,6 +1598,12 @@ h6 {
   @include desktop {
     display: none;
   }
+}
+
+.trade-section {
+  height: 80vh;
+  overflow-y: auto;
+  position: relative;
 }
 
 .trade-container {

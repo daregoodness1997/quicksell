@@ -15,8 +15,28 @@ const Trade = () => {
         <TradeCard onTrade={true} />
         <TradeCard onTrade={true} />
         <TradeCard onTrade={true} />
+        <TradeCard onTrade={true} />
+        <TradeCard onTrade={true} />
+        <TradeCard onTrade={true} />
+        <TradeCard onTrade={true} />
+        <TradeCard onTrade={true} />
+        <TradeCard onTrade={true} />
+        <TradeCard onTrade={true} />
+        <TradeCard onTrade={true} />
+        <TradeCard onTrade={true} />
+        <TradeCard onTrade={true} />
+        <TradeCard onTrade={true} />
       </TradeSection>
       <TradeSection size='lg' title='Our Items'>
+        <TradeCard onTrade={true} />
+        <TradeCard onTrade={true} />
+        <TradeCard onTrade={true} />
+        <TradeCard onTrade={true} />
+        <TradeCard onTrade={true} />
+        <TradeCard onTrade={true} />
+        <TradeCard onTrade={true} />
+        <TradeCard onTrade={true} />
+        <TradeCard onTrade={true} />
         <TradeCard onTrade={true} />
         <TradeCard onTrade={true} />
         <TradeCard onTrade={true} />

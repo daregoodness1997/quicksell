@@ -7,6 +7,7 @@ interface TradeSectionProps {
   size?: string;
   onReload?: (e?: any) => void;
   children?: React.ReactNode;
+  type?: string;
 }
 
 const TradeSection: React.FC<TradeSectionProps> = ({
@@ -15,10 +16,11 @@ const TradeSection: React.FC<TradeSectionProps> = ({
   size,
   onReload,
   children,
+  type,
 }) => {
   return (
     <div className={`trade-section ${size}`}>
-      <TradeHeader title={title} onReload={onReload} />
+      <TradeHeader title={title} onReload={onReload} type={type} />
       <div className='trade-container grid'>{children}</div>
     </div>
   );

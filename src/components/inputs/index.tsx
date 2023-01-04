@@ -1,7 +1,11 @@
 import React from 'react';
 
 const Input = () => {
-  return <div>Input</div>;
+  return (
+    <div className='form-control'>
+      <input className='input' />
+    </div>
+  );
 };
 
 export default Input;

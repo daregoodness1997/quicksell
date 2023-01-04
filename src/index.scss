@@ -1147,11 +1147,19 @@ h6 {
     padding: 1rem;
     &.lg {
       width: 40%;
+      @include mobile {
+        width: 100%;
+        padding: 0.4rem;
+      }
     }
 
     &.sm {
       width: 20%;
       padding: 1rem 0;
+      @include mobile {
+        width: 100%;
+        padding: 0.4rem;
+      }
     }
   }
   &-header {
@@ -1635,12 +1643,19 @@ h6 {
 .trade-container {
   display: flex;
   gap: 0.2rem;
+  @include mobile {
+    display: block;
+  }
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 0.4rem;
+  @include mobile {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.2rem;
+  }
 }
 .exchange-wrapper {
   margin-bottom: 0.9rem;

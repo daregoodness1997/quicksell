@@ -1,4 +1,6 @@
 import React from 'react';
+import { Button } from '../../components';
+import { CogIcon, KeyIcon } from '../../components/icons';
 import TradeHeader from './TradeHeader';
 
 interface TradeSectionProps {
@@ -20,7 +22,22 @@ const TradeSection: React.FC<TradeSectionProps> = ({
 }) => {
   return (
     <div className={`trade-section ${size}`}>
-      <TradeHeader title={title} onReload={onReload} type={type} />
+      {type !== 'exchange' ? (
+        <TradeHeader title={title} onReload={onReload} type={type} />
+      ) : (
+        <div className='trade-header'>
+          <h5>You Get</h5>
+          <div className='flex'>
+            <button>
+              <KeyIcon /> 10 Keys
+            </button>
+            <button>
+              <CogIcon /> Refs
+            </button>
+          </div>
+        </div>
+      )}
+
       <div className='trade-container grid'>{children}</div>
     </div>
   );

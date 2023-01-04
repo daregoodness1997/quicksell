@@ -1041,16 +1041,17 @@ h6 {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  background-color: rgba(22, 23, 27, 0.4);
-  backdrop-filter: blur(60px);
-  position: sticky;
-  top: 0;
-  z-index: 10;
+
   & h2 {
     font-size: 1.4rem;
   }
   & p {
     font-size: 90%;
+  }
+  button {
+    display: flex;
+    align-items: center;
+    gap: 3.2px;
   }
 }
 
@@ -1145,7 +1146,7 @@ h6 {
     }
 
     &.sm {
-      width: 18%;
+      width: 20%;
     }
   }
   &-header {
@@ -1416,19 +1417,6 @@ h6 {
 }
 
 .trade-header {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  margin-bottom: 0.8rem;
-
-  & button {
-    background-color: transparent;
-    border: none;
-    color: #6fcf97;
-  }
-
   @include mobile {
     display: flex;
     flex-direction: column;
@@ -1604,6 +1592,34 @@ h6 {
   height: 80vh;
   overflow-y: auto;
   position: relative;
+  border-radius: 16px;
+}
+
+.trade-section {
+  & .trade-heading {
+    background-color: rgba(22, 23, 27, 0.4);
+    backdrop-filter: blur(60px);
+    position: sticky;
+    top: -20px;
+    width: 100%;
+    z-index: 10;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+  }
+  & .trade-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 0.4rem;
+
+    & button {
+      background-color: transparent;
+      border: none;
+      color: #6fcf97;
+    }
+  }
 }
 
 .trade-container {
@@ -1615,4 +1631,11 @@ h6 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 0.4rem;
+}
+
+.exchange-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 40vh;
+  gap: 0.2rem;
 }

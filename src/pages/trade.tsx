@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { Button, Modal } from '../components';
 import { TradeCard } from '../components/cards';
@@ -14,7 +15,7 @@ const Trade = () => {
       <Modal open={open} setOpen={setOpen} title='Trade Now'>
         <p>Test Modal</p>
       </Modal>
-      <div className='trade-container container'>
+      <motion.div layout className='trade-container container'>
         <TradeSection size='lg' title='Your Items'>
           <TradeCard onTrade={true} />
           <TradeCard onTrade={true} />
@@ -64,7 +65,7 @@ const Trade = () => {
             <Button label='Trade Now' size='md' onClick={handleTradeClick} />
           </div>
         </TradeSection>
-      </div>
+      </motion.div>
     </>
   );
 };

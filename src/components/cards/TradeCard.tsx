@@ -17,8 +17,12 @@ const TradeCard: React.FC<Props> = ({
   color,
   onTrade,
 }) => {
+  const handleMousever = () => {};
   return (
-    <div className={`card trade-card ${onTrade && 'list'}`}>
+    <div
+      className={`card trade-card ${onTrade && 'list'}`}
+      onMouseOver={handleMousever}
+    >
       <img src='assets/img/qc-logo.png' alt='' />
       <p>{name}</p>
       <h3>

@@ -1708,3 +1708,60 @@ h6 {
     }
   }
 }
+
+// Modal
+
+.modal {
+  &-overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(51, 58, 63, 0.9);
+    display: grid;
+    place-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000;
+  }
+
+  &-wrapper {
+    width: 40%;
+    padding: 1.6rem;
+    background-color: #20232d;
+    border-radius: 4px;
+    position: relative;
+    @include mobile {
+      width: 80%;
+    }
+  }
+
+  &-header {
+    text-align: center;
+  }
+  &-button {
+    position: absolute;
+    top: -16px;
+    right: 1.5rem;
+    background-color: #20232d;
+    border: none;
+    padding: 0.6rem;
+    width: 40px;
+    height: 40px;
+    -webkit-clip-path: polygon(
+      25% 5%,
+      75% 5%,
+      100% 50%,
+      75% 95%,
+      25% 95%,
+      0% 50%
+    );
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+
+    &:before {
+      // content: '\2B22';
+      // color: orange;
+      // font-size: 135px;
+    }
+  }
+}

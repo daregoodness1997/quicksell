@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from '../modal';
 
 interface Props {
   name?: string;
@@ -17,18 +18,27 @@ const TradeCard: React.FC<Props> = ({
   color,
   onTrade,
 }) => {
-  const handleMousever = () => {};
+  const [open, setOpen] = useState(false);
+
+  const handleMousever = () => {
+    setOpen(true);
+  };
   return (
-    <div
-      className={`card trade-card ${onTrade && 'list'}`}
-      onMouseOver={handleMousever}
-    >
-      <img src='assets/img/qc-logo.png' alt='' />
-      <p>{name}</p>
-      <h3>
-        {keys} Keys {refs} Refs
-      </h3>
-      <div className={`indicator ${color}`}></div>
+    <div>
+      {/* <Modal open={open} setOpen={setOpen} title='Trade Now'>
+        <p>Test Modal</p>
+      </Modal> */}
+      <div
+        className={`card trade-card ${onTrade && 'list'}`}
+        onMouseOver={handleMousever}
+      >
+        <img src='assets/img/qc-logo.png' alt='' />
+        <p>{name}</p>
+        <h3>
+          {keys} Keys {refs} Refs
+        </h3>
+        <div className={`indicator ${color}`}></div>
+      </div>
     </div>
   );
 };

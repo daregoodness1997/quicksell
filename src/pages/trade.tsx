@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button, Modal } from '../components';
 import { TradeCard } from '../components/cards';
 import ExchangeView from '../views/ExchangeView';
+import TradeMobileNav from '../views/trades/TradeMobileNav';
 import TradeSection from '../views/trades/TradeSection';
 
 const Trade = () => {
@@ -15,6 +16,7 @@ const Trade = () => {
       <Modal open={open} setOpen={setOpen} title='Trade Now'>
         <p>Test Modal</p>
       </Modal>
+      <TradeMobileNav />
       <motion.div layout className='trade-container container'>
         <TradeSection size='lg' title='Your Items'>
           <TradeCard onTrade={true} />

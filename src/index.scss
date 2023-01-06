@@ -160,12 +160,15 @@ h6 {
     padding: 1rem;
   }
 }
-
+.form-control {
+  width: 100%;
+}
 .input {
   padding: 0.5rem 0.8rem;
   background-color: rgba(37, 37, 37, 0.6);
   border: 0.2px solid rgba(255, 255, 255, 0.4);
   border-radius: 4px;
+  width: 100%;
 
   &:focus {
     border: 0.2px solid #6fcf97;
@@ -1430,9 +1433,30 @@ h6 {
 }
 
 .trade-header {
+  &.top {
+    @include mobile {
+      display: none !important;
+    }
+  }
   @include mobile {
     display: flex;
     flex-direction: column;
+  }
+  & .filters {
+    @include mobile {
+      width: 100%;
+      display: flex;
+    }
+    & .filter {
+      @include mobile {
+        width: 50%;
+      }
+      & button {
+        @include mobile {
+          width: 50%;
+        }
+      }
+    }
   }
 }
 
@@ -1618,6 +1642,9 @@ h6 {
     z-index: 10;
     padding: 0.8rem 1rem;
     border-radius: 8px;
+    @include mobile {
+      padding: 0 0.6rem;
+    }
   }
   & .trade-header {
     display: flex;
@@ -1763,5 +1790,35 @@ h6 {
       // color: orange;
       // font-size: 135px;
     }
+  }
+}
+
+// mobile trade navigation
+.trade {
+  &-mobile-nav {
+    width: 100%;
+    display: none;
+    @include mobile {
+      display: block;
+    }
+    & .items {
+      padding: 0.2rem !important;
+    }
+    & .tab {
+    }
+    & .item-tab {
+      width: 48%;
+      border-bottom: 4px solid #6fcf97;
+      text-align: center;
+      padding: 0.4rem;
+
+      &.active {
+        background-color: #1f2124;
+      }
+    }
+  }
+  &-tab {
+    width: 42%;
+    padding: 0.1rem !important;
   }
 }

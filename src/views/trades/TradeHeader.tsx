@@ -11,7 +11,7 @@ interface TradeHeaderProps {
 const TradeHeader: React.FC<TradeHeaderProps> = ({ title, onReload, type }) => {
   return (
     <div className='trade-heading'>
-      <div className='trade-header'>
+      <div className='trade-header top'>
         <h4>{title}</h4>
         <button onClick={onReload} className='green'>
           <ReloadIcon /> Reload
@@ -20,14 +20,18 @@ const TradeHeader: React.FC<TradeHeaderProps> = ({ title, onReload, type }) => {
 
       <div className='trade-header'>
         <h5>TF2</h5>
-        <div className='flex'>
-          <button onClick={onReload}>
-            <FilterIcon /> Filter
-          </button>
-          <button onClick={onReload}>
-            <SortIcon /> Sort
-          </button>
-          <Input />
+        <div className='flex filters'>
+          <div className='flex filter'>
+            <button onClick={onReload}>
+              <FilterIcon /> Filter
+            </button>
+            <button onClick={onReload}>
+              <SortIcon /> Sort
+            </button>
+          </div>
+          <div className='filter'>
+            <Input />
+          </div>
         </div>
       </div>
     </div>

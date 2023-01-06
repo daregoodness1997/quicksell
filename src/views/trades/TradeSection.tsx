@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '../../components';
 import { CogIcon, KeyIcon } from '../../components/icons';
 import TradeHeader from './TradeHeader';
+import { motion } from 'framer-motion';
 
 interface TradeSectionProps {
   title?: string;
@@ -23,7 +24,7 @@ const TradeSection: React.FC<TradeSectionProps> = ({
   hasGrid = true,
 }) => {
   return (
-    <div className={`trade-section ${size}`}>
+    <motion.div layout className={`trade-section ${size}`}>
       {type !== 'exchange' ? (
         <TradeHeader title={title} onReload={onReload} type={type} />
       ) : (
@@ -41,7 +42,7 @@ const TradeSection: React.FC<TradeSectionProps> = ({
       )}
 
       <div className={`${hasGrid && 'grid'}`}>{children}</div>
-    </div>
+    </motion.div>
   );
 };
 

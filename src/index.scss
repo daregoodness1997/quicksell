@@ -760,6 +760,9 @@ h6 {
   justify-content: center;
   align-items: center;
   width: 200px;
+
+  &-wrapper {
+  }
   &:hover {
     background-color: #0f1210;
   }
@@ -1637,7 +1640,9 @@ h6 {
 .trade-section {
   height: 82vh;
   overflow-y: auto;
-  // position: relative;
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
   border-radius: 16px;
 }
 

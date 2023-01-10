@@ -9,7 +9,7 @@ interface Props {
   color?: string;
   onTrade?: boolean;
   selectedOption?: { label: string; value: string; selected?: boolean };
-  setSelectedOption?: (option: any) => void;
+  // setSelectedOption: (option: any) => void;
   option?: any;
 }
 
@@ -20,7 +20,7 @@ const TradeCard: React.FC<Props> = ({
   refs = '120',
   color,
   onTrade,
-  setSelectedOption,
+  // setSelectedOption,
   selectedOption,
   option,
 }) => {
@@ -40,7 +40,7 @@ const TradeCard: React.FC<Props> = ({
       }`}
       onClick={() => {
         setSelect(!select);
-        setSelectedOption({ ...option, selected: !selectedOption?.selected });
+        // setSelectedOption({ ...option, selected: !selectedOption?.selected });
       }}
       onMouseOver={handleMousever}
       onMouseLeave={handleMousLeave}

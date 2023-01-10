@@ -14,7 +14,7 @@ const TradeMobileNav: React.FC<TradeMobileNavProps> = ({ onReload }) => {
             <p>10 Keys</p>
             <small className='green'>10 Refs</small>
           </div>
-          <div className='item-number'>3</div>
+          <div className='item-number hex'>3 </div>
         </div>
         <button onClick={onReload} className='green'>
           <ReloadIcon />
@@ -25,7 +25,7 @@ const TradeMobileNav: React.FC<TradeMobileNavProps> = ({ onReload }) => {
             <p>10 Keys</p>
             <small className='green'>10 Refs</small>
           </div>
-          <div className='item-number'>3</div>
+          <div className='item-number hex'>30</div>
         </div>
       </div>
       <div className='flex items'>

@@ -41,7 +41,9 @@ const TradeSection: React.FC<TradeSectionProps> = ({
         </div>
       )}
 
-      <div className={`${hasGrid && 'grid'}`}>{children}</div>
+      <motion.div layout className={`${hasGrid && 'grid'}`}>
+        {children}
+      </motion.div>
     </motion.div>
   );
 };

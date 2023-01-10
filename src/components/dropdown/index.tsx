@@ -4,6 +4,9 @@ interface DropdownProps {
   headerTitle: string;
   list: { id: string; title: string; selected: boolean }[];
   resetThenSet: () => void;
+  selectedOption?: { label: string; value: string; selected?: boolean };
+  setSelectedOption?: (option: any) => void;
+  option?: any;
 }
 
 // https://blog.logrocket.com/customize-reusable-react-dropdown-menu-component/
@@ -12,6 +15,9 @@ const Dropdown: React.FC<DropdownProps> = ({
   headerTitle,
   list,
   resetThenSet,
+  setSelectedOption,
+  selectedOption,
+  option,
 }) => {
   const [open, setOpen] = useState(false);
 

@@ -5,6 +5,9 @@ const Loader = () => {
     <div className='loader-wrapper '>
       <div>
         <img src='assets/img/qc-logo.png' className='App-logo' />
+        <div className='content'>
+          <p>loading</p>
+        </div>
       </div>
     </div>
   );

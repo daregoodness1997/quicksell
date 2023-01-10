@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Modal from '../modal';
+import Tooltip from '../modal/ToolTip';
 
 interface Props {
   name?: string;
@@ -8,6 +8,9 @@ interface Props {
   refs?: string;
   color?: string;
   onTrade?: boolean;
+  selectedOption?: { label: string; value: string; selected?: boolean };
+  setSelectedOption?: (option: any) => void;
+  option?: any;
 }
 
 const TradeCard: React.FC<Props> = ({
@@ -17,21 +20,36 @@ const TradeCard: React.FC<Props> = ({
   refs = '120',
   color,
   onTrade,
+  setSelectedOption,
+  selectedOption,
+  option,
 }) => {
   const [open, setOpen] = useState(false);
+  const [select, setSelect] = useState(false);
 
   const handleMousever = () => {
     setOpen(true);
   };
+  const handleMousLeave = () => {
+    setOpen(false);
+  };
   return (
-    <div>
-      {/* <Modal open={open} setOpen={setOpen} title='Trade Now'>
+    <div
+      className={`trade-card-wrapper ${
+        select || selectedOption?.selected ? 'selected' : 'transparent'
+      }`}
+      onClick={() => {
+        setSelect(!select);
+        setSelectedOption({ ...option, selected: !selectedOption?.selected });
+      }}
+      onMouseOver={handleMousever}
+      onMouseLeave={handleMousLeave}
+    >
+      <Tooltip open={open} setOpen={setOpen} title='Trade Now'>
         <p>Test Modal</p>
-      </Modal> */}
-      <div
-        className={`card trade-card ${onTrade && 'list'}`}
-        onMouseOver={handleMousever}
-      >
+      </Tooltip>
+
+      <div className={`card trade-card ${onTrade && 'list'}`}>
         <img src='assets/img/qc-logo.png' alt='' />
         <p>{name}</p>
         <h3>

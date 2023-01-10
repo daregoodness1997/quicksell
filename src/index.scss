@@ -65,7 +65,7 @@ $m-05: #bf80a9;
   font-weight: 400;
   box-sizing: border-box;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: #fff;
   background-color: #242424;
 
   font-synthesis: none;
@@ -128,13 +128,9 @@ body {
   scroll-behavior: smooth;
   overflow-x: hidden;
   box-sizing: border-box;
+  color: #fff;
 
-  background: linear-gradient(
-      180.92deg,
-      rgba(16, 17, 19, 0.8) 19.77%,
-      rgba(22, 23, 27, 0.5) 56.89%
-    ),
-    url(./assets/background.png);
+  background: url(assets/bg.png);
   background-size: cover;
   background-repeat: repeat-y;
 }
@@ -755,16 +751,18 @@ h6 {
 
 .trade-card {
   padding: 1rem;
-  background: #32323a;
+  background: #1f2124;
   color: #fff;
-  border-radius: 4px;
+  border-radius: 8px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 200px;
-
+  &:hover {
+    background-color: #0f1210;
+  }
   @include mobile {
     width: 95%;
   }
@@ -1214,6 +1212,7 @@ h6 {
   display: grid;
   place-items: center;
   overflow: hidden;
+  background-color: #15161a;
 
   & .content {
     width: 300px;
@@ -1432,6 +1431,16 @@ h6 {
   }
 }
 
+// dropdown
+.dropdown {
+  &-header {
+    width: 80px;
+  }
+  &_list {
+    box-shadow: 10px 10px 20px #fff;
+  }
+}
+
 .trade-header {
   &.top {
     @include mobile {
@@ -1628,7 +1637,7 @@ h6 {
 .trade-section {
   height: 82vh;
   overflow-y: auto;
-  position: relative;
+  // position: relative;
   border-radius: 16px;
 }
 
@@ -1793,11 +1802,53 @@ h6 {
   }
 }
 
+// tooltip
+.tooltip {
+  &-wrapper {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 240px;
+    min-width: 240px;
+    padding: 1.2rem;
+    background-color: #20232d;
+    border-radius: 4px;
+    z-index: 10000 !important;
+    border-radius: 6px;
+
+    h4 {
+      color: #6fcf97;
+
+      &.green {
+        color: #6fcf97;
+      }
+    }
+    p {
+      font-size: 0.75rem;
+      padding-top: 0.8rem;
+      &span {
+      }
+    }
+    @include mobile {
+      width: 80%;
+    }
+  }
+
+  &-header {
+    text-align: left;
+  }
+}
+
 // mobile trade navigation
 .trade {
   &-mobile-nav {
     width: 100%;
     display: none;
+
+    & button {
+      background-color: transparent;
+      border: none;
+    }
     @include mobile {
       display: block;
     }
@@ -1805,14 +1856,19 @@ h6 {
       padding: 0.2rem !important;
     }
     & .tab {
+      & p {
+        font-size: 0.65rem;
+        font-weight: bold;
+      }
     }
     & .item-tab {
       width: 48%;
-      border-bottom: 4px solid #6fcf97;
       text-align: center;
       padding: 0.4rem;
+      transition: bo;
 
       &.active {
+        border-bottom: 4px solid #6fcf97;
         background-color: #1f2124;
       }
     }
@@ -1821,4 +1877,33 @@ h6 {
     width: 42%;
     padding: 0.1rem !important;
   }
+  &-card-wrapper {
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    border-radius: 8px;
+
+    &.selected {
+      border: 2px solid #6fcf97;
+    }
+  }
+}
+
+// Hexagon
+.hex {
+  background: #6fcf97;
+  padding: 0.25rem;
+
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  display: grid;
+  -webkit-clip-path: polygon(
+    25% 5%,
+    75% 5%,
+    100% 50%,
+    75% 95%,
+    25% 95%,
+    0% 50%
+  );
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
 }

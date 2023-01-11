@@ -37,7 +37,7 @@ const Trade = () => {
       setDisplay({
         yourItems: true,
         ourItems: false,
-        exchange: true,
+        exchange: false,
         showExchange: { youGive: false, youGet: false },
       });
     }
@@ -51,7 +51,6 @@ const Trade = () => {
       window.removeEventListener('resize', handleWindowSizeChange);
     };
   }, [mobile]);
-
 
   return (
     <>

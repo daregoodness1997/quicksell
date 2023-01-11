@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Button from '../button';
+import Dropdown from '../dropdown';
 
 export const navItems = [
   { name: 'Home', link: '/' },
@@ -18,6 +19,13 @@ export const navItems = [
   // { name: 'Brokering', link: '/' },
 ];
 
+const i18nOptions = [
+  { id: '1', title: 'EN', selected: false },
+  { id: '2', title: 'FR', selected: false },
+  { id: '3', title: 'RU', selected: false },
+  { id: '4', title: 'DE', selected: false },
+];
+
 interface TopNavProps {
   onClick?: (event?: any) => void;
   toggle: boolean;
@@ -26,6 +34,11 @@ interface TopNavProps {
 const TopNav: React.FC<TopNavProps> = ({ onClick, toggle }) => {
   const hamburgerRef = useRef();
   const [menu, setMenu] = useState(false);
+  const [selectedOption, setSelectedOption] = useState<{
+    id: string;
+    title: string;
+    selected: boolean;
+  }>({ id: '1', title: 'EN', selected: false });
 
   return (
     <>
@@ -52,7 +65,12 @@ const TopNav: React.FC<TopNavProps> = ({ onClick, toggle }) => {
           </nav>
         </div>
         <div className='button-group'>
-          <div className='i18n-dropdown'>EN</div>
+          {/* <div className='i18n-dropdown'>EN</div> */}
+          <Dropdown
+            list={i18nOptions}
+            setSelectedOption={setSelectedOption}
+            selectedOption={selectedOption}
+          />
           <Button label='Sign in with Steam' />
         </div>
       </div>

@@ -11,6 +11,7 @@ interface Props {
   selectedOption?: { label: string; value: string; selected?: boolean };
   // setSelectedOption: (option: any) => void;
   option?: any;
+  isMockup?: boolean;
 }
 
 const TradeCard: React.FC<Props> = ({
@@ -23,6 +24,7 @@ const TradeCard: React.FC<Props> = ({
   // setSelectedOption,
   selectedOption,
   option,
+  isMockup,
 }) => {
   const [open, setOpen] = useState(false);
   const [select, setSelect] = useState(false);
@@ -49,7 +51,9 @@ const TradeCard: React.FC<Props> = ({
         <p>Test Modal</p>
       </Tooltip>
 
-      <div className={`card trade-card ${onTrade && 'list'}`}>
+      <div
+        className={`card trade-card ${onTrade && 'list'} ${isMockup && 'mock'}`}
+      >
         <img src='assets/img/qc-logo.png' alt='' />
         <p>{name}</p>
         <h3>

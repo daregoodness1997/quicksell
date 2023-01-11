@@ -10,7 +10,7 @@ const Feautures = () => {
   const settings = {
     dots: true,
     infinite: true,
-    slidesToShow: 6,
+    slidesToShow: 7,
     slidesToScroll: 1,
     autoplay: true,
     speed: 2000,
@@ -127,13 +127,15 @@ const Feautures = () => {
       </div>
       <div className='slider-box'>
         <Slider {...settings}>
-          <TradeCard />
-          <TradeCard />
-          <TradeCard />
-          <TradeCard />
-          <TradeCard />
-          <TradeCard />
-          <TradeCard />
+          <TradeCard isMockup />
+          <TradeCard isMockup />
+          <TradeCard isMockup />
+          <TradeCard isMockup />
+          <TradeCard isMockup />
+          <TradeCard isMockup />
+          <TradeCard isMockup />
+          <TradeCard isMockup />
+          <TradeCard isMockup />
         </Slider>
       </div>
 
@@ -184,13 +186,12 @@ const Feautures = () => {
 
         <div className='slider-box'>
           <Slider {...auctionSettings}>
-            <AuctionCard />
-            <AuctionCard />
-            <AuctionCard />
-            <AuctionCard />
-            <AuctionCard />
-            <AuctionCard />
-            <AuctionCard />
+            <AuctionCard title='Test Bid' minBids='20' />
+            <AuctionCard title='Test Bid' minBids='20' />
+            <AuctionCard title='Test Bid' minBids='20' />
+            <AuctionCard title='Test Bid' minBids='20' />
+            <AuctionCard title='Test Bid' minBids='20' />
+            <AuctionCard title='Test Bid' minBids='20' />
           </Slider>
         </div>
       </div>

@@ -9,7 +9,7 @@ import Trades from '../views/Trades';
 
 const Home = () => {
   return (
-    <div>
+    <div className='home'>
       <Hero />
       <Product />
       <Feautures />

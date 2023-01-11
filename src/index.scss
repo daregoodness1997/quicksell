@@ -607,6 +607,18 @@ h6 {
 .box-3 {
   width: 32%;
 }
+
+// Home
+
+.home {
+  background: linear-gradient(
+      180.92deg,
+      rgba(16, 17, 19, 0.8) 19.77%,
+      rgba(22, 23, 27, 0.5) 56.89%
+    ),
+    url(assets/img/background.png);
+}
+
 .hero {
   margin: 0rem 6rem;
   align-items: flex-start;
@@ -755,7 +767,7 @@ h6 {
   padding: 1rem;
   background: #1f2124;
   color: #fff;
-  border-radius: 8px;
+  border-radius: 6px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -924,7 +936,7 @@ h6 {
 }
 
 .giveaway-card {
-  background-color: #191b1c;
+  background-color: #20232d;
   width: 200px;
   padding: 1rem;
   text-align: left;
@@ -1026,16 +1038,18 @@ h6 {
 }
 
 .keys {
+  background-color: #1f2124;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
   & img {
     width: 90%;
   }
 }
 
 .trades {
-  padding-top: 4rem;
+  padding-top: 10rem;
   padding-bottom: 4rem;
   background-color: #222a30;
-  margin: 6rem 0 0;
   gap: 8px;
 
   & .flex {

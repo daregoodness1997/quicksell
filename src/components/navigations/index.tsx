@@ -34,6 +34,11 @@ interface TopNavProps {
 const TopNav: React.FC<TopNavProps> = ({ onClick, toggle }) => {
   const hamburgerRef = useRef();
   const [menu, setMenu] = useState(false);
+  const [selectedOption, setSelectedOption] = useState<{
+    id: string;
+    title: string;
+    selected: boolean;
+  }>({ id: '1', title: 'EN', selected: false });
 
   return (
     <>
@@ -61,7 +66,11 @@ const TopNav: React.FC<TopNavProps> = ({ onClick, toggle }) => {
         </div>
         <div className='button-group'>
           {/* <div className='i18n-dropdown'>EN</div> */}
-          <Dropdown list={i18nOptions} />
+          <Dropdown
+            list={i18nOptions}
+            setSelectedOption={setSelectedOption}
+            selectedOption={selectedOption}
+          />
           <Button label='Sign in with Steam' />
         </div>
       </div>

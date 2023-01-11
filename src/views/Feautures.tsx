@@ -186,13 +186,12 @@ const Feautures = () => {
 
         <div className='slider-box'>
           <Slider {...auctionSettings}>
-            <AuctionCard />
-            <AuctionCard />
-            <AuctionCard />
-            <AuctionCard />
-            <AuctionCard />
-            <AuctionCard />
-            <AuctionCard />
+            <AuctionCard title='Test Bid' minBids='20' />
+            <AuctionCard title='Test Bid' minBids='20' />
+            <AuctionCard title='Test Bid' minBids='20' />
+            <AuctionCard title='Test Bid' minBids='20' />
+            <AuctionCard title='Test Bid' minBids='20' />
+            <AuctionCard title='Test Bid' minBids='20' />
           </Slider>
         </div>
       </div>

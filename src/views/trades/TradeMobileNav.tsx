@@ -11,7 +11,6 @@ const TradeMobileNav: React.FC<TradeMobileNavProps> = ({
   display,
   setDisplay,
 }) => {
-  console.log('Display', display);
   return (
     <div className='trade-mobile-nav'>
       <div className='flex trade-tabs mobile '>

@@ -26,6 +26,21 @@ const Trade = () => {
     setWidth(window.innerWidth);
     isMobile = window.innerWidth < 700 ? true : false;
     setMobile(isMobile);
+    if (!mobile) {
+      setDisplay({
+        yourItems: true,
+        ourItems: true,
+        exchange: true,
+        showExchange: { youGive: true, youGet: true },
+      });
+    } else {
+      setDisplay({
+        yourItems: true,
+        ourItems: false,
+        exchange: true,
+        showExchange: { youGive: false, youGet: false },
+      });
+    }
   };
 
   // call your useEffect
@@ -35,28 +50,9 @@ const Trade = () => {
     return () => {
       window.removeEventListener('resize', handleWindowSizeChange);
     };
-  });
+  }, [mobile]);
 
-  useEffect(() => {
-    if (!mobile) {
-      setView({
-        yourItems: true,
-        ourItems: true,
-        exchange: true,
-        showExchange: { youGive: true, youGet: true },
-      });
-    } else {
-      setView({
-        yourItems: true,
-        ourItems: false,
-        exchange: true,
-        showExchange: { youGive: false, youGet: false },
-      });
-    }
-  });
 
-  console.log('View', view);
-  console.log('Display', display);
   return (
     <>
       <Modal open={open} setOpen={setOpen} title='Trade Now'>

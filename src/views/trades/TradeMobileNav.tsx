@@ -60,14 +60,14 @@ const TradeMobileNav: React.FC<TradeMobileNavProps> = ({
       </div>
       <div className='flex items'>
         <div
-          className={`item-tab ${display?.yourItems && 'active'} `}
-          onClick={() => setDisplay({ yourItems: true })}
+          className={`item-tab ${display?.ourItems && 'active'} `}
+          onClick={() => setDisplay({ ourItems: true })}
         >
           Our Items
         </div>
         <div
-          className={`item-tab ${display?.ourItems && 'active'} `}
-          onClick={() => setDisplay({ ourItems: true })}
+          className={`item-tab ${display?.yourItems && 'active'} `}
+          onClick={() => setDisplay({ yourItems: true })}
         >
           Your Items
         </div>

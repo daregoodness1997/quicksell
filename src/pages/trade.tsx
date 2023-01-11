@@ -10,9 +10,9 @@ const Trade = () => {
   const [open, setOpen] = useState(false);
   let showItems = {
     yourItems: true,
-    ourItems: false,
+    ourItems: true,
     exchange: true,
-    showExchange: { youGive: false, youGet: false },
+    showExchange: { youGive: true, youGet: true },
   };
   const [view, setView] = useState(showItems);
   const [display, setDisplay] = useState(view);
@@ -55,6 +55,8 @@ const Trade = () => {
     }
   });
 
+  console.log('View', view);
+  console.log('Display', display);
   return (
     <>
       <Modal open={open} setOpen={setOpen} title='Trade Now'>
@@ -62,83 +64,76 @@ const Trade = () => {
       </Modal>
       <TradeMobileNav setDisplay={setDisplay} display={display} />
       <motion.div className='trade-container container'>
-        {display?.yourItems ||
-          (view?.yourItems && (
-            <TradeSection
-              size='lg'
-              title='Your Items'
-              className={`${display.yourItems && 'show'}`}
-            >
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-            </TradeSection>
-          ))}
-        {display?.ourItems ||
-          (view?.ourItems && (
-            <TradeSection
-              size='lg'
-              title='Your Items'
-              className={`${display.yourItems && 'show'}`}
-            >
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-              <TradeCard onTrade={true} />
-            </TradeSection>
-          ))}
-        {display?.exchange ||
-          (view?.exchange && (
-            <TradeSection
-              size='sm'
-              type='exchange'
-              hasGrid={false}
-              className={`${display.exchange && 'show'}`}
-            >
-              {display?.showExchange?.youGive && <ExchangeView />}
-              {display?.showExchange?.youGet && <ExchangeView />}
-              <div className='button'>
-                <Button
-                  label='Trade Now'
-                  size='md'
-                  onClick={handleTradeClick}
-                />
-              </div>
-            </TradeSection>
-          ))}
+        {display?.ourItems && (
+          <TradeSection
+            size='lg'
+            title='Your Items'
+            className={`${display.ourItems && 'show'}`}
+          >
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+          </TradeSection>
+        )}
+        {display?.yourItems && (
+          <TradeSection
+            size='lg'
+            title='Your Items'
+            className={`${display.yourItems && 'show'}`}
+          >
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+            <TradeCard onTrade={true} />
+          </TradeSection>
+        )}
+        {display?.exchange && (
+          <TradeSection
+            size='sm'
+            type='exchange'
+            hasGrid={false}
+            className={`${display.exchange && 'show'}`}
+          >
+            {display?.showExchange?.youGive && <ExchangeView />}
+            {display?.showExchange?.youGet && <ExchangeView />}
+            <div className='button'>
+              <Button label='Trade Now' size='md' onClick={handleTradeClick} />
+            </div>
+          </TradeSection>
+        )}
       </motion.div>
     </>
   );

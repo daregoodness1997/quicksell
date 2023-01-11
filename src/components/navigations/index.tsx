@@ -19,7 +19,7 @@ export const navItems = [
   // { name: 'Brokering', link: '/' },
 ];
 
-const i18nOptions = [
+export const i18nOptions = [
   { id: '1', title: 'EN', selected: false },
   { id: '2', title: 'FR', selected: false },
   { id: '3', title: 'RU', selected: false },
@@ -64,6 +64,7 @@ const TopNav: React.FC<TopNavProps> = ({ onClick, toggle }) => {
             ))}
           </nav>
         </div>
+
         <div className='button-group'>
           {/* <div className='i18n-dropdown'>EN</div> */}
           <Dropdown

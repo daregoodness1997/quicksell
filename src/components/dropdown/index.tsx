@@ -1,14 +1,47 @@
 import React, { useState } from 'react';
 import { ChevronIcon } from '../icons';
+import { motion } from 'framer-motion';
 
 interface DropdownProps {
-  list: { id: string; title: string; selected: boolean }[];
+  list: { id: string; title: string; imgUrl?: string; selected: boolean }[];
   resetThenSet?: () => void;
-  selectedOption?: { id: string; title: string; selected: boolean };
+  selectedOption?: {
+    id: string;
+    title: string;
+    imgUrl?: string;
+    selected: boolean;
+  };
   setSelectedOption?: any;
 }
 
 // https://blog.logrocket.com/customize-reusable-react-dropdown-menu-component/
+
+export const animation = {
+  hidden: {
+    scale: 0.65,
+    opacity: 0,
+  },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      duration: 0.1,
+      type: 'spring',
+      damping: 100,
+      stiffness: 1000,
+    },
+  },
+  exit: {
+    scale: 1.25,
+    opacity: 0,
+    transition: {
+      duration: 0.1,
+      type: 'spring',
+      damping: 100,
+      stiffness: 1000,
+    },
+  },
+};
 
 const Dropdown: React.FC<DropdownProps> = ({
   list,
@@ -20,7 +53,6 @@ const Dropdown: React.FC<DropdownProps> = ({
 
   const toggleList = () => setOpen(!open);
 
-  console.log('selected option dropdown', selectedOption);
   return (
     <div className='dropdown-wrapper'>
       <button type='button' className='dropdown-header' onClick={toggleList}>
@@ -32,18 +64,29 @@ const Dropdown: React.FC<DropdownProps> = ({
         <ChevronIcon />
       </button>
       {open && (
-        <div role='list' className='dropdown-list'>
+        <motion.div
+          variants={animation}
+          initial='hidden'
+          animate='visible'
+          exit='exit'
+          role='list'
+          className='dropdown-list'
+        >
           {list.map(item => (
             <button
               type='button'
               className='dropdown-list-item'
               key={item.id}
-              onClick={() => setSelectedOption(item)}
+              onClick={() => {
+                setSelectedOption(item);
+                toggleList();
+              }}
             >
               {item.title} {item.selected && 'checked'}
+              <img src='' alt='' />
             </button>
           ))}
-        </div>
+        </motion.div>
       )}
     </div>
   );

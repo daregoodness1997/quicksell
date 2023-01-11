@@ -10,11 +10,11 @@ interface ModalProps {
 }
 const modalAnimation = {
   hidden: {
-    y: '-100vh',
+    scale: 0.65,
     opacity: 0,
   },
   visible: {
-    y: 0,
+    scale: 1,
     opacity: 1,
     transition: {
       duration: 0.01,
@@ -24,7 +24,7 @@ const modalAnimation = {
     },
   },
   exit: {
-    y: '100vh',
+    scale: 0.65,
     opacity: 0,
     transition: {
       duration: 0.01,

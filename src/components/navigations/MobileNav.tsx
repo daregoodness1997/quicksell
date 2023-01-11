@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { navItems } from '.';
+import { i18nOptions, navItems } from '.';
+import Dropdown from '../dropdown';
 import './style.scss';
 
 interface MobileNavProps {
@@ -9,6 +10,11 @@ interface MobileNavProps {
 }
 
 const MobileNav: React.FC<MobileNavProps> = ({ toggle, onClick }) => {
+  const [selectedOption, setSelectedOption] = useState<{
+    id: string;
+    title: string;
+    selected: boolean;
+  }>({ id: '1', title: 'EN', selected: false });
   return (
     <div>
       <div className={`mobile ${toggle ? 'navigation' : ''}`} id='mobile'>

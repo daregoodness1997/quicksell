@@ -50,13 +50,7 @@ const TradeSection: React.FC<TradeSectionProps> = ({
         </div>
       )}
 
-      <motion.div
-        variants={animation}
-        initial='hidden'
-        animate='visible'
-        exit='exit'
-        className={`${hasGrid && 'grid'}`}
-      >
+      <motion.div layout className={`${hasGrid && 'grid'}`}>
         {children}
       </motion.div>
     </motion.div>

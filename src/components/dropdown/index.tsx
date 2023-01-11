@@ -16,6 +16,33 @@ interface DropdownProps {
 
 // https://blog.logrocket.com/customize-reusable-react-dropdown-menu-component/
 
+export const animation = {
+  hidden: {
+    scale: 0.65,
+    opacity: 0,
+  },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      duration: 0.1,
+      type: 'spring',
+      damping: 100,
+      stiffness: 1000,
+    },
+  },
+  exit: {
+    scale: 1.25,
+    opacity: 0,
+    transition: {
+      duration: 0.1,
+      type: 'spring',
+      damping: 100,
+      stiffness: 1000,
+    },
+  },
+};
+
 const Dropdown: React.FC<DropdownProps> = ({
   list,
   resetThenSet,
@@ -25,33 +52,6 @@ const Dropdown: React.FC<DropdownProps> = ({
   const [open, setOpen] = useState(false);
 
   const toggleList = () => setOpen(!open);
-
-  const animation = {
-    hidden: {
-      scale: 0.65,
-      opacity: 0,
-    },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        duration: 0.1,
-        type: 'spring',
-        damping: 100,
-        stiffness: 1000,
-      },
-    },
-    exit: {
-      scale: 1.25,
-      opacity: 0,
-      transition: {
-        duration: 0.1,
-        type: 'spring',
-        damping: 100,
-        stiffness: 1000,
-      },
-    },
-  };
 
   return (
     <div className='dropdown-wrapper'>

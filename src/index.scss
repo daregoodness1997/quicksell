@@ -774,6 +774,10 @@ h6 {
   justify-content: center;
   align-items: center;
 
+  @include mobile {
+    padding: 0.5rem;
+  }
+
   &.mock {
     background: #32323a;
     margin-right: 1rem;
@@ -784,6 +788,9 @@ h6 {
   }
   & h3 {
     font-size: 1rem;
+    @include mobile {
+      font-size: 0.7rem !important;
+    }
   }
 
   &:hover {
@@ -1294,7 +1301,7 @@ h6 {
     position: relative;
   }
   &-header {
-    width: 60px;
+    width: 70px;
     background-color: transparent;
     border: none;
     display: flex;
@@ -1524,6 +1531,13 @@ h6 {
   width: 100%;
   overflow-x: hidden;
   border-radius: 16px;
+  @include mobile {
+    display: none;
+  }
+
+  &.show {
+    display: block;
+  }
 }
 
 .trade-section {
@@ -1718,9 +1732,21 @@ h6 {
 
 // mobile trade navigation
 .trade {
+  &-tabs {
+    gap: 4px;
+  }
+  &-flex {
+    padding: 4px;
+    display: flex;
+    gap: 6px;
+  }
   &-mobile-nav {
     width: 100%;
     display: none;
+
+    & .mobile {
+      padding: 0.2rem 1rem !important;
+    }
 
     & button {
       background-color: transparent;
@@ -1730,19 +1756,60 @@ h6 {
       display: block;
     }
     & .items {
-      padding: 0.2rem !important;
+      padding: 0.2rem 1rem !important;
     }
+
     & .tab {
+      padding: 0.4rem 0.6rem !important;
+      width: 150px;
+      border-radius: 4px;
+      transition: all 0.4s ease-in-out;
+
+      &.active {
+        background-color: #6fcf97;
+        color: #fff;
+
+        & .hex {
+          background-color: #fff;
+          color: #6fcf97;
+        }
+
+        & small {
+          color: #fff;
+        }
+      }
+
+      & .box {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
       & p {
         font-size: 0.65rem;
         font-weight: bold;
+        line-height: 0.65rem;
+      }
+
+      & h5 {
+        font-size: 0.65rem;
+      }
+
+      & small {
+        line-height: 0.65rem;
+        font-weight: bold;
+      }
+
+      &.active {
       }
     }
     & .item-tab {
       width: 48%;
       text-align: center;
       padding: 0.4rem;
-      transition: bo;
+      transition: all 0.4s ease-in-out;
+      width: 150px;
+      border-radius: 2px;
 
       &.active {
         border-bottom: 4px solid #6fcf97;
@@ -1768,10 +1835,11 @@ h6 {
 // Hexagon
 .hex {
   background: #6fcf97;
-  padding: 0.25rem;
+  padding: 0.02rem;
+  font-size: 0.6rem;
 
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   text-align: center;
   display: grid;
   -webkit-clip-path: polygon(

@@ -54,7 +54,7 @@ const TradeCard: React.FC<Props> = ({
       <div
         className={`card trade-card ${onTrade && 'list'} ${isMockup && 'mock'}`}
       >
-        <img src='assets/img/qc-logo.png' alt='' />
+        <img src={imageUrl || 'assets/img/qc-logo.png'} alt='' />
         <p>{name}</p>
         <h3>
           {keys} Keys {refs} Refs

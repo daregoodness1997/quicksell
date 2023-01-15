@@ -3,6 +3,7 @@
 $desktop: 1260px;
 $tablet: 960px;
 $mobile: 480px;
+$extraSmall: 280px;
 
 $m-01: #6fcf97;
 $m-02: #56a477;
@@ -117,6 +118,11 @@ h1 {
 
 @mixin mobile {
   @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+@mixin extraSmall {
+  @media (max-width: #{$extraSmall}) {
     @content;
   }
 }
@@ -1123,7 +1129,7 @@ h6 {
   display: flex;
 
   @include mobile {
-    flex-direction: column;
+    display: none;
   }
   & .left-navigation {
     display: flex;

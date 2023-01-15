@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import React, { useState, useEffect } from 'react';
 import { Button, Modal } from '../components';
 import { TradeCard } from '../components/cards';
+import { tradeItems } from '../utils/data';
 import ExchangeView from '../views/ExchangeView';
 import TradeMobileNav from '../views/trades/TradeMobileNav';
 import TradeSection from '../views/trades/TradeSection';
@@ -65,26 +66,9 @@ const Trade = () => {
             title='Your Items'
             className={`${display.ourItems && 'show'}`}
           >
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
+            {tradeItems.map(item => (
+              <TradeCard onTrade={true} {...item} />
+            ))}
           </TradeSection>
         )}
         {display?.yourItems && (

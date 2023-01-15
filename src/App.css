@@ -1,14 +1,17 @@
 @keyframes App-logo-spin {
-  from {
+  0% {
     transform: rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(-180deg);
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 0.8s linear;
+    animation: App-logo-spin infinite 1.2s linear;
   }
 }

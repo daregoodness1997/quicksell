@@ -5,7 +5,7 @@ interface TooltipProps {
   open?: boolean;
   setOpen?: any;
   children?: React.ReactNode;
-  title?: string;
+  name?: string;
   status?: 'pending' | 'failed' | 'complete';
 }
 const TooltipAnimation = {
@@ -35,12 +35,7 @@ const TooltipAnimation = {
   },
 };
 
-const Tooltip: React.FC<TooltipProps> = ({
-  open,
-  setOpen,
-  children,
-  title,
-}) => (
+const Tooltip: React.FC<TooltipProps> = ({ open, setOpen, children, name }) => (
   <AnimatePresence>
     {open && (
       <motion.div
@@ -51,7 +46,7 @@ const Tooltip: React.FC<TooltipProps> = ({
         className='tooltip-wrapper'
       >
         <div className='tooltip-header'>
-          <h4>Man Co Supply Crate Keys</h4>
+          <h4>{name}</h4>
         </div>
         <p>
           You have <span>443 Keys</span> available! Select some items and

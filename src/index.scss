@@ -257,6 +257,19 @@ h6 {
   }
 }
 
+.truncate {
+  width: 90px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.prices {
+  width: 90px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .left-navigation {
   display: flex;
   align-items: center;
@@ -713,8 +726,19 @@ h6 {
     padding: 0 2rem;
   }
 
+  & .trade-box {
+    justify-content: flex-start;
+    gap: 40px;
+    & .box-1 {
+      width: 32%;
+      @include mobile {
+        width: 100%;
+      }
+    }
+  }
   & .box-1 {
     & img {
+      transform: scale(0.8);
       @include mobile {
         display: none;
       }
@@ -1833,7 +1857,8 @@ h6 {
     border-radius: 8px;
 
     &.selected {
-      border: 2px solid #6fcf97;
+      outline: 2px solid #6fcf97;
+      outline-offset: -2px;
     }
   }
 }

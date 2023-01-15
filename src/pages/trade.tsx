@@ -74,29 +74,12 @@ const Trade = () => {
         {display?.yourItems && (
           <TradeSection
             size='lg'
-            title='Your Items'
+            title='Our Items'
             className={`${display.yourItems && 'show'}`}
           >
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
-            <TradeCard onTrade={true} />
+            {tradeItems.map(item => (
+              <TradeCard onTrade={true} {...item} />
+            ))}
           </TradeSection>
         )}
         {display?.exchange && (

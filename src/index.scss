@@ -136,7 +136,12 @@ body {
   box-sizing: border-box;
   color: #fff;
 
-  background: url(assets/bg.png);
+  // background: url(assets/bg.png);
+  background: linear-gradient(
+    60.92deg,
+    rgba(16, 17, 19, 0.8) 50.77%,
+    rgba(38, 38, 45, 0.8) 70.89%
+  );
   background-size: cover;
   background-repeat: repeat-y;
 }
@@ -344,6 +349,17 @@ h6 {
 
   @include mobile {
     width: 300px;
+  }
+
+  &.solid {
+    &:before {
+      background-color: #6fcf97;
+    }
+    &:after {
+      background-color: #6fcf97;
+    }
+    color: #1e252b;
+    font-weight: bold;
   }
 
   &.sm {
@@ -607,6 +623,10 @@ h6 {
     & .bottom-wrapper {
       margin-top: 2rem;
       width: 200px;
+      @include mobile {
+        margin-left: 5px;
+        background-color: red !important;
+      }
     }
 
     & h1 {

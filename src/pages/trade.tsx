@@ -91,8 +91,13 @@ const Trade = () => {
           >
             {display?.showExchange?.youGive && <ExchangeView />}
             {display?.showExchange?.youGet && <ExchangeView />}
-            <div className='button'>
-              <Button label='Trade Now' size='md' onClick={handleTradeClick} />
+            <div className='button-group'>
+              <Button
+                label='Trade Now'
+                size='md'
+                variant='solid'
+                onClick={handleTradeClick}
+              />
             </div>
           </TradeSection>
         )}

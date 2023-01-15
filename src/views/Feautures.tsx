@@ -5,6 +5,7 @@ import { Button } from '../components';
 import { TradeCard } from '../components/cards';
 import AuctionCard from '../components/cards/AuctionCard';
 import GiveawayCard from '../components/cards/GiveawayCard';
+import { tradeItems } from '../utils/data';
 
 const Feautures = () => {
   const settings = {
@@ -127,15 +128,9 @@ const Feautures = () => {
       </div>
       <div className='slider-box'>
         <Slider {...settings}>
-          <TradeCard isMockup />
-          <TradeCard isMockup />
-          <TradeCard isMockup />
-          <TradeCard isMockup />
-          <TradeCard isMockup />
-          <TradeCard isMockup />
-          <TradeCard isMockup />
-          <TradeCard isMockup />
-          <TradeCard isMockup />
+          {tradeItems.map(item => (
+            <TradeCard isMockup {...item} />
+          ))}
         </Slider>
       </div>
 
@@ -149,7 +144,7 @@ const Feautures = () => {
           </p>
         </div>
 
-        <div className='content flex '>
+        <div className='content flex trade-box '>
           <div className='box-1'>
             <h3>Trade</h3>
             <p>

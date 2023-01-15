@@ -47,16 +47,16 @@ const TradeCard: React.FC<Props> = ({
       onMouseOver={handleMousever}
       onMouseLeave={handleMousLeave}
     >
-      <Tooltip open={open} setOpen={setOpen} title='Trade Now'>
+      <Tooltip open={open} setOpen={setOpen} name={name}>
         <p>Test Modal</p>
       </Tooltip>
 
       <div
         className={`card trade-card ${onTrade && 'list'} ${isMockup && 'mock'}`}
       >
-        <img src='assets/img/qc-logo.png' alt='' />
-        <p>{name}</p>
-        <h3>
+        <img src={imageUrl || 'assets/img/qc-logo.png'} alt='' />
+        <p className='truncate'>{name}</p>
+        <h3 className='prices'>
           {keys} Keys {refs} Refs
         </h3>
         <div className={`indicator ${color}`}></div>

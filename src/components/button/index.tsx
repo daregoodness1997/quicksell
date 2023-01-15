@@ -2,7 +2,7 @@ import React, { MouseEvent, MouseEventHandler } from 'react';
 
 interface ButtonProps {
   border?: string;
-  variant?: string;
+  variant?: 'regular' | 'solid';
   size?: 'sm' | 'md' | 'lg';
   label?: string;
   logo?: boolean;
@@ -20,7 +20,10 @@ const Button: React.FC<ButtonProps> = ({
   loading,
 }) => {
   return (
-    <div className={`button-wrapper ${border} ${size}`} onClick={onClick}>
+    <div
+      className={`button-wrapper ${border} ${size} ${variant}`}
+      onClick={onClick}
+    >
       <button
         className={`button ribbon-outset border ${variant} ${size}`}
         onClick={onClick}

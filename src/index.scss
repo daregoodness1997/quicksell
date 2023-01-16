@@ -1748,9 +1748,8 @@ h6 {
 // tooltip
 .tooltip {
   &-wrapper {
-    position: absolute;
-    top: 50px;
-    left: 50px;
+    position: fixed;
+
     width: 240px;
     min-width: 240px;
     padding: 1.2rem;
@@ -1772,6 +1771,9 @@ h6 {
     }
     @include mobile {
       width: 80%;
+      left: 50% !important;
+      top: 50% !important;
+      transform: translate(-50%, 50%) !important;
     }
   }
 

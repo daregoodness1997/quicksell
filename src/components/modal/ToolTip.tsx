@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { CloseIcon } from '../icons';
+import React, { useState, useEffect } from 'react';
 
 interface TooltipProps {
   open?: boolean;
@@ -35,26 +36,44 @@ const TooltipAnimation = {
   },
 };
 
-const Tooltip: React.FC<TooltipProps> = ({ open, setOpen, children, name }) => (
-  <AnimatePresence>
-    {open && (
-      <motion.div
-        variants={TooltipAnimation}
-        initial='hidden'
-        animate='visible'
-        exit='exit'
-        className='tooltip-wrapper'
-      >
-        <div className='tooltip-header'>
-          <h4>{name}</h4>
-        </div>
-        <p>
-          You have <span>443 Keys</span> available! Select some items and
-          currency will automatically be added to the trade
-        </p>
-      </motion.div>
-    )}
-  </AnimatePresence>
-);
+const Tooltip: React.FC<TooltipProps> = ({ open, setOpen, children, name }) => {
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  useEffect(() => {
+    const handleMouseMove = (event: any) => {
+      setMousePos({ x: event.clientX, y: event.clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  console.log('Mouse Position', mousePos);
+
+  return (
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          variants={TooltipAnimation}
+          initial='hidden'
+          animate='visible'
+          exit='exit'
+          className='tooltip-wrapper'
+          style={{ left: mousePos?.x, top: mousePos.y }}
+        >
+          <div className='tooltip-header'>
+            <h4>{name}</h4>
+          </div>
+          <p>
+            You have <span>443 Keys</span> available! Select some items and
+            currency will automatically be added to the trade
+          </p>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
 
 export default Tooltip;

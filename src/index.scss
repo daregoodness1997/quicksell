@@ -1666,6 +1666,9 @@ h6 {
   width: 100%;
   overflow-y: auto;
 
+  & .trade-card-wrapper {
+    width: 80px;
+  }
   & .list {
     height: 100px;
 
@@ -1906,4 +1909,44 @@ h6 {
     0% 50%
   );
   clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+}
+
+// Empty
+
+.empty {
+  width: 100%;
+  height: 60vh;
+  background-color: #1f2124;
+  border-radius: 4px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+
+  & .step-img {
+    width: 75%;
+  }
+}
+
+.empty-exchange-wrapper {
+  width: 100%;
+  height: 160px;
+  background-color: #1f2124;
+  border-radius: 4px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+
+  & h3 {
+    font-size: 1rem;
+  }
+
+  & p {
+    font-size: 0.75rem;
+  }
 }

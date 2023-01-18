@@ -60,7 +60,7 @@ const Trade = () => {
       </Modal>
       <TradeMobileNav setDisplay={setDisplay} display={display} />
       <motion.div className='trade-container container'>
-        {display?.ourItems && (
+        {display?.yourItems && (
           <TradeSection
             size='lg'
             title='Your Items'
@@ -71,10 +71,11 @@ const Trade = () => {
             ))}
           </TradeSection>
         )}
-        {display?.yourItems && (
+        {display?.ourItems && (
           <TradeSection
             size='lg'
             title='Our Items'
+            loggedIn={true}
             className={`${display.yourItems && 'show'}`}
           >
             {tradeItems.map(item => (

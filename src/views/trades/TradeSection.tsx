@@ -41,7 +41,7 @@ const TradeSection: React.FC<TradeSectionProps> = ({
         <TradeHeader title={title} onReload={onReload} type={type} />
       )}
 
-      {type !== 'exchange' && (
+      {type !== 'exchange' ? (
         <>
           {!loggedIn ? (
             <motion.div layout>
@@ -53,10 +53,11 @@ const TradeSection: React.FC<TradeSectionProps> = ({
             </motion.div>
           )}
         </>
+      ) : (
+        <motion.div layout className={`${hasGrid && 'grid'}`}>
+          {children}
+        </motion.div>
       )}
-      <motion.div layout className={`${hasGrid && 'grid'}`}>
-        {children}
-      </motion.div>
     </motion.div>
   );
 };

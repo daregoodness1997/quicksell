@@ -1588,6 +1588,26 @@ h6 {
     display: none;
   }
 
+  &-footer {
+    width: 240px;
+    padding: 1.2rem;
+    margin: 0.4rem auto;
+    text-align: center;
+    & .icon {
+      background: transparent;
+      border: none;
+      font-size: 24px;
+    }
+
+    & h4 {
+      font-weight: 200;
+      font-size: 20px;
+    }
+    & .flex {
+      margin: 0.4rem 0;
+    }
+  }
+
   &.show {
     display: block;
   }

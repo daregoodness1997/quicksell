@@ -16,6 +16,7 @@ interface TradeSectionProps {
   hasGrid?: boolean;
   className?: string;
   loggedIn?: boolean;
+  buyer?: boolean;
 }
 
 const TradeSection: React.FC<TradeSectionProps> = ({
@@ -28,6 +29,7 @@ const TradeSection: React.FC<TradeSectionProps> = ({
   hasGrid = true,
   className,
   loggedIn,
+  buyer,
 }) => {
   return (
     <motion.div
@@ -48,9 +50,25 @@ const TradeSection: React.FC<TradeSectionProps> = ({
               <EmptyTradeCards />
             </motion.div>
           ) : (
-            <motion.div layout className={`${hasGrid && 'grid'}`}>
-              {children}
-            </motion.div>
+            <>
+              <motion.div layout className={`${hasGrid && 'grid'}`}>
+                {children}
+              </motion.div>
+              {buyer && (
+                <motion.div layout className='trade-section-footer'>
+                  <h4>Your Items are worth</h4>
+                  <div className='flex'>
+                    <button className='icon'>
+                      <KeyIcon /> 10 Keys
+                    </button>
+                    <button className='icon'>
+                      <CogIcon /> Refs
+                    </button>
+                  </div>
+                  <Button label='See All' logo={false} />
+                </motion.div>
+              )}
+            </>
           )}
         </>
       ) : (

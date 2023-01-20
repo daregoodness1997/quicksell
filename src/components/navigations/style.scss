@@ -141,7 +141,12 @@
   position: relative;
   margin-left: 120px;
   padding: 1rem;
-  background-color: black;
+  background: url(assets/bg.png),
+    linear-gradient(
+      60.92deg,
+      rgba(16, 17, 19, 0.8) 50.77%,
+      rgba(38, 38, 45, 0.8) 70.89%
+    );
   overflow: hidden;
   height: 100vh;
   border-radius: 6px;

@@ -9,7 +9,7 @@ import { tradeItems } from '../utils/data';
 
 const Feautures = () => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     slidesToShow: 7,
     slidesToScroll: 1,
@@ -25,6 +25,14 @@ const Feautures = () => {
           slidesToScroll: 1,
           infinite: true,
           dots: true,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 2,
+          initialSlide: 2,
         },
       },
       {
@@ -65,6 +73,14 @@ const Feautures = () => {
         },
       },
       {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
         breakpoint: 600,
         settings: {
           slidesToShow: 3,
@@ -99,6 +115,14 @@ const Feautures = () => {
           slidesToScroll: 1,
           infinite: true,
           dots: true,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 2,
         },
       },
       {

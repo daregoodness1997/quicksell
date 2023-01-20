@@ -59,10 +59,10 @@ const TradeSection: React.FC<TradeSectionProps> = ({
                   <h4>Your Items are worth</h4>
                   <div className='flex'>
                     <button className='icon'>
-                      <KeyIcon /> 10 Keys
+                      <KeyIcon /> 1940 Keys
                     </button>
                     <button className='icon'>
-                      <CogIcon /> Refs
+                      <CogIcon /> 200 Refs
                     </button>
                   </div>
                   <Button label='See All' logo={false} />

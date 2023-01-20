@@ -361,7 +361,7 @@ h6 {
   transition: all 0.3s ease-in-out;
 
   @include mobile {
-    width: 320px;
+    width: 315px;
   }
 
   &.solid {
@@ -514,7 +514,7 @@ h6 {
     transition: all ease 0.3s;
 
     @include mobile {
-      right: -140px;
+      right: -135px;
     }
   }
 
@@ -779,7 +779,13 @@ h6 {
 
   & .trade-box {
     justify-content: flex-start;
-    gap: 40px;
+    gap: 20px;
+
+    & .bottom-wrapper {
+      & button {
+        width: 280px;
+      }
+    }
 
     @include tablet {
       gap: 0px;

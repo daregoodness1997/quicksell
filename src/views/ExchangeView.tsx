@@ -1,23 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TradeCard } from '../components/cards';
+import { CogIcon, KeyIcon } from '../components/icons';
+import { exchangeItems } from '../utils/data';
+import EmptyExchange from './modal-views/EmptyExchange';
 
 const ExchangeView = () => {
+  const [empty, setEmpty] = useState(true);
   return (
-    <div className='exchange-wrapper'>
-      <div className='exchange-section'>
-        <TradeCard onTrade={true} />
-        <TradeCard onTrade={true} />
-        <TradeCard onTrade={true} />
-        <TradeCard onTrade={true} />
-        <TradeCard onTrade={true} />
-        <TradeCard onTrade={true} />
-        <TradeCard onTrade={true} />
-        <TradeCard onTrade={true} />
-        <TradeCard onTrade={true} />
+    <div>
+      <div className='trade-header'>
+        <h5>You Get</h5>
+        <div className='flex'>
+          <button>
+            <KeyIcon /> 10 Keys
+          </button>
+          <button>
+            <CogIcon /> Refs
+          </button>
+        </div>
       </div>
-      <div className='flex'>
-        <button>Auto Select</button>
-        <button className='red'>Clear Items</button>
+      <div className='exchange-wrapper'>
+        <div>
+          {empty ? (
+            <EmptyExchange />
+          ) : (
+            <div className='exchange-section'>
+              {exchangeItems.map(item => (
+                <TradeCard onTrade={true} {...item} />
+              ))}
+            </div>
+          )}
+        </div>
+        <div className='flex'>
+          <button>Auto Select</button>
+          <button className='red'>Clear Items</button>
+        </div>
       </div>
     </div>
   );

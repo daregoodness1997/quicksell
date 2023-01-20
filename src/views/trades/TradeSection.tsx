@@ -4,6 +4,7 @@ import { CogIcon, KeyIcon } from '../../components/icons';
 import TradeHeader from './TradeHeader';
 import { motion } from 'framer-motion';
 import { animation } from '../../components/dropdown';
+import EmptyTradeCards from '../modal-views/EmptyTradeCards';
 
 interface TradeSectionProps {
   title?: string;
@@ -14,6 +15,8 @@ interface TradeSectionProps {
   type?: string;
   hasGrid?: boolean;
   className?: string;
+  loggedIn?: boolean;
+  buyer?: boolean;
 }
 
 const TradeSection: React.FC<TradeSectionProps> = ({
@@ -25,6 +28,8 @@ const TradeSection: React.FC<TradeSectionProps> = ({
   type,
   hasGrid = true,
   className,
+  loggedIn,
+  buyer,
 }) => {
   return (
     <motion.div
@@ -32,27 +37,45 @@ const TradeSection: React.FC<TradeSectionProps> = ({
       initial='hidden'
       animate='visible'
       exit='exit'
-      className={`trade-section ${size} ${className}`}
+      className={`trade-section ${size} ${className} `}
     >
-      {type !== 'exchange' ? (
+      {type !== 'exchange' && (
         <TradeHeader title={title} onReload={onReload} type={type} />
-      ) : (
-        <div className='trade-header'>
-          <h5>You Get</h5>
-          <div className='flex'>
-            <button>
-              <KeyIcon /> 10 Keys
-            </button>
-            <button>
-              <CogIcon /> Refs
-            </button>
-          </div>
-        </div>
       )}
 
-      <motion.div layout className={`${hasGrid && 'grid'}`}>
-        {children}
-      </motion.div>
+      {type !== 'exchange' ? (
+        <>
+          {!loggedIn ? (
+            <motion.div layout>
+              <EmptyTradeCards />
+            </motion.div>
+          ) : (
+            <>
+              <motion.div layout className={`${hasGrid && 'grid'}`}>
+                {children}
+              </motion.div>
+              {buyer && (
+                <motion.div layout className='trade-section-footer'>
+                  <h4>Your Items are worth</h4>
+                  <div className='flex'>
+                    <button className='icon'>
+                      <KeyIcon /> 10 Keys
+                    </button>
+                    <button className='icon'>
+                      <CogIcon /> Refs
+                    </button>
+                  </div>
+                  <Button label='See All' logo={false} />
+                </motion.div>
+              )}
+            </>
+          )}
+        </>
+      ) : (
+        <motion.div layout className={`${hasGrid && 'grid'}`}>
+          {children}
+        </motion.div>
+      )}
     </motion.div>
   );
 };

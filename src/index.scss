@@ -137,11 +137,12 @@ body {
   color: #fff;
 
   // background: url(assets/bg.png);
-  background: linear-gradient(
-    60.92deg,
-    rgba(16, 17, 19, 0.8) 50.77%,
-    rgba(38, 38, 45, 0.8) 70.89%
-  );
+  background: url(assets/bg.png),
+    linear-gradient(
+      60.92deg,
+      rgba(16, 17, 19, 0.8) 50.77%,
+      rgba(38, 38, 45, 0.8) 70.89%
+    );
   background-size: cover;
   background-repeat: repeat-y;
 }
@@ -360,6 +361,9 @@ h6 {
     }
     color: #1e252b;
     font-weight: bold;
+    &:hover {
+      color: #fff;
+    }
   }
 
   &.sm {
@@ -625,7 +629,6 @@ h6 {
       width: 200px;
       @include mobile {
         margin-left: 5px;
-        background-color: red !important;
       }
     }
 
@@ -1585,6 +1588,26 @@ h6 {
     display: none;
   }
 
+  &-footer {
+    width: 240px;
+    padding: 1.2rem;
+    margin: 0.4rem auto;
+    text-align: center;
+    & .icon {
+      background: transparent;
+      border: none;
+      font-size: 24px;
+    }
+
+    & h4 {
+      font-weight: 200;
+      font-size: 20px;
+    }
+    & .flex {
+      margin: 0.4rem 0;
+    }
+  }
+
   &.show {
     display: block;
   }
@@ -1664,6 +1687,9 @@ h6 {
   width: 100%;
   overflow-y: auto;
 
+  & .trade-card-wrapper {
+    width: 80px;
+  }
   & .list {
     height: 100px;
 
@@ -1904,4 +1930,49 @@ h6 {
     0% 50%
   );
   clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+}
+
+// Empty
+
+.empty {
+  width: 100%;
+  height: 60vh;
+  border-radius: 4px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+
+  & .step-img {
+    width: 75%;
+  }
+}
+
+.empty-exchange-wrapper {
+  width: 100%;
+  height: 160px;
+  background-color: #1f2124;
+  border-radius: 4px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+
+  & h3 {
+    font-size: 1rem;
+  }
+
+  & p {
+    font-size: 0.75rem;
+  }
+}
+
+.empty-content {
+  display: grid;
+  place-items: center;
+  margin-bottom: 2rem;
 }

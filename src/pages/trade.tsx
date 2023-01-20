@@ -64,6 +64,8 @@ const Trade = () => {
           <TradeSection
             size='lg'
             title='Your Items'
+            buyer={true}
+            loggedIn={true}
             className={`${display.ourItems && 'show'}`}
           >
             {tradeItems.map(item => (
@@ -75,6 +77,7 @@ const Trade = () => {
           <TradeSection
             size='lg'
             title='Our Items'
+            loggedIn={true}
             className={`${display.yourItems && 'show'}`}
           >
             {tradeItems.map(item => (

@@ -32,7 +32,15 @@ const Button: React.FC<ButtonProps> = ({
           `Loading`
         ) : (
           <div className='button-flex'>
-            {logo && <img src='assets/svg/steam-icon.svg' alt={label} />}
+            {logo && (
+              <>
+                {variant !== 'solid' ? (
+                  <img src='assets/svg/steam-icon.svg' alt={label} />
+                ) : (
+                  <img src='assets/svg/cib_steam.svg' alt={label} />
+                )}
+              </>
+            )}
             <span>{label}</span>
           </div>
         )}

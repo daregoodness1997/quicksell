@@ -6,6 +6,7 @@ interface ModalProps {
   setOpen?: any;
   children?: React.ReactNode;
   title?: string;
+  subTitle?: string;
   status?: 'pending' | 'failed' | 'complete';
 }
 const modalAnimation = {
@@ -35,7 +36,14 @@ const modalAnimation = {
   },
 };
 
-const Modal: React.FC<ModalProps> = ({ open, setOpen, children, title }) => (
+const Modal: React.FC<ModalProps> = ({
+  open,
+  setOpen,
+  children,
+  title,
+  status,
+  subTitle,
+}) => (
   <AnimatePresence>
     {open && (
       <div className='modal-overlay'>
@@ -50,7 +58,17 @@ const Modal: React.FC<ModalProps> = ({ open, setOpen, children, title }) => (
             <CloseIcon />
           </button>
           <div className='modal-header'>
-            <h3>{title}</h3>
+            <div className='top'>
+              {status === 'complete' ? (
+                <img src='assets/svg/accept-icon.svg' />
+              ) : (
+                <img src='assets/svg/warning-icon.svg' />
+              )}
+              <div>
+                <h3 className={`${status}`}>{title}</h3>
+                <p>{subTitle}</p>
+              </div>
+            </div>
           </div>
           {children}
         </motion.div>

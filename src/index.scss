@@ -84,6 +84,9 @@ a {
 a:hover {
   color: #3a8057;
 }
+button {
+  color: #fff;
+}
 
 h1 {
   font-size: 3.2em;
@@ -105,7 +108,7 @@ h1 {
 }
 
 @mixin tablet {
-  @media (min-width: #{$tablet}) and (max-width: #{$desktop - 1px}) {
+  @media (max-width: #{$tablet}) {
     @content;
   }
 }
@@ -164,6 +167,9 @@ h6 {
 .container {
   padding: 1rem 6rem;
 
+  @include tablet {
+    padding: 1rem 2rem;
+  }
   @include mobile {
     padding: 1rem;
   }
@@ -244,6 +250,9 @@ h6 {
   backdrop-filter: blur(60px);
   z-index: 100;
 
+  @include tablet {
+    padding: 0.4rem 1rem;
+  }
   @include mobile {
     padding: 0.4rem 2rem;
   }
@@ -284,6 +293,9 @@ h6 {
 .left-navigation nav {
   margin-left: 8px;
 
+  @include tablet {
+    display: none;
+  }
   @include mobile {
     display: none;
   }
@@ -349,7 +361,7 @@ h6 {
   transition: all 0.3s ease-in-out;
 
   @include mobile {
-    width: 300px;
+    width: 320px;
   }
 
   &.solid {
@@ -361,9 +373,6 @@ h6 {
     }
     color: #1e252b;
     font-weight: bold;
-    &:hover {
-      color: #fff;
-    }
   }
 
   &.sm {
@@ -455,14 +464,6 @@ h6 {
     border: 2.51957px solid #6fcf97;
     border-top: none;
   }
-  &:hover {
-    &:before {
-      background: #0e1012;
-    }
-    &:after {
-      background: #0e1012;
-    }
-  }
 }
 
 .button-wrapper {
@@ -513,7 +514,7 @@ h6 {
     transition: all ease 0.3s;
 
     @include mobile {
-      right: -120px;
+      right: -140px;
     }
   }
 
@@ -579,6 +580,11 @@ h6 {
       );
       backdrop-filter: blur(50px);
 
+      @include tablet {
+        gap: 0rem;
+        padding: 1rem;
+        align-items: flex-start;
+      }
       @include mobile {
         gap: 0rem;
         padding: 1rem;
@@ -592,6 +598,9 @@ h6 {
         font-size: 2rem;
         font-weight: 400;
         line-height: 1.5;
+        @include tablet {
+          font-size: 1.2rem;
+        }
 
         @include mobile {
           font-size: 1.2rem;
@@ -601,6 +610,9 @@ h6 {
       & p {
         font-size: 0.95rem;
         line-height: 120%;
+        @include tablet {
+          font-size: 0.7rem;
+        }
 
         @include mobile {
           font-size: 0.75rem;
@@ -664,6 +676,10 @@ h6 {
 .hero {
   margin: 0rem 6rem;
   align-items: flex-start;
+  @include tablet {
+    margin: 0rem 1rem;
+    width: 100vw;
+  }
   @include mobile {
     margin: 0rem 1rem;
     width: 100vw;
@@ -686,6 +702,9 @@ h6 {
     }
 
     & h1 {
+      @include tablet {
+        font-size: 2.4rem;
+      }
       @include mobile {
         font-size: 2rem;
       }
@@ -701,6 +720,12 @@ h6 {
   height: 100vh;
   text-align: center;
 
+  @include tablet {
+    width: 100%;
+    margin-top: 4rem;
+    background-size: 60%;
+    height: 40vh;
+  }
   @include mobile {
     width: 100%;
     margin-top: 9rem;
@@ -745,6 +770,9 @@ h6 {
   background-color: #1f2124;
   text-align: center;
 
+  @include tablet {
+    padding: 0 2rem;
+  }
   @include mobile {
     padding: 0 2rem;
   }
@@ -752,6 +780,10 @@ h6 {
   & .trade-box {
     justify-content: flex-start;
     gap: 40px;
+
+    @include tablet {
+      gap: 0px;
+    }
     & .box-1 {
       width: 32%;
       @include mobile {
@@ -762,6 +794,9 @@ h6 {
   & .box-1 {
     & img {
       transform: scale(0.8);
+      @include tablet {
+        transform: scale(0.6);
+      }
       @include mobile {
         display: none;
       }
@@ -913,6 +948,11 @@ h6 {
   text-align: left;
   gap: 12px;
 
+  @include tablet {
+    width: 340px;
+    height: 200px;
+    gap: 4px;
+  }
   @include mobile {
     width: 95%;
     height: 240px;
@@ -921,20 +961,32 @@ h6 {
   & .auction-name {
     font-weight: bold;
     text-transform: uppercase;
+    @include tablet {
+      font-size: 0.8rem !important;
+    }
   }
 
+  & small {
+    font-size: 0.6rem !important;
+
+    @include tablet {
+      font-size: 0.7rem !important;
+      margin: 0;
+      padding: 0;
+    }
+  }
   & .auction-flex {
-    gap: 6px;
+    gap: 4px;
 
     & small {
-      font-size: 0.6rem;
+      font-size: 0.5rem;
     }
   }
 
   & .auction-flex-sub {
     color: #787885;
     display: flex;
-    gap: 10px;
+    gap: 4px;
   }
   & .img-container {
     width: 50%;
@@ -942,6 +994,15 @@ h6 {
     background: #00000033;
     display: grid;
     place-items: center;
+
+    @include tablet {
+      width: 40%;
+    }
+  }
+
+  & .auction-content {
+    width: 60%;
+    height: 100%;
   }
 
   & small {
@@ -949,8 +1010,11 @@ h6 {
   }
   & h5 {
     margin-top: -6px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
+    @include tablet {
+      font-size: 0.7rem;
+    }
   }
 
   & .instant-buy {
@@ -960,13 +1024,20 @@ h6 {
   & .bottom {
     margin-top: 0.5rem;
 
+    @include tablet {
+      margin-top: 0.2rem;
+    }
+
     &.-text {
       margin-top: -0.4rem;
     }
   }
 
   & .bottom-wrapper {
-    margin-top: 1rem;
+    margin-top: 0.6rem;
+    @include tablet {
+      margin-top: 0.2rem;
+    }
     & .auction-avatar {
       width: 24px;
       height: 24px;
@@ -1097,10 +1168,20 @@ h6 {
   }
 }
 
-.keys {
+.giveaways.giveaways {
+  margin-bottom: 0;
+}
+
+.keys.keys {
   background-color: #1f2124;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 6rem;
+  margin-top: 0;
+
+  @include tablet {
+    padding-top: 4rem;
+  }
+
   & img {
     width: 90%;
   }
@@ -1114,6 +1195,9 @@ h6 {
 
   & .flex {
     margin-top: 2rem;
+    @include tablet {
+      margin-top: 1rem;
+    }
     @include mobile {
       & .box-3 {
         width: 100%;
@@ -1356,6 +1440,7 @@ h6 {
   &-header {
     width: 70px;
     background-color: transparent;
+    color: white;
     border: none;
     display: flex;
     align-items: center;
@@ -1589,7 +1674,8 @@ h6 {
   }
 
   &-footer {
-    width: 240px;
+    width: 320px;
+
     padding: 1.2rem;
     margin: 0.4rem auto;
     text-align: center;
@@ -1736,11 +1822,19 @@ h6 {
     z-index: 2000;
   }
 
+  &-container {
+    text-align: center;
+    margin: auto;
+    & img {
+      width: 70%;
+    }
+  }
+
   &-wrapper {
-    width: 40%;
-    padding: 1.6rem;
+    width: 32%;
+    padding: 2rem 1.2rem;
     background-color: #20232d;
-    border-radius: 4px;
+    border-radius: 6px;
     position: relative;
     @include mobile {
       width: 80%;
@@ -1748,7 +1842,32 @@ h6 {
   }
 
   &-header {
-    text-align: center;
+    margin: auto 10%;
+
+    & .top {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+      & img {
+        width: 32px;
+      }
+    }
+    & h3 {
+      font-size: 24px;
+    }
+    & p {
+      font-size: 14px;
+      font-weight: 300;
+    }
+    & .failed {
+      color: #f6655a;
+    }
+    & .complete {
+      color: #6fcf97;
+    }
+    & .pending {
+      color: #eba354;
+    }
   }
   &-button {
     position: absolute;
@@ -1768,6 +1887,19 @@ h6 {
       0% 50%
     );
     clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  }
+
+  &-footer {
+    text-align: left;
+
+    & .flex {
+      justify-content: flex-start;
+      gap: 10px;
+    }
+
+    & img {
+      width: 20px;
+    }
   }
 }
 

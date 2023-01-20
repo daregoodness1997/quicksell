@@ -2,6 +2,10 @@ import { motion } from 'framer-motion';
 import React, { useState, useEffect } from 'react';
 import { Button, Modal } from '../components';
 import { TradeCard } from '../components/cards';
+import AlreadySelected from '../components/modal/views/AlreadySelected';
+import Successful from '../components/modal/views/Successful';
+
+import UnsuccessfulTrade from '../components/modal/views/UnsuccessfulTrade';
 import { tradeItems } from '../utils/data';
 import ExchangeView from '../views/ExchangeView';
 import TradeMobileNav from '../views/trades/TradeMobileNav';
@@ -55,9 +59,10 @@ const Trade = () => {
 
   return (
     <>
-      <Modal open={open} setOpen={setOpen} title='Trade Now'>
-        <p>Test Modal</p>
-      </Modal>
+      {/* <UnsuccessfulTrade open={open} setOpen={setOpen} /> */}
+
+      {/* <AlreadySelected open={open} setOpen={setOpen} /> */}
+      <Successful open={open} setOpen={setOpen} />
       <TradeMobileNav setDisplay={setDisplay} display={display} />
       <motion.div className='trade-container container'>
         {display?.ourItems && (

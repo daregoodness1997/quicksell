@@ -26,7 +26,7 @@ const AuctionCard: React.FC<AuctionCardProps> = ({
       </div>
 
       {/* Start Left Content */}
-      <div>
+      <div className='auction-content'>
         <p className='auction-name'>
           {title || <SkeletalLoader />}
           {/* Haunted Einstein */}

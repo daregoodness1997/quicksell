@@ -90,7 +90,7 @@ const AuctionCard: React.FC<AuctionCardProps> = ({
             alt=''
             className='auction-avatar'
           />
-          <div>
+          <div className='hours'>
             <i className='bi bi-clock-fill green-text'></i>
             <small className='green-text'> 10 hrs</small>
           </div>

@@ -168,7 +168,7 @@ const Feautures = () => {
           </p>
         </div>
 
-        <div className='content flex trade-box '>
+        <div className='content flex  '>
           <div className='box-1'>
             <h3>Trade</h3>
             <p>

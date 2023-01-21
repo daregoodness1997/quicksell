@@ -26,6 +26,8 @@ export const i18nOptions = [
   { id: '4', title: 'DE', selected: false },
 ];
 
+let activeClassName = 'nav-item-active';
+
 interface TopNavProps {
   onClick?: (event?: any) => void;
   toggle: boolean;
@@ -56,7 +58,10 @@ const TopNav: React.FC<TopNavProps> = ({ onClick, toggle }) => {
               <NavLink
                 key={idx}
                 to={item.link}
-                className='nav-item'
+                className={({ isActive }) =>
+                  isActive ? activeClassName : 'nav-item'
+                }
+
                 // to={item.link}
               >
                 {item.name}

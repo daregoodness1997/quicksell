@@ -401,6 +401,7 @@ h6 {
       border-radius: 4px;
       background: #222a30;
       transform: perspective(9px) rotateX(3deg);
+      -webkit-transform: perspective(9px) rotateX(3deg);
     }
     &:after {
       position: absolute;
@@ -413,6 +414,7 @@ h6 {
       background: #222a30;
 
       transform: perspective(9px) rotateX(-3deg);
+      -webkit-transform: perspective(9px) rotateX(-3deg);
     }
 
     &.border {
@@ -701,7 +703,7 @@ h6 {
     width: 100vw;
   }
   @include mobile {
-    padding: 0rem 1rem;
+    padding: 0rem 2rem !important;
     width: 100vw;
     flex-direction: column;
     justify-content: center;
@@ -1288,8 +1290,7 @@ h6 {
 
 .keys.keys {
   background-color: #1f2124;
-  padding-top: 2rem;
-  padding-bottom: 6rem;
+  padding: 2rem 2rem 6rem !important;
   margin-top: 0;
 
   & .box-1.img-box {
@@ -1311,6 +1312,10 @@ h6 {
   padding-bottom: 4rem;
   background-color: #222a30;
   gap: 8px;
+
+  @include mobile {
+    padding: 6rem 2rem 4rem;
+  }
 
   & .flex {
     margin-top: 2rem;

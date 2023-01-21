@@ -27,7 +27,9 @@ const GiveawayCard: React.FC<Props> = ({
       <p>{name}</p>
       <div className='center'>
         <h4>Sample Auth Giveaways </h4>
-        <Button label='Enter Giveaway' logo={false} size='sm' />
+        <div>
+          <button className='giveaway-cta'>Enter Giveaway</button>
+        </div>
       </div>
       <AvatarStack />
     </div>

@@ -77,7 +77,9 @@ const TopNav: React.FC<TopNavProps> = ({ onClick, toggle }) => {
             setSelectedOption={setSelectedOption}
             selectedOption={selectedOption}
           />
-          <Button label='Sign in with Steam' />
+          <div className='bottom-wrapper'>
+            <Button label='Sign in with Steam' />
+          </div>
         </div>
       </div>
       <div className={`nav-ul ${toggle ? 'navigation' : ''}`}>

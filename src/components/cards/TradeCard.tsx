@@ -46,10 +46,13 @@ const TradeCard: React.FC<Props> = ({
       }`}
       onClick={() => {
         if (!disabled) setSelect(!select);
+        if (isMockup) setSelect(false);
 
         // setSelectedOption({ ...option, selected: !selectedOption?.selected });
       }}
-      onMouseOver={handleMousever}
+      onMouseOver={() => {
+        if (!isMockup) handleMousever();
+      }}
       onMouseLeave={handleMousLeave}
     >
       <Tooltip open={open} setOpen={setOpen} name={name}>

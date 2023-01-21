@@ -387,11 +387,11 @@ h6 {
   &.sm {
     min-width: 140px;
     width: 100%;
-    height: 32px;
+    height: 42px;
     line-height: 32px;
-
     background-color: transparent;
     color: #fff;
+
     &:before {
       position: absolute;
       content: '';
@@ -1170,6 +1170,13 @@ h6 {
     height: 200px;
     padding: 0.4rem;
   }
+  & .giveaway-cta {
+    background: #222a30;
+    border: none;
+    padding: 0.4rem 1rem;
+    position: relative;
+    border-radius: 1rem;
+  }
 
   & .img-container {
     width: 100%;
@@ -1285,7 +1292,12 @@ h6 {
   padding-bottom: 6rem;
   margin-top: 0;
 
-  @include tablet {
+  & .box-1.img-box {
+    @include mobile {
+      padding-top: 6rem;
+    }
+  }
+  @include mobile {
     padding-top: 4rem;
   }
 

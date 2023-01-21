@@ -5,7 +5,7 @@ const Keys = () => {
     <>
       {/* Keys Section */}
       <div className='container flex keys'>
-        <div className='box-1'>
+        <div className='box-1 img-box'>
           <img src='/assets/img/keys-mockup.png' alt='Keys Mockup' />
         </div>
         <div className='content box-1'>

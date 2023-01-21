@@ -439,7 +439,7 @@ h6 {
   & span,
   & img {
     position: relative;
-    z-index: 1000;
+    z-index: 100;
   }
 
   &:before {
@@ -449,7 +449,7 @@ h6 {
     height: 18px;
     left: 0px;
     border-radius: 4px;
-    background: #1e252b;
+    background: rgba(30, 37, 43, 0.2);
 
     transform: perspective(9px) rotateX(3deg);
   }
@@ -461,7 +461,7 @@ h6 {
     height: 18px;
     top: 20px;
     border-radius: 4px;
-    background: #1e252b;
+    background: rgba(30, 37, 43, 0.2);
 
     transform: perspective(9px) rotateX(-3deg);
   }
@@ -469,12 +469,12 @@ h6 {
 .button.border {
   &:before {
     border: 2.51957px solid #6fcf97;
-    -webkit-border: 2.51957px solid #6fcf97;
+    -webkit-border-before: 2.51957px solid #6fcf97;
     border-bottom: none;
   }
   &:after {
     border: 2.51957px solid #6fcf97;
-    -webkit-border: 2.51957px solid #6fcf97;
+    -webkit-border-before: 2.51957px solid #6fcf97;
 
     border-top: none;
   }

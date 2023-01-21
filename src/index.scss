@@ -2123,6 +2123,23 @@ h6 {
       }
     }
   }
+
+  &-action {
+    position: fixed;
+    bottom: 10px;
+    left: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    padding: 1.4rem;
+    display: none;
+    background-color: rgba(22, 23, 27, 0.2);
+    backdrop-filter: blur(60px);
+    border-radius: 8px;
+
+    @include mobile {
+      display: block;
+    }
+  }
   &-tab {
     width: 42%;
     padding: 0.1rem !important;

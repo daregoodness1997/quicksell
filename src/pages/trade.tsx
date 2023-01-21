@@ -10,6 +10,7 @@ import UnsuccessfulSold from '../components/modal/views/UnsuccessfulSold';
 import UnsuccessfulTrade from '../components/modal/views/UnsuccessfulTrade';
 import { tradeItems } from '../utils/data';
 import ExchangeView from '../views/ExchangeView';
+import TradeAction from '../views/trades/TradeAction';
 import TradeMobileNav from '../views/trades/TradeMobileNav';
 import TradeSection from '../views/trades/TradeSection';
 
@@ -68,6 +69,7 @@ const Trade = () => {
       {/* <UnsuccessfulSold open={open} setOpen={setOpen} /> */}
       <PriceChanges open={open} setOpen={setOpen} />
       <TradeMobileNav setDisplay={setDisplay} display={display} />
+      <TradeAction />
       <motion.div className='trade-container container'>
         {display?.ourItems && (
           <TradeSection

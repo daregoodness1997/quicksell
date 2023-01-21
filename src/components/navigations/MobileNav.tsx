@@ -8,6 +8,7 @@ interface MobileNavProps {
   toggle: boolean;
   onClick: (e?: any) => void;
 }
+let activeClassName = 'nav-item-active';
 
 const MobileNav: React.FC<MobileNavProps> = ({ toggle, onClick }) => {
   const [selectedOption, setSelectedOption] = useState<{
@@ -24,13 +25,14 @@ const MobileNav: React.FC<MobileNavProps> = ({ toggle, onClick }) => {
             <img src='assets/img/qc-logo.png' />
           </Link>
         </div>
-        <ul id='nav'>
+        <ul id='nav' className='mobile-nav'>
           {navItems.map((item, idx) => (
             <NavLink
               key={idx}
               to={item.link}
-              className='nav-item'
-              // to={item.link}
+              className={({ isActive }) =>
+                isActive ? activeClassName : 'nav-item'
+              }
             >
               {item.name}
             </NavLink>

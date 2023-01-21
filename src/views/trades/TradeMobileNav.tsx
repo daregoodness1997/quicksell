@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReloadIcon } from '../../components/icons';
+import { MobileReloadIcon, ReloadIcon } from '../../components/icons';
 
 interface TradeMobileNavProps {
   onReload?: (e?: any) => void;
@@ -35,7 +35,7 @@ const TradeMobileNav: React.FC<TradeMobileNavProps> = ({
           </div>
         </div>
         <button onClick={onReload} className='green'>
-          <ReloadIcon />
+          <MobileReloadIcon />
         </button>
         <div
           className={`flex tab trade-tab ${

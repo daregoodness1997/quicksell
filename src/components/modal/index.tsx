@@ -9,7 +9,7 @@ interface ModalProps {
   subTitle?: string;
   status?: 'pending' | 'failed' | 'complete';
 }
-const modalAnimation = {
+export const modalAnimation = {
   hidden: {
     scale: 0.65,
     opacity: 0,

@@ -17,7 +17,7 @@ const Successful: React.FC<Props> = ({ open, setOpen }) => {
     >
       <div className='modal-container'>
         <img src='assets/gif/correct.gif' />
-        <div style={{ textAlign: 'left' }}>
+        <div style={{ textAlign: 'left', marginBottom: '1rem' }}>
           <small>
             You account may have been hijacked. Don’t confirm any trade and
             click here

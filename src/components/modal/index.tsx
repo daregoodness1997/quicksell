@@ -59,11 +59,11 @@ const Modal: React.FC<ModalProps> = ({
           </button>
           <div className='modal-header'>
             <div className='top'>
-              {status === 'complete' ? (
+              {status === 'complete' && (
                 <img src='assets/svg/accept-icon.svg' />
-              ) : (
-                <img src='assets/svg/warning-icon.svg' />
               )}
+              {status === 'failed' && <img src='assets/svg/warning-icon.svg' />}
+              {status === 'pending' && <img src='assets/svg/warning-hex.svg' />}
               <div>
                 <h3 className={`${status}`}>{title}</h3>
                 <p>{subTitle}</p>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Modal from '..';
 import Button from '../../button';
 interface Props {
@@ -26,7 +27,7 @@ const AlreadySelected: React.FC<Props> = ({ open, setOpen }) => {
           </div>
           <small>
             You account may have been hijacked. Don’t confirm any trade and
-            click here
+            <Link to='support'>Click here</Link>
           </small>
         </div>
       </div>

@@ -12,6 +12,8 @@ interface Props {
   // setSelectedOption: (option: any) => void;
   option?: any;
   isMockup?: boolean;
+  discount?: boolean;
+  disabled?: boolean;
 }
 
 const TradeCard: React.FC<Props> = ({
@@ -25,6 +27,8 @@ const TradeCard: React.FC<Props> = ({
   selectedOption,
   option,
   isMockup,
+  discount,
+  disabled,
 }) => {
   const [open, setOpen] = useState(false);
   const [select, setSelect] = useState(false);
@@ -41,7 +45,8 @@ const TradeCard: React.FC<Props> = ({
         select || selectedOption?.selected ? 'selected' : 'transparent'
       }`}
       onClick={() => {
-        setSelect(!select);
+        if (!disabled) setSelect(!select);
+
         // setSelectedOption({ ...option, selected: !selectedOption?.selected });
       }}
       onMouseOver={handleMousever}
@@ -52,8 +57,11 @@ const TradeCard: React.FC<Props> = ({
       </Tooltip>
 
       <div
-        className={`card trade-card ${onTrade && 'list'} ${isMockup && 'mock'}`}
+        className={`card trade-card ${onTrade && 'list'} ${
+          isMockup && 'mock'
+        } ${disabled && 'disabled'}  `}
       >
+        {discount && <div className='discount'>-125%</div>}
         <img src={imageUrl || 'assets/img/qc-logo.png'} alt='' />
         <p className='truncate'>{name}</p>
         <h3 className='prices'>

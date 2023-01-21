@@ -874,6 +874,27 @@ h6 {
   }
 }
 
+.horizontal-card {
+  & .flex {
+    gap: 8px;
+  }
+  & h5 {
+    font-size: 75%;
+  }
+
+  & p {
+    font-size: 70%;
+    margin: 0;
+  }
+  & .icon-img {
+    width: 64px;
+    padding: 6px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    margin: 0.4rem 0;
+  }
+}
+
 .trade-card {
   padding: 1rem;
   background: #1f2124;
@@ -884,6 +905,22 @@ h6 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  &.disabled {
+    opacity: 0.3;
+  }
+
+  & .discount {
+    padding: 0rem 0.8rem;
+    border-radius: 40px;
+    background-color: #fb8200;
+    color: #fff;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    font-size: 10px;
+    font-weight: bold;
+  }
 
   @include mobile {
     padding: 0.5rem;
@@ -1825,6 +1862,8 @@ h6 {
   overflow-y: auto;
 
   & .trade-card-wrapper {
+    // position: relative;
+
     width: 80px;
   }
   & .list {
@@ -1876,6 +1915,11 @@ h6 {
   &-container {
     text-align: center;
     margin: auto;
+    padding: 0 2rem;
+
+    & .content-container {
+      padding: 2.4rem 1rem;
+    }
     & img {
       width: 70%;
     }
@@ -1942,7 +1986,7 @@ h6 {
 
   &-footer {
     text-align: left;
-
+    margin-top: 1rem;
     & .flex {
       justify-content: flex-start;
       gap: 10px;

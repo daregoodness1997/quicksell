@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Modal from '..';
 import Button from '../../button';
 interface Props {
@@ -17,8 +18,17 @@ const UnsuccessfulTrade: React.FC<Props> = ({ open, setOpen }) => {
     >
       <div className='modal-container'>
         <img src='assets/gif/empty-box.gif' />
-        <div className='button-group'>
-          <Button logo={false} label='Add Icon(s)' variant='solid' />
+
+        <div className='modal-footer'>
+          <div className='flex'>
+            <img src='assets/svg/warning-icon.svg' />
+
+            <h4>Didn’t decline this trade</h4>
+          </div>
+          <small>
+            You account may have been hijacked. Don’t confirm any trade and
+            <Link to='support'>Click here</Link>
+          </small>
         </div>
       </div>{' '}
     </Modal>

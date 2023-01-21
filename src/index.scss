@@ -498,6 +498,7 @@ h6 {
     -ms-transform: skew(40deg, 0deg);
     transform: skew(40deg, 0deg);
     border: 2.51957px solid #6fcf97;
+    -webkit-border-before: 2.51957px solid #6fcf97;
     border-radius: 1.67972px;
     left: -20px;
     bottom: 0px;
@@ -521,6 +522,7 @@ h6 {
     -ms-transform: skew(40deg, 0deg);
     transform: skew(40deg, 0deg);
     border: 2.51957px solid #6fcf97;
+    -webkit-border-before: 2.51957px solid #6fcf97;
     border-radius: 1.67972px;
     top: 0px;
     right: -20px;
@@ -538,7 +540,7 @@ h6 {
   &.sm {
     &:before {
       display: none;
-      border: none !important;
+      border: none;
     }
     &:after {
       display: none;

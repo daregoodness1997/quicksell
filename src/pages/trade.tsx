@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import React, { useState, useEffect } from 'react';
 import { Button, Modal } from '../components';
 import { TradeCard } from '../components/cards';
+import SkeletalCard from '../components/cards/SkeletalCard';
+
 import AlreadySelected from '../components/modal/views/AlreadySelected';
 import PriceChanges from '../components/modal/views/PriceChanges';
 import Successful from '../components/modal/views/Successful';
@@ -24,6 +26,8 @@ const Trade = () => {
   };
   const [view, setView] = useState(showItems);
   const [display, setDisplay] = useState(view);
+  const [loading, setLoading] = useState(true);
+
   const handleTradeClick = () => {
     setOpen(true);
   };
@@ -60,6 +64,16 @@ const Trade = () => {
     };
   }, [mobile]);
 
+  setTimeout(() => {
+    setLoading(false);
+  }, 4000);
+  const renderOurItems = () =>
+    tradeItems.map(item => <TradeCard onTrade={true} {...item} />);
+  const renderYourItems = () =>
+    tradeItems.map(item => <TradeCard onTrade={true} {...item} />);
+
+  const renderMocks = () => [...Array(16)].map(() => <SkeletalCard />);
+
   return (
     <>
       {/* <UnsuccessfulTrade open={open} setOpen={setOpen} /> */}
@@ -80,9 +94,7 @@ const Trade = () => {
               loggedIn={true}
               className={`${display.ourItems && 'show'}`}
             >
-              {tradeItems.map(item => (
-                <TradeCard onTrade={true} {...item} />
-              ))}
+              {loading ? renderMocks() : renderOurItems()}
             </TradeSection>
           )}
           {display?.yourItems && (
@@ -92,9 +104,7 @@ const Trade = () => {
               loggedIn={true}
               className={`${display.yourItems && 'show'}`}
             >
-              {tradeItems.map(item => (
-                <TradeCard onTrade={true} {...item} />
-              ))}
+              {loading ? renderMocks() : renderOurItems()}
             </TradeSection>
           )}
           {display?.exchange && (

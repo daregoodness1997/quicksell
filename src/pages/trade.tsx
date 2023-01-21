@@ -65,9 +65,9 @@ const Trade = () => {
       {/* <UnsuccessfulTrade open={open} setOpen={setOpen} /> */}
 
       {/* <AlreadySelected open={open} setOpen={setOpen} /> */}
-      {/* <Successful open={open} setOpen={setOpen} /> */}
+      <Successful open={open} setOpen={setOpen} />
       {/* <UnsuccessfulSold open={open} setOpen={setOpen} /> */}
-      <PriceChanges open={open} setOpen={setOpen} />
+      {/* <PriceChanges open={open} setOpen={setOpen} /> */}
       <TradeMobileNav setDisplay={setDisplay} display={display} />
       <TradeAction />
       <motion.div className='trade-container container'>

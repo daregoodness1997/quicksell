@@ -65,7 +65,7 @@ const TradeSection: React.FC<TradeSectionProps> = ({
                       <CogIcon /> 200 Refs
                     </button>
                   </div>
-                  <Button label='See All' logo={false} />
+                  <Button label='Sell All' logo={false} />
                 </motion.div>
               )}
             </>

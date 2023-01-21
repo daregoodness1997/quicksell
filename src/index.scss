@@ -361,7 +361,8 @@ h6 {
   transition: all 0.3s ease-in-out;
 
   @include mobile {
-    width: 315px;
+    width: 90%;
+    margin: 0 auto;
   }
 
   &.solid {
@@ -492,6 +493,9 @@ h6 {
     -webkit-transition: all ease 0.3s;
     -o-transition: all ease 0.3s;
     transition: all ease 0.3s;
+    @include mobile {
+      left: -5px;
+    }
   }
 
   &:after {
@@ -514,7 +518,7 @@ h6 {
     transition: all ease 0.3s;
 
     @include mobile {
-      right: -135px;
+      right: -5px;
     }
   }
 
@@ -630,18 +634,19 @@ h6 {
     }
   }
 
+  & .bottom-wrapper {
+    margin-top: 2rem;
+    width: 200px;
+    @include mobile {
+      width: 100%;
+      // margin-left: 5px;
+    }
+  }
+
   & .box-1 {
     width: 50%;
     @include mobile {
       width: 100%;
-    }
-
-    & .bottom-wrapper {
-      margin-top: 2rem;
-      width: 200px;
-      @include mobile {
-        margin-left: 5px;
-      }
     }
 
     & h1 {
@@ -674,14 +679,14 @@ h6 {
 }
 
 .hero {
-  margin: 0rem 6rem;
+  padding: 0rem 6rem;
   align-items: flex-start;
   @include tablet {
-    margin: 0rem 1rem;
+    padding: 0rem 1rem;
     width: 100vw;
   }
   @include mobile {
-    margin: 0rem 1rem;
+    padding: 0rem 1rem;
     width: 100vw;
     flex-direction: column;
     justify-content: center;

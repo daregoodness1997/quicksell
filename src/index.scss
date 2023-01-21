@@ -874,6 +874,19 @@ h6 {
   }
 }
 
+.horizontal-card {
+  & h5 {
+    font-size: 75%;
+  }
+  & .icon-img {
+    width: 64px;
+    padding: 6px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    margin: 0.4rem 0;
+  }
+}
+
 .trade-card {
   padding: 1rem;
   background: #1f2124;
@@ -1876,6 +1889,11 @@ h6 {
   &-container {
     text-align: center;
     margin: auto;
+    padding: 0 2rem;
+
+    & .content-container {
+      padding: 1.6rem 1rem;
+    }
     & img {
       width: 70%;
     }
@@ -1942,7 +1960,7 @@ h6 {
 
   &-footer {
     text-align: left;
-
+    margin-top: 1rem;
     & .flex {
       justify-content: flex-start;
       gap: 10px;

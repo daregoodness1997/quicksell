@@ -12,6 +12,7 @@ export const tradeItems = [
     keys: '4',
     imageUrl: 'img/giveaway-img-1.png',
     desc: '',
+    discount: true,
   },
   {
     name: 'Scorching Flames Kiss King',
@@ -47,6 +48,7 @@ export const tradeItems = [
     keys: '798',
     imageUrl: 'img/item-img-2.png',
     desc: '',
+    discount: true,
   },
   {
     name: 'Burning Flames Nasty Norsemann',
@@ -54,6 +56,7 @@ export const tradeItems = [
     keys: '31',
     imageUrl: 'img/item-img-3.png',
     desc: '',
+    discount: true,
   },
   {
     name: 'Aces High Deep Cover Operator',

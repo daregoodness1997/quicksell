@@ -896,6 +896,7 @@ h6 {
 }
 
 .trade-card {
+  position: relative;
   padding: 1rem;
   background: #1f2124;
   color: #fff;
@@ -905,6 +906,18 @@ h6 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  & .discount {
+    padding: 0rem 0.8rem;
+    border-radius: 40px;
+    background-color: #fb8200;
+    color: #fff;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    font-size: 10px;
+    font-weight: bold;
+  }
 
   @include mobile {
     padding: 0.5rem;

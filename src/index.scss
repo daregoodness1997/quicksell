@@ -875,8 +875,16 @@ h6 {
 }
 
 .horizontal-card {
+  & .flex {
+    gap: 8px;
+  }
   & h5 {
     font-size: 75%;
+  }
+
+  & p {
+    font-size: 70%;
+    margin: 0;
   }
   & .icon-img {
     width: 64px;
@@ -1892,7 +1900,7 @@ h6 {
     padding: 0 2rem;
 
     & .content-container {
-      padding: 1.6rem 1rem;
+      padding: 2.4rem 1rem;
     }
     & img {
       width: 70%;

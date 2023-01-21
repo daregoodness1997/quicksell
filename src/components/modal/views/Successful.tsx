@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Modal from '..';
 import Button from '../../button';
 interface Props {
@@ -35,8 +36,8 @@ const Successful: React.FC<Props> = ({ open, setOpen }) => {
             <h4>Didn’t decline this trade</h4>
           </div>
           <small>
-            You account may have been hijacked. Don’t confirm any trade and
-            click here
+            You account may have been hijacked. Don’t confirm any trade and{' '}
+            <Link to='support'>Click here</Link>
           </small>
         </div>
       </div>

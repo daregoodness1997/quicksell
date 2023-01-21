@@ -3,7 +3,11 @@ import React from 'react';
 import { Button } from '../../components';
 import { modalAnimation } from '../../components/modal';
 
-const TradeAction = () => {
+interface Props {
+  onClick: (e: any) => void;
+}
+
+const TradeAction: React.FC<Props> = ({ onClick }) => {
   return (
     <motion.div
       variants={modalAnimation}
@@ -13,7 +17,7 @@ const TradeAction = () => {
       className='trade-action'
     >
       <div className='group'>
-        <Button label='Trade Now' size='md' variant='solid' />
+        <Button label='Trade Now' size='md' variant='solid' onClick={onClick} />
       </div>
     </motion.div>
   );

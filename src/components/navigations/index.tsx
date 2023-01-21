@@ -77,7 +77,7 @@ const TopNav: React.FC<TopNavProps> = ({ onClick, toggle }) => {
             setSelectedOption={setSelectedOption}
             selectedOption={selectedOption}
           />
-          <div className='bottom-wrapper'>
+          <div className='bottom-wrapper' style={{ position: 'sticky' }}>
             <Button label='Sign in with Steam' />
           </div>
         </div>

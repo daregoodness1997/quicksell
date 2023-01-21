@@ -896,7 +896,6 @@ h6 {
 }
 
 .trade-card {
-  position: relative;
   padding: 1rem;
   background: #1f2124;
   color: #fff;
@@ -1863,6 +1862,8 @@ h6 {
   overflow-y: auto;
 
   & .trade-card-wrapper {
+    // position: relative;
+
     width: 80px;
   }
   & .list {

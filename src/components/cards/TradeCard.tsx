@@ -45,7 +45,8 @@ const TradeCard: React.FC<Props> = ({
         select || selectedOption?.selected ? 'selected' : 'transparent'
       }`}
       onClick={() => {
-        setSelect(!select);
+        if (!disabled) setSelect(!select);
+
         // setSelectedOption({ ...option, selected: !selectedOption?.selected });
       }}
       onMouseOver={handleMousever}

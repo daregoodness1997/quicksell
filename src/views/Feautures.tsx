@@ -112,7 +112,7 @@ const Feautures = () => {
         breakpoint: 1024,
         settings: {
           slidesToShow: 6,
-          slidesToScroll: 1,
+          slidesToScroll: 2,
           infinite: true,
           dots: true,
         },
@@ -121,7 +121,7 @@ const Feautures = () => {
         breakpoint: 900,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
+          slidesToScroll: 2,
           initialSlide: 2,
         },
       },
@@ -137,7 +137,7 @@ const Feautures = () => {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
+          slidesToScroll: 2,
         },
       },
     ],
@@ -153,7 +153,7 @@ const Feautures = () => {
       <div className='slider-box'>
         <Slider {...settings}>
           {tradeItems.map(item => (
-            <TradeCard isMockup {...item} />
+            <TradeCard isMockup={true} {...item} />
           ))}
         </Slider>
       </div>

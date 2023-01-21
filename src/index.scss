@@ -1761,16 +1761,27 @@ h6 {
     display: none;
   }
 
+  & .grid {
+    @include mobile {
+      padding-bottom: 8rem;
+    }
+  }
+
   &-footer {
     width: 320px;
 
     padding: 1.2rem;
     margin: 0.4rem auto;
     text-align: center;
+    @include mobile {
+      margin-top: -6rem;
+      padding-bottom: 10rem;
+    }
     & .icon {
       background: transparent;
       border: none;
-      font-size: 24px;
+      font-size: 18px;
+      font-weight: bold;
     }
 
     & h4 {
@@ -1825,8 +1836,19 @@ h6 {
 .trade-container {
   display: flex;
   gap: 0.2rem;
+
   @include mobile {
     display: block;
+  }
+}
+
+.trade-global {
+  @include mobile {
+    position: absolute;
+    top: 75px;
+    height: calc(100vh - 10%);
+    overflow: hidden;
+    padding-bottom: 6rem;
   }
 }
 

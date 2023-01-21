@@ -68,54 +68,56 @@ const Trade = () => {
       <Successful open={open} setOpen={setOpen} />
       {/* <UnsuccessfulSold open={open} setOpen={setOpen} /> */}
       {/* <PriceChanges open={open} setOpen={setOpen} /> */}
-      <TradeMobileNav setDisplay={setDisplay} display={display} />
-      <TradeAction />
-      <motion.div className='trade-container container'>
-        {display?.ourItems && (
-          <TradeSection
-            size='lg'
-            title='Your Items'
-            buyer={true}
-            loggedIn={true}
-            className={`${display.ourItems && 'show'}`}
-          >
-            {tradeItems.map(item => (
-              <TradeCard onTrade={true} {...item} />
-            ))}
-          </TradeSection>
-        )}
-        {display?.yourItems && (
-          <TradeSection
-            size='lg'
-            title='Our Items'
-            loggedIn={true}
-            className={`${display.yourItems && 'show'}`}
-          >
-            {tradeItems.map(item => (
-              <TradeCard onTrade={true} {...item} />
-            ))}
-          </TradeSection>
-        )}
-        {display?.exchange && (
-          <TradeSection
-            size='sm'
-            type='exchange'
-            hasGrid={false}
-            className={`${display.exchange && 'show'}`}
-          >
-            {display?.showExchange?.youGive && <ExchangeView />}
-            {display?.showExchange?.youGet && <ExchangeView />}
-            <div className='button-group'>
-              <Button
-                label='Trade Now'
-                size='md'
-                variant='solid'
-                onClick={handleTradeClick}
-              />
-            </div>
-          </TradeSection>
-        )}
-      </motion.div>
+      <div className='trade-global'>
+        <TradeMobileNav setDisplay={setDisplay} display={display} />
+        <TradeAction />
+        <motion.div className='trade-container container'>
+          {display?.ourItems && (
+            <TradeSection
+              size='lg'
+              title='Your Items'
+              buyer={true}
+              loggedIn={true}
+              className={`${display.ourItems && 'show'}`}
+            >
+              {tradeItems.map(item => (
+                <TradeCard onTrade={true} {...item} />
+              ))}
+            </TradeSection>
+          )}
+          {display?.yourItems && (
+            <TradeSection
+              size='lg'
+              title='Our Items'
+              loggedIn={true}
+              className={`${display.yourItems && 'show'}`}
+            >
+              {tradeItems.map(item => (
+                <TradeCard onTrade={true} {...item} />
+              ))}
+            </TradeSection>
+          )}
+          {display?.exchange && (
+            <TradeSection
+              size='sm'
+              type='exchange'
+              hasGrid={false}
+              className={`${display.exchange && 'show'}`}
+            >
+              {display?.showExchange?.youGive && <ExchangeView />}
+              {display?.showExchange?.youGet && <ExchangeView />}
+              <div className='button-group'>
+                <Button
+                  label='Trade Now'
+                  size='md'
+                  variant='solid'
+                  onClick={handleTradeClick}
+                />
+              </div>
+            </TradeSection>
+          )}
+        </motion.div>
+      </div>
     </>
   );
 };

@@ -56,7 +56,9 @@ const TradeCard: React.FC<Props> = ({
       </Tooltip>
 
       <div
-        className={`card trade-card ${onTrade && 'list'} ${isMockup && 'mock'}`}
+        className={`card trade-card ${onTrade && 'list'} ${
+          isMockup && 'mock'
+        } ${disabled && 'disabled'}  `}
       >
         {discount && <div className='discount'>-125%</div>}
         <img src={imageUrl || 'assets/img/qc-logo.png'} alt='' />

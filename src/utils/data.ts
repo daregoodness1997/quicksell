@@ -20,6 +20,7 @@ export const tradeItems = [
     keys: '07',
     imageUrl: 'img/giveaway-img-2.png',
     desc: '',
+    disabled: true,
   },
   {
     name: `Searing Plasma Bloke's Bucket Hat`,
@@ -71,6 +72,7 @@ export const tradeItems = [
     keys: '95',
     imageUrl: 'img/item-img-5.png',
     desc: '',
+    disabled: true,
   },
   {
     name: 'Circling Peace Sign Mann of Reason',
@@ -92,6 +94,7 @@ export const tradeItems = [
     keys: '358',
     imageUrl: 'img/item-img-6.png',
     desc: '',
+    disabled: true,
   },
   {
     name: 'Kill-a-Watt Harmburg',

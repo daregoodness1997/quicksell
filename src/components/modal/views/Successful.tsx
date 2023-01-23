@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Modal from '..';
-import Button from '../../button';
 import AppButton from '../../button/AppButton';
 interface Props {
   open: boolean;

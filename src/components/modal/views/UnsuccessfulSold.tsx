@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Modal from '..';
-import Button from '../../button';
+import AppButton from '../../button/AppButton';
 import HorizontalCard from '../../cards/HorizontalCard';
 interface Props {
   open: boolean;
@@ -25,7 +25,7 @@ const UnsuccessfulSold: React.FC<Props> = ({ open, setOpen }) => {
           <HorizontalCard />
         </div>
         <div className='button-group'>
-          <Button
+          <AppButton
             logo={false}
             label='Remove Item and Restart Trade'
             variant='solid'

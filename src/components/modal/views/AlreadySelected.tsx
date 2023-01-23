@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Modal from '..';
-import Button from '../../button';
 interface Props {
   open: boolean;
   setOpen(value?: any): void;

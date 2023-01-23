@@ -1,10 +1,10 @@
 import React from 'react';
-import { Button } from '../../components';
 import { CogIcon, KeyIcon } from '../../components/icons';
 import TradeHeader from './TradeHeader';
 import { motion } from 'framer-motion';
 import { animation } from '../../components/dropdown';
 import EmptyTradeCards from '../modal-views/EmptyTradeCards';
+import AppButton from '../../components/button/AppButton';
 
 interface TradeSectionProps {
   title?: string;
@@ -65,7 +65,7 @@ const TradeSection: React.FC<TradeSectionProps> = ({
                       <CogIcon /> 200 Refs
                     </button>
                   </div>
-                  <Button label='Sell All' logo={false} />
+                  <AppButton label='Sell All' logo={false} />
                 </motion.div>
               )}
             </>

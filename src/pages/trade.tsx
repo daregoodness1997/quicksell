@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import React, { useState, useEffect } from 'react';
-import { Button, Modal } from '../components';
 import AppButton from '../components/button/AppButton';
 import { TradeCard } from '../components/cards';
 import SkeletalCard from '../components/cards/SkeletalCard';

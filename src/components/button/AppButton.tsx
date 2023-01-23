@@ -9,6 +9,7 @@ interface ButtonProps {
   logo?: boolean;
   onClick?: (event?: any) => void;
   loading?: boolean;
+  sx?: {};
 }
 
 const AppButton: React.FC<ButtonProps> = ({
@@ -19,28 +20,28 @@ const AppButton: React.FC<ButtonProps> = ({
   logo = true,
   onClick,
   loading,
+  sx,
 }) => {
   return (
-    <div className='btn-wrapper' onClick={onClick}>
-      <button
-        className={`btn flex ${border} ${size} ${variant}  `}
-        data-jzz-gui-player='true'
-        onClick={onClick}
-      >
-        <div className='btn-content'>
-          {logo && (
-            <>
-              {variant !== 'solid' ? (
-                <img src='assets/svg/steam-icon.svg' alt={label} />
-              ) : (
-                <img src='assets/svg/cib_steam.svg' alt={label} />
-              )}
-            </>
-          )}
-          <span>{label}</span>
-        </div>
-      </button>
-    </div>
+    <button
+      className={`btn flex ${border} ${size} ${variant}  `}
+      data-jzz-gui-player='true'
+      onClick={onClick}
+      style={sx}
+    >
+      <div className='btn-content'>
+        {logo && (
+          <>
+            {variant !== 'solid' ? (
+              <img src='assets/svg/steam-icon.svg' alt={label} />
+            ) : (
+              <img src='assets/svg/cib_steam.svg' alt={label} />
+            )}
+          </>
+        )}
+        <span>{label}</span>
+      </div>
+    </button>
   );
 };
 

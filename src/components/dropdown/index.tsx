@@ -8,7 +8,7 @@ interface DropdownProps {
     title: string;
     imgUrl?: string;
     selected: boolean;
-    icon?: React.ReactNode;
+    icon?: string;
   }[];
   resetThenSet?: () => void;
   selectedOption?: {
@@ -16,7 +16,7 @@ interface DropdownProps {
     title: string;
     imgUrl?: string;
     selected: boolean;
-    icon?: React.ReactNode;
+    icon?: string;
   };
   setSelectedOption?: any;
 }
@@ -63,7 +63,8 @@ const Dropdown: React.FC<DropdownProps> = ({
   return (
     <div className='dropdown-wrapper'>
       <button type='button' className='dropdown-header' onClick={toggleList}>
-        {selectedOption?.icon}
+        <img src={selectedOption?.icon} />
+
         <div className='dropdown-header-title'>
           <div>
             {selectedOption?.title} <img src='' alt='' />
@@ -90,7 +91,8 @@ const Dropdown: React.FC<DropdownProps> = ({
                 toggleList();
               }}
             >
-              {item?.icon} {item.title} {item.selected && 'checked'}
+              <img src={item?.icon} />
+              {item.title} {item.selected && 'checked'}
               <img src='' alt='' />
             </button>
           ))}

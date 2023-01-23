@@ -1564,22 +1564,44 @@ h6 {
     position: relative;
   }
   &-header {
-    width: 70px;
+    width: 120px;
     background-color: transparent;
     color: white;
     border: none;
     display: flex;
     align-items: center;
     cursor: pointer;
+
+    & img {
+      width: 20px;
+      border-radius: 20px;
+    }
   }
   &-list {
-    width: 120px;
+    width: 140px;
     z-index: 100;
     position: absolute;
     background-color: #191a1d;
     margin-top: 0.4rem;
-    box-shadow: 2px 2px 6px rgba(44, 44, 44, 0.6);
+    box-shadow: 2px 2px 6px rgba(44, 44, 44, 0.2);
     border-radius: 6px;
+    padding: 0.4rem;
+
+    & img {
+      width: 20px;
+      border-radius: 20px;
+    }
+
+    & .dropdown-list-item {
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      transition: all 0.2s ease-in-out;
+      margin-bottom: 0.6rem;
+      cursor: pointer;
+      &:hover {
+        background-color: #6fcf97;
+      }
+    }
 
     & button {
       background-color: transparent;

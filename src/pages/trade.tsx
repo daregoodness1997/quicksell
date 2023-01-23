@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, Modal } from '../components';
 import { TradeCard } from '../components/cards';
 import SkeletalCard from '../components/cards/SkeletalCard';
+import FlyOuts from '../components/flyouts';
 
 import AlreadySelected from '../components/modal/views/AlreadySelected';
 import PriceChanges from '../components/modal/views/PriceChanges';
@@ -80,6 +81,8 @@ const Trade = () => {
 
       {/* <AlreadySelected open={open} setOpen={setOpen} /> */}
       <Successful open={open} setOpen={setOpen} />
+      {/* <FlyOuts open={open} setOpen={setOpen} /> */}
+
       {/* <UnsuccessfulSold open={open} setOpen={setOpen} /> */}
       {/* <PriceChanges open={open} setOpen={setOpen} /> */}
       <div className='trade-global'>
@@ -114,8 +117,12 @@ const Trade = () => {
               hasGrid={false}
               className={`${display.exchange && 'show'}`}
             >
-              {display?.showExchange?.youGive && <ExchangeView />}
-              {display?.showExchange?.youGet && <ExchangeView />}
+              {display?.showExchange?.youGive && (
+                <ExchangeView label='You Give' />
+              )}
+              {display?.showExchange?.youGet && (
+                <ExchangeView label='You Get' />
+              )}
               <div className='button-group'>
                 <Button
                   label='Trade Now'

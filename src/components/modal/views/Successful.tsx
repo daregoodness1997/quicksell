@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Modal from '..';
 import Button from '../../button';
+import AppButton from '../../button/AppButton';
 interface Props {
   open: boolean;
   setOpen(value?: any): void;
@@ -26,7 +27,7 @@ const Successful: React.FC<Props> = ({ open, setOpen }) => {
         </div>
 
         <div className='button-group'>
-          <Button logo={false} label='GOTO TRADE' variant='solid' />
+          <AppButton logo={false} label='GOTO TRADE' variant='solid' />
         </div>
 
         <div className='modal-footer'>

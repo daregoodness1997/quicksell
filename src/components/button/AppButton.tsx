@@ -1,4 +1,5 @@
 import React from 'react';
+import './button.scss';
 
 interface ButtonProps {
   border?: string;
@@ -10,16 +11,34 @@ interface ButtonProps {
   loading?: boolean;
 }
 
-
-const AppButton = () => {
+const AppButton: React.FC<ButtonProps> = ({
+  border,
+  variant,
+  size,
+  label,
+  logo = true,
+  onClick,
+  loading,
+}) => {
   return (
-    <div className='btn-wrapper'>
-      <button className='btn flex' data-jzz-gui-player='true'>
-        <img
-          src='./Quicksell.store_files/img/steam-icon.svg'
-          alt='Sign in with Steam'
-        />
-        <span>Sign in with Steam</span>
+    <div className='btn-wrapper' onClick={onClick}>
+      <button
+        className={`btn flex ${border} ${size} ${variant}  `}
+        data-jzz-gui-player='true'
+        onClick={onClick}
+      >
+        <div className='btn-content'>
+          {logo && (
+            <>
+              {variant !== 'solid' ? (
+                <img src='assets/svg/steam-icon.svg' alt={label} />
+              ) : (
+                <img src='assets/svg/cib_steam.svg' alt={label} />
+              )}
+            </>
+          )}
+          <span>{label}</span>
+        </div>
       </button>
     </div>
   );

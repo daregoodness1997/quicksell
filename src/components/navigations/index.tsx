@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Button from '../button';
+import AppButton from '../button/AppButton';
 import Dropdown from '../dropdown';
 
 export const navItems = [
@@ -78,7 +79,7 @@ const TopNav: React.FC<TopNavProps> = ({ onClick, toggle }) => {
             selectedOption={selectedOption}
           />
           <div className='bottom-wrapper' style={{ position: 'sticky' }}>
-            <Button label='Sign in with Steam' />
+            <AppButton label='Sign in with Steam' />
           </div>
         </div>
       </div>

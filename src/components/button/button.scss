@@ -1,0 +1,93 @@
+.btn-wrapper {
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+}
+
+.btn {
+  position: relative;
+  padding: 9px 20px;
+  background: url(img/btn-bg.png) center center no-repeat;
+  background-size: 100% 100%;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  /*border: 2px solid #6FCF97;*/
+  border-radius: 30px;
+  border: none;
+  color: #6fcf97;
+  text-transform: uppercase;
+  min-width: 200px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  transition: all ease 0.3s;
+  gap: 2px;
+
+  &-content {
+    width: 100%;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    align-items: center;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    gap: 6px;
+  }
+
+  &.solid {
+    background: url(img/btn-bg-solid.png) center center no-repeat;
+    color: #000;
+    font-weight: bold;
+    min-width: 210px;
+    text-align: center;
+  }
+}
+.btn:before {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 12px;
+  height: 12px;
+  -webkit-transform: skew(40deg, 0deg);
+  -ms-transform: skew(40deg, 0deg);
+  transform: skew(40deg, 0deg);
+  border: 2.51957px solid #6fcf97;
+  border-radius: 1.67972px;
+  left: -10px;
+  bottom: 0px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+.btn:after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 12px;
+  height: 12px;
+  -webkit-transform: skew(40deg, 0deg);
+  -ms-transform: skew(40deg, 0deg);
+  transform: skew(40deg, 0deg);
+  border: 2.51957px solid #6fcf97;
+  border-radius: 1.67972px;
+  right: -10px;
+  top: 0px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+.btn:hover {
+  transform: scale(0.9);
+}
+.btn:hover:before,
+.btn:hover:after {
+  border-radius: 4px;
+  -webkit-transform: skew(0deg, 0deg);
+  -ms-transform: skew(0deg, 0deg);
+  transform: skew(0deg, 0deg);
+}

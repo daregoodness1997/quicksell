@@ -4,12 +4,16 @@ import { CogIcon, KeyIcon } from '../components/icons';
 import { exchangeItems } from '../utils/data';
 import EmptyExchange from './modal-views/EmptyExchange';
 
-const ExchangeView = () => {
+interface Props {
+  label?: string;
+}
+
+const ExchangeView: React.FC<Props> = ({ label }) => {
   const [empty, setEmpty] = useState(true);
   return (
     <div>
       <div className='trade-header'>
-        <h5>You Get</h5>
+        <h5>{label}</h5>
         <div className='flex'>
           <button>
             <KeyIcon /> 10 Keys

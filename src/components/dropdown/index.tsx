@@ -3,13 +3,20 @@ import { ChevronIcon } from '../icons';
 import { motion } from 'framer-motion';
 
 interface DropdownProps {
-  list: { id: string; title: string; imgUrl?: string; selected: boolean }[];
+  list: {
+    id: string;
+    title: string;
+    imgUrl?: string;
+    selected: boolean;
+    icon?: React.ReactNode;
+  }[];
   resetThenSet?: () => void;
   selectedOption?: {
     id: string;
     title: string;
     imgUrl?: string;
     selected: boolean;
+    icon?: React.ReactNode;
   };
   setSelectedOption?: any;
 }
@@ -56,6 +63,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   return (
     <div className='dropdown-wrapper'>
       <button type='button' className='dropdown-header' onClick={toggleList}>
+        {selectedOption?.icon}
         <div className='dropdown-header-title'>
           <div>
             {selectedOption?.title} <img src='' alt='' />
@@ -82,7 +90,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                 toggleList();
               }}
             >
-              {item.title} {item.selected && 'checked'}
+              {item?.icon} {item.title} {item.selected && 'checked'}
               <img src='' alt='' />
             </button>
           ))}

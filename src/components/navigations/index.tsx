@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import Button from '../button';
 import AppButton from '../button/AppButton';
 import Dropdown from '../dropdown';
 

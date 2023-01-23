@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Modal from '..';
-import Button from '../../button';
+import AppButton from '../../button/AppButton';
 import HorizontalCard from '../../cards/HorizontalCard';
 interface Props {
   open: boolean;
@@ -25,7 +25,7 @@ const PriceChanges: React.FC<Props> = ({ open, setOpen }) => {
           <HorizontalCard changes={true} />
         </div>
         <div className='button-group'>
-          <Button logo={false} label='Proceed with trade' variant='solid' />
+          <AppButton logo={false} label='Proceed with trade' variant='solid' />
         </div>
 
         <div className='modal-footer'>

@@ -25,7 +25,9 @@ const Successful: React.FC<Props> = ({ open, setOpen }) => {
           </small>
         </div>
 
-        <div className='button-group'>
+        <div
+          style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
+        >
           <AppButton logo={false} label='GOTO TRADE' variant='solid' />
         </div>
 

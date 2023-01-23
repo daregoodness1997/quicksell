@@ -10,10 +10,30 @@ interface TradeHeaderProps {
 }
 
 const tradeOptions = [
-  { id: '1', title: 'TF2', selected: false },
-  { id: '2', title: 'FR', selected: false },
-  { id: '3', title: 'RU', selected: false },
-  { id: '4', title: 'DE', selected: false },
+  {
+    id: '1',
+    title: 'TF2',
+    selected: false,
+    icon: 'assets/svg/select-icon-1.svg',
+  },
+  {
+    id: '2',
+    title: 'Steam',
+    selected: false,
+    icon: 'assets/svg/select-icon-2.svg',
+  },
+  {
+    id: '3',
+    title: 'CG:CO',
+    selected: false,
+    icon: 'assets/svg/select-icon-3.svg',
+  },
+  {
+    id: '4',
+    title: 'Rust',
+    selected: false,
+    icon: 'assets/svg/select-icon-4.svg',
+  },
 ];
 
 const TradeHeader: React.FC<TradeHeaderProps> = ({ title, onReload, type }) => {
@@ -21,7 +41,13 @@ const TradeHeader: React.FC<TradeHeaderProps> = ({ title, onReload, type }) => {
     id: string;
     title: string;
     selected: boolean;
-  }>({ id: '1', title: 'TF2', selected: false });
+    icon: string;
+  }>({
+    id: '1',
+    title: 'TF2',
+    selected: false,
+    icon: 'assets/svg/select-icon-1.svg',
+  });
   return (
     <div className='trade-heading'>
       <div className='trade-header top'>

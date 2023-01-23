@@ -20,7 +20,7 @@ export const navItems = [
 ];
 
 export const i18nOptions = [
-  { id: '1', title: 'EN', selected: false },
+  { id: '1', title: 'EN', selected: false, icon: 'img/flags/flag-en.png' },
   { id: '2', title: 'FR', selected: false },
   { id: '3', title: 'RU', selected: false },
   { id: '4', title: 'DE', selected: false },
@@ -40,7 +40,8 @@ const TopNav: React.FC<TopNavProps> = ({ onClick, toggle }) => {
     id: string;
     title: string;
     selected: boolean;
-  }>({ id: '1', title: 'EN', selected: false });
+    icon: string;
+  }>({ id: '1', title: 'EN', selected: false, icon: 'img/flags/flag-en.png' });
 
   return (
     <>

@@ -93,7 +93,6 @@ const Dropdown: React.FC<DropdownProps> = ({
             >
               <img src={item?.icon} />
               {item.title} {item.selected && 'checked'}
-              <img src='' alt='' />
             </button>
           ))}
         </motion.div>

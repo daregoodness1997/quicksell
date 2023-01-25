@@ -236,7 +236,7 @@ h6 {
 }
 
 .top-navigation {
-  padding: 0.4rem 6rem;
+  padding: 0.4rem 5rem;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -249,11 +249,10 @@ h6 {
   background: rgba(16, 17, 19, 0.6);
   backdrop-filter: blur(60px);
   -webkit-backdrop-filter: blur(60px);
-
   z-index: 100;
 
   @include tablet {
-    padding: 0.4rem 1rem;
+    padding: 0.4rem 0.6rem;
   }
   @include mobile {
     padding: 0.4rem 2rem;
@@ -265,6 +264,10 @@ h6 {
         display: none;
       }
     }
+  }
+
+  & .nav-group {
+    display: flex;
   }
 
   img {
@@ -1564,17 +1567,20 @@ h6 {
     position: relative;
   }
   &-header {
-    width: 120px;
+    width: auto;
+    min-width: 80px;
     background-color: transparent;
     color: white;
     border: none;
     display: flex;
     align-items: center;
     cursor: pointer;
+    justify-content: center;
 
     & img {
-      width: 20px;
+      width: 24px;
       border-radius: 20px;
+      margin-right: 0.32rem;
     }
   }
   &-list {
@@ -1588,10 +1594,13 @@ h6 {
     padding: 0.4rem;
 
     & .dropdown-list-item {
-      padding: 0.6rem 1.2rem;
+      padding: 0.4rem 0.6rem;
       border-radius: 6px;
       transition: all 0.2s ease-in-out;
       margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
       cursor: pointer;
       &:hover {
         background-color: #6fcf97;

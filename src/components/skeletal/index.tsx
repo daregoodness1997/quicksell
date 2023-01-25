@@ -16,8 +16,8 @@ const SkeletalLoader: React.FC<SkeletonProps> = ({ height, width, count }) => {
       enableAnimation={true}
       direction={'ltr'}
       borderRadius={'4px'}
-      baseColor={'#21232A'}
-      highlightColor={'#1A1C24'}
+      baseColor={'#1A1B1F'}
+      highlightColor={'#1f2124'}
     />
   );
 };

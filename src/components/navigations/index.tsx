@@ -71,7 +71,7 @@ const TopNav: React.FC<TopNavProps> = ({ onClick, toggle }) => {
           </nav>
         </div>
 
-        <div className='button-group'>
+        <div className='button-group nav-group'>
           {/* <div className='i18n-dropdown'>EN</div> */}
           <Dropdown
             list={i18nOptions}

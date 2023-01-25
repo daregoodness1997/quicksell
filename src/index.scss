@@ -193,6 +193,15 @@ h6 {
   justify-content: space-between;
   width: 100%;
 }
+
+.gap-2 {
+  gap: 6px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
 /* Top Navigation */
 
 .burgerBtn {

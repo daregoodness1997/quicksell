@@ -16,7 +16,7 @@ const TradeAction: React.FC<Props> = ({ onClick }) => {
       exit='exit'
       className='trade-action'
     >
-      <div className='group'>
+      <div className='group center'>
         <AppButton
           label='Trade Now'
           size='md'

@@ -5,6 +5,7 @@ import { Button } from '../components';
 import { TradeCard } from '../components/cards';
 import AuctionCard from '../components/cards/AuctionCard';
 import GiveawayCard from '../components/cards/GiveawayCard';
+import { AuctionIcon, GiveawayIcon } from '../components/icons';
 import { tradeItems } from '../utils/data';
 
 const Feautures = () => {
@@ -189,7 +190,10 @@ const Feautures = () => {
 
       <div className='sub-section'>
         <div className='trade-header'>
-          <h2>Auctions</h2>
+          <div className='flex gap-2'>
+            <AuctionIcon />
+            <h2> Auctions</h2>
+          </div>
           <p>
             You can always auction your items and get the best offers and sell
             to the highest bidder
@@ -219,7 +223,10 @@ const Feautures = () => {
 
       <div className='sub-section giveaways'>
         <div className='trade-header'>
-          <h2>Giveaways</h2>
+          <div className='flex gap-2'>
+            <GiveawayIcon />
+            <h3>Giveaways</h3>
+          </div>
           <p>
             You can enter giveaways and also give out items to the community
             that you do not need

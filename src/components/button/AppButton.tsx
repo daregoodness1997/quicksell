@@ -27,7 +27,6 @@ const AppButton: React.FC<ButtonProps> = ({
       className={`btn flex ${variant} ${border} ${size}   `}
       data-jzz-gui-player='true'
       onClick={onClick}
-      style={sx}
     >
       <div className='btn-content'>
         {logo && (

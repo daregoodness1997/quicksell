@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { ChevronIcon } from '../icons';
+import { ChevronIcon, SortIcon } from '../icons';
 import { motion } from 'framer-motion';
 
 interface DropdownProps {
-  list: { id: string; title: string; imgUrl?: string; selected: boolean }[];
   resetThenSet?: () => void;
   selectedOption?: {
     id: string;
@@ -43,8 +42,14 @@ export const animation = {
   },
 };
 
+const list = [
+  { id: '1', title: 'By Name: Desc', selected: false },
+  { id: '2', title: 'By Name: Asc', selected: false },
+  { id: '2', title: 'By Price: Desc', selected: false },
+  { id: '2', title: 'By Price: Asc', selected: false },
+];
+
 const SortDropdown: React.FC<DropdownProps> = ({
-  list,
   resetThenSet,
   setSelectedOption,
   selectedOption,
@@ -55,13 +60,8 @@ const SortDropdown: React.FC<DropdownProps> = ({
 
   return (
     <div className='dropdown-wrapper'>
-      <button type='button' className='dropdown-header' onClick={toggleList}>
-        <div className='dropdown-header-title'>
-          <div>
-            {selectedOption?.title} <img src='' alt='' />
-          </div>
-        </div>
-        <ChevronIcon />
+      <button type='button' className='dropdown-button' onClick={toggleList}>
+        <SortIcon /> Sort {selectedOption?.title}
       </button>
       {open && (
         <motion.div
@@ -70,7 +70,7 @@ const SortDropdown: React.FC<DropdownProps> = ({
           animate='visible'
           exit='exit'
           role='list'
-          className='dropdown-list'
+          className='dropdown-list sort-list'
         >
           {list.map(item => (
             <button

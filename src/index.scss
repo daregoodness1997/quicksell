@@ -255,10 +255,13 @@ h6 {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(16, 17, 19, 0.6);
   backdrop-filter: blur(60px);
   -webkit-backdrop-filter: blur(60px);
   z-index: 100;
+
+  &.blur {
+    background: rgba(16, 17, 19, 0.6);
+  }
 
   @include tablet {
     padding: 0.4rem 0.6rem;

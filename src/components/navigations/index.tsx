@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import AppButton from '../button/AppButton';
 import Dropdown from '../dropdown';
@@ -36,6 +36,8 @@ interface TopNavProps {
 const TopNav: React.FC<TopNavProps> = ({ onClick, toggle }) => {
   const hamburgerRef = useRef();
   const [menu, setMenu] = useState(false);
+  const [blur, setBlur] = useState(false);
+
   const [selectedOption, setSelectedOption] = useState<{
     id: string;
     title: string;
@@ -43,9 +45,18 @@ const TopNav: React.FC<TopNavProps> = ({ onClick, toggle }) => {
     icon: string;
   }>({ id: '1', title: 'EN', selected: false, icon: 'img/flags/flag-en.png' });
 
+  const changeBackground = () => {
+    if (window.scrollY >= 80) setBlur(true);
+    else {
+      setBlur(false);
+    }
+  };
+
+  window.addEventListener('scroll', changeBackground);
+
   return (
     <>
-      <div className='top-navigation'>
+      <div className={`top-navigation ${blur && 'blur'}`}>
         <div className={`left-navigation ${toggle ? 'navigation' : ''}`}>
           <button className='menu-btn'>
             <div id='burgerBtn' onClick={onClick}></div>

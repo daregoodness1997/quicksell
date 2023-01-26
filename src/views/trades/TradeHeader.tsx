@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Input } from '../../components';
 import Dropdown from '../../components/dropdown';
+import SortDropdown from '../../components/dropdown/sort';
+import FlyOuts from '../../components/flyouts';
 import { FilterIcon, SortIcon, ReloadIcon } from '../../components/icons';
 
 interface TradeHeaderProps {
@@ -48,36 +50,42 @@ const TradeHeader: React.FC<TradeHeaderProps> = ({ title, onReload, type }) => {
     selected: false,
     icon: 'assets/svg/select-icon-1.svg',
   });
-  return (
-    <div className='trade-heading'>
-      <div className='trade-header top'>
-        <h4>{title}</h4>
-        <button onClick={onReload} className='green'>
-          <ReloadIcon /> Reload
-        </button>
-      </div>
+  const [open, setOpen] = useState<boolean>(false);
 
-      <div className='trade-header'>
-        <Dropdown
-          list={tradeOptions}
-          setSelectedOption={setSelectedOption}
-          selectedOption={selectedOption}
-        />
-        <div className='flex filters'>
-          <div className='flex filter'>
-            <button onClick={onReload}>
-              <FilterIcon /> Filter
-            </button>
-            <button onClick={onReload}>
-              <SortIcon /> Sort
-            </button>
-          </div>
-          <div className='filter'>
-            <Input />
+  const handleOpenFilter = () => {
+    setOpen(!open);
+  };
+  return (
+    <>
+      <FlyOuts open={open} setOpen={setOpen} />
+      <div className='trade-heading'>
+        <div className='trade-header top'>
+          <h4>{title}</h4>
+          <button onClick={onReload} className='green'>
+            <ReloadIcon /> Reload
+          </button>
+        </div>
+
+        <div className='trade-header'>
+          <Dropdown
+            list={tradeOptions}
+            setSelectedOption={setSelectedOption}
+            selectedOption={selectedOption}
+          />
+          <div className='flex filters'>
+            <div className='flex filter'>
+              <button onClick={handleOpenFilter}>
+                <FilterIcon /> Filter
+              </button>
+              <SortDropdown />
+            </div>
+            <div className='filter'>
+              <Input />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

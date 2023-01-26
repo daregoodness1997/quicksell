@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CloseIcon } from '../icons';
+import DualSlider from '../dual-slider';
 
 interface ModalProps {
   open?: boolean;
@@ -12,11 +13,12 @@ interface ModalProps {
 
 export const flyoutAnimation = {
   hidden: {
-    right: '-50vw',
+    right: '-100vw',
   },
   visible: {
     scale: 1,
     opacity: 1,
+    right: 0,
     transition: {
       duration: 0.01,
       type: 'spring',
@@ -25,7 +27,7 @@ export const flyoutAnimation = {
     },
   },
   exit: {
-    right: '50vw',
+    right: '-100vw',
     opacity: 0,
     transition: {
       duration: 0.01,
@@ -45,28 +47,37 @@ const FlyOuts: React.FC<ModalProps> = ({
   return (
     <AnimatePresence>
       {open && (
-        <div className='modal-overlay'>
-          <motion.div
-            variants={flyoutAnimation}
-            initial='hidden'
-            animate='visible'
-            exit='exit'
-            className='modal-wrapper'
-          >
-            <button onClick={() => setOpen(false)} className='modal-button'>
-              <CloseIcon />
-            </button>
-            <div className='modal-header'>
-              <div className='top'>
-                <div>
-                  <h3 className={`${status}`}>{title}</h3>
-                  <p>{subTitle}</p>
-                </div>
+        <motion.div
+          variants={flyoutAnimation}
+          initial='hidden'
+          animate='visible'
+          exit='exit'
+          className='flyout-wrapper'
+        >
+          <button onClick={() => setOpen(false)} className='flyout-button'>
+            <CloseIcon />
+          </button>
+          <div className='flyout-header'>
+            <div className='top'>
+              <div>
+                <h3>Filters</h3>
+                <p>{subTitle}</p>
               </div>
             </div>
-            {children}
-          </motion.div>
-        </div>
+          </div>
+          <div>
+            <div>
+              <p className='red'>Reset Filter</p>
+              <DualSlider
+                min={0}
+                max={1000}
+                onChange={({ min, max }) =>
+                  console.log(`min = ${min}, max = ${max}`)
+                }
+              />
+            </div>
+          </div>
+        </motion.div>
       )}
     </AnimatePresence>
   );

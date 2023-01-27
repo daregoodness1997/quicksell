@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CloseIcon } from '../icons';
+import {
+  ClassIcon,
+  CloseIcon,
+  CogIcon,
+  EffectIcon,
+  KeyIcon,
+  PriceIcon,
+  QualityIcon,
+  TypeIcon,
+} from '../icons';
 import DualSlider from '../dual-slider';
+import DualRangeSlider from '../dual-slider/DualRangeSlider';
+import Accordion from '../accordion';
+import Input from '../inputs';
 
 interface ModalProps {
   open?: boolean;
@@ -30,9 +42,9 @@ export const flyoutAnimation = {
     right: '-100vw',
     opacity: 0,
     transition: {
-      duration: 0.01,
+      duration: 0.1,
       type: 'spring',
-      damping: 100,
+      damping: 500,
       stiffness: 1000,
     },
   },
@@ -66,15 +78,78 @@ const FlyOuts: React.FC<ModalProps> = ({
             </div>
           </div>
           <div>
-            <div>
-              <p className='red'>Reset Filter</p>
-              <DualSlider
-                min={0}
-                max={1000}
-                onChange={({ min, max }) =>
-                  console.log(`min = ${min}, max = ${max}`)
-                }
-              />
+            <div className='flyout-content'>
+              <p className='red' style={{ textAlign: 'right' }}>
+                Reset Filter
+              </p>
+              <div style={{ marginTop: '1rem' }}>
+                <Accordion
+                  icon={<PriceIcon />}
+                  header='Price'
+                  icon2={<KeyIcon />}
+                >
+                  <DualRangeSlider max={200} />
+                  <div
+                    style={{
+                      display: 'grid',
+                      gridTemplateColumns: '1fr 1fr',
+                      gridGap: '0.4rem',
+                      padding: '0.4rem',
+                      marginTop: '0.4rem',
+                      borderRadius: '4px',
+                    }}
+                  >
+                    <Input />
+                    <Input />
+                  </div>
+                </Accordion>
+
+                <Accordion
+                  header='Price - Metals'
+                  icon={<PriceIcon />}
+                  icon2={<CogIcon />}
+                >
+                  <DualRangeSlider max={200} />
+                  <div
+                    style={{
+                      display: 'grid',
+                      gridTemplateColumns: '1fr 1fr',
+                      gridGap: '0.4rem',
+                      padding: '0.4rem',
+                      marginTop: '0.4rem',
+                      borderRadius: '4px',
+                    }}
+                  >
+                    <Input />
+                    <Input />
+                  </div>
+                </Accordion>
+                <Accordion header='Class' icon={<ClassIcon />}>
+                  <div>Class Contentt</div>
+                </Accordion>
+                <Accordion header='Quality' icon={<QualityIcon />}>
+                  <div>Quality Content</div>
+                </Accordion>
+                <Accordion header='Type' icon={<TypeIcon />}>
+                  <div>Type Content</div>
+                </Accordion>
+                <Accordion header='Effects' icon={<EffectIcon />}>
+                  <div>Effect Content</div>
+                </Accordion>
+
+                <div className='flex start gap-2'>
+                  <input type='checkbox' />
+                  <p>Show items we don’t buy</p>
+                </div>
+                <div className='flex start gap-2'>
+                  <input type='checkbox' />
+                  <p>Show duplicates only</p>
+                </div>
+                <div className='flex start gap-2'>
+                  <input type='checkbox' />
+                  <p>Show Partner items</p>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>

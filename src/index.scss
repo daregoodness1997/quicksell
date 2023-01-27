@@ -1913,6 +1913,8 @@ h6 {
 
   &.show {
     display: block;
+    // hack for now
+    width: 92vw !important;
   }
 }
 

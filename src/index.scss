@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100&display=swap');
 // Predefined Break-points
 $desktop: 1260px;
-$tablet: 960px;
+$tablet: 1308px;
 $mobile: 480px;
 $extraSmall: 280px;
 
@@ -920,6 +920,18 @@ h6 {
   }
 }
 
+.trade-content {
+  padding: 0;
+  margin: 0;
+
+  & .box-1 {
+    &.image {
+      height: 75vh !important;
+      margin-top: -4rem;
+    }
+  }
+}
+
 .trade-card {
   padding: 1rem;
   background: #1f2124;
@@ -1835,6 +1847,9 @@ h6 {
 .menu-btn {
   @include desktop {
     display: none;
+  }
+  @include tablet {
+    display: block;
   }
 }
 

@@ -125,27 +125,27 @@ const FlyOuts: React.FC<ModalProps> = ({
                   </div>
                 </Accordion>
                 <Accordion header='Class' icon={<ClassIcon />}>
-                  <div>Class Contentt</div>
+                  <div className='accordion-content'>Class Contentt</div>
                 </Accordion>
                 <Accordion header='Quality' icon={<QualityIcon />}>
-                  <div>Quality Content</div>
+                  <div className='accordion-content'>Quality Content</div>
                 </Accordion>
                 <Accordion header='Type' icon={<TypeIcon />}>
-                  <div>Type Content</div>
+                  <div className='accordion-content'>Type Content</div>
                 </Accordion>
                 <Accordion header='Effects' icon={<EffectIcon />}>
-                  <div>Effect Content</div>
+                  <div className='accordion-content'>Effect Content</div>
                 </Accordion>
 
-                <div className='flex start gap-2'>
+                <div className='flex start gap-2 mt-4'>
                   <input type='checkbox' />
                   <p>Show items we don’t buy</p>
                 </div>
-                <div className='flex start gap-2'>
+                <div className='flex start gap-2 mt-4'>
                   <input type='checkbox' />
                   <p>Show duplicates only</p>
                 </div>
-                <div className='flex start gap-2'>
+                <div className='flex start gap-2 mt-4'>
                   <input type='checkbox' />
                   <p>Show Partner items</p>
                 </div>

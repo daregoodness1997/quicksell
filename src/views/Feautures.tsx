@@ -169,7 +169,7 @@ const Feautures = () => {
           </p>
         </div>
 
-        <div className='content flex  '>
+        <div className='content flex trade-content'>
           <div className='box-1'>
             <h3>Trade</h3>
             <p>
@@ -180,7 +180,7 @@ const Feautures = () => {
               <Button label='Trade Now' />
             </div>
           </div>
-          <div className='box-1'>
+          <div className='box-1 image'>
             <img src='assets/img/trades-mockup.png' alt='Trades Mockup' />
           </div>
         </div>

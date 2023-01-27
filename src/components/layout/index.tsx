@@ -29,7 +29,7 @@ const Layout: React.FC<Props> = ({ children }) => {
   const width = window.innerWidth;
 
   useEffect(() => {
-    const mobile = width <= 400 ? true : false;
+    const mobile = width <= 1308 ? true : false;
     setIsMobile(mobile);
   }, [setIsMobile, isMobile, window.innerWidth]);
 

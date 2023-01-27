@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CloseIcon } from '../icons';
 import DualSlider from '../dual-slider';
+import DualRangeSlider from '../dual-slider/DualRangeSlider';
+import Accordion from '../accordion';
+import Input from '../inputs';
 
 interface ModalProps {
   open?: boolean;
@@ -66,15 +69,34 @@ const FlyOuts: React.FC<ModalProps> = ({
             </div>
           </div>
           <div>
-            <div>
-              <p className='red'>Reset Filter</p>
-              <DualSlider
-                min={0}
-                max={1000}
-                onChange={({ min, max }) =>
-                  console.log(`min = ${min}, max = ${max}`)
-                }
-              />
+            <div className='flyout-content'>
+              <p className='red' style={{ textAlign: 'right' }}>
+                Reset Filter
+              </p>
+              <div style={{ marginTop: '1rem' }}>
+                <Accordion header='Price'>
+                  <DualRangeSlider max={200} />
+                  <div
+                    style={{
+                      display: 'grid',
+                      gridTemplateColumns: '1fr 1fr',
+                      gridGap: '1rem',
+                      padding: '0.6rem',
+                      marginTop: '1rem',
+                      borderRadius: '4px',
+                    }}
+                  >
+                    <Input />
+                    <Input />
+                  </div>
+                </Accordion>
+                <Accordion header='Price'>
+                  <DualRangeSlider max={200} />
+                </Accordion>
+                <Accordion header='Price'>
+                  <DualRangeSlider max={200} />
+                </Accordion>
+              </div>
             </div>
           </div>
         </motion.div>

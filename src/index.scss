@@ -194,6 +194,9 @@ h6 {
   width: 100%;
 }
 
+.start {
+  justify-content: flex-start !important;
+}
 .gap-2 {
   gap: 6px;
 }
@@ -2466,4 +2469,28 @@ h6 {
   display: grid;
   place-items: center;
   margin-bottom: 2rem;
+}
+
+// Accordioon
+.accordion {
+  &-header {
+    padding: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.4s ease-in;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & .header-title {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    &:hover {
+      background: #2d3130 !important ;
+    }
+  }
 }

@@ -26,7 +26,13 @@ const DualRangeSlider: React.FC<Props> = ({
       minValue={minValue}
       maxValue={maxValue}
       onInput={onChange}
+      ruler={false}
       style={{ border: 'none', boxShadow: 'none' }}
+      barInnerColor='#6fcf97'
+      barLeftColor='white'
+      barRightColor='white'
+      thumbLeftColor='#6fcf97'
+      thumbRightColor='#6fcf97'
     />
   );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { PlusIcon } from '../icons';
 
 interface Props {
   children: React.ReactNode;
@@ -14,17 +15,18 @@ const Accordion: React.FC<Props> = ({ children, icon, header, icon2 }) => {
   return (
     <>
       <motion.header
+        className='accordion-header'
         initial={false}
         animate={{
           backgroundColor: 'transparent',
-          color: open ? '#fff' : '#6fcf97',
-          cursor: 'pointer',
-          fontWeight: 'bold',
-          padding: '0.5rem',
+          color: open ? '#6fcf97' : '#fff',
         }}
         onClick={() => setOpen(!open)}
       >
-        {icon} {header} {icon2}
+        <div className='header-title'>
+          {icon} {header} {icon2}
+        </div>
+        <PlusIcon />
       </motion.header>
       <AnimatePresence initial={false}>
         {open && (

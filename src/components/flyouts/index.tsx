@@ -125,16 +125,80 @@ const FlyOuts: React.FC<ModalProps> = ({
                   </div>
                 </Accordion>
                 <Accordion header='Class' icon={<ClassIcon />}>
-                  <div className='accordion-content'>Class Contentt</div>
+                  <div className='accordion-content'>
+                    <div>
+                      <Input placeholder='Search here' />
+                      <div className='flex start gap-2 mt-4'>
+                        <input type='checkbox' />
+                        <p>Scout</p>
+                      </div>
+                      <div className='flex start gap-2 mt-4'>
+                        <input type='checkbox' />
+                        <p>Soldier</p>
+                      </div>
+                      <div className='flex start gap-2 mt-4'>
+                        <input type='checkbox' />
+                        <p>Sniper</p>
+                      </div>
+                    </div>
+                  </div>
                 </Accordion>
                 <Accordion header='Quality' icon={<QualityIcon />}>
-                  <div className='accordion-content'>Quality Content</div>
+                  <div className='accordion-content'>
+                    <div>
+                      <Input placeholder='Search here' />
+                      <div className='flex start gap-2 mt-4'>
+                        <input type='checkbox' />
+                        <p>Scout</p>
+                      </div>
+                      <div className='flex start gap-2 mt-4'>
+                        <input type='checkbox' />
+                        <p>Soldier</p>
+                      </div>
+                      <div className='flex start gap-2 mt-4'>
+                        <input type='checkbox' />
+                        <p>Sniper</p>
+                      </div>
+                    </div>
+                  </div>
                 </Accordion>
                 <Accordion header='Type' icon={<TypeIcon />}>
-                  <div className='accordion-content'>Type Content</div>
+                  <div className='accordion-content'>
+                    <div>
+                      <Input placeholder='Search here' />
+                      <div className='flex start gap-2 mt-4'>
+                        <input type='checkbox' />
+                        <p>Scout</p>
+                      </div>
+                      <div className='flex start gap-2 mt-4'>
+                        <input type='checkbox' />
+                        <p>Soldier</p>
+                      </div>
+                      <div className='flex start gap-2 mt-4'>
+                        <input type='checkbox' />
+                        <p>Sniper</p>
+                      </div>
+                    </div>
+                  </div>
                 </Accordion>
                 <Accordion header='Effects' icon={<EffectIcon />}>
-                  <div className='accordion-content'>Effect Content</div>
+                  <div className='accordion-content'>
+                    <div>
+                      <Input placeholder='Search here' />
+                      <div className='flex start gap-2 mt-4'>
+                        <input type='checkbox' />
+                        <p>Scout</p>
+                      </div>
+                      <div className='flex start gap-2 mt-4'>
+                        <input type='checkbox' />
+                        <p>Soldier</p>
+                      </div>
+                      <div className='flex start gap-2 mt-4'>
+                        <input type='checkbox' />
+                        <p>Sniper</p>
+                      </div>
+                    </div>
+                  </div>
                 </Accordion>
 
                 <div className='flex start gap-2 mt-4'>

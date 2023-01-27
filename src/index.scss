@@ -730,7 +730,7 @@ h6 {
   padding: 0rem 6rem;
   align-items: flex-start;
   @include tablet {
-    padding: 0rem 1rem;
+    padding: 0rem 3.2rem !important;
     width: 100vw;
   }
   @include mobile {
@@ -778,6 +778,7 @@ h6 {
     margin-top: 4rem;
     background-size: 60%;
     height: 40vh;
+    display: none;
   }
   @include mobile {
     width: 100%;
@@ -825,9 +826,11 @@ h6 {
 
   @include tablet {
     padding: 0 2rem;
+    margin-top: 32rem !important;
   }
   @include mobile {
     padding: 0 2rem;
+    margin-top: 12rem !important;
   }
 
   & .trade-box {
@@ -936,8 +939,8 @@ h6 {
   margin: 0;
 
   & .box-1 {
+    margin-top: 1.2rem;
     &.image {
-      height: 75vh !important;
       margin-top: -4rem;
     }
   }

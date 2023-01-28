@@ -1356,6 +1356,11 @@ h6 {
 
 .giveaways.giveaways {
   margin-bottom: 0;
+  margin-top: 12rem;
+
+  @include mobile {
+    margin-top: 6rem;
+  }
 }
 
 .keys.keys {

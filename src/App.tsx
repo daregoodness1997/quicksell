@@ -6,13 +6,16 @@ import 'slick-carousel/slick/slick-theme.css';
 import 'react-loading-skeleton/dist/skeleton.css';
 import 'react-accessible-accordion/dist/fancy-example.css';
 import { AnimatePresence } from 'framer-motion';
+import ProductProvider from './context/AppContext';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <AnimatePresence>
-      <AppRoute />
+      <ProductProvider>
+        <AppRoute />
+      </ProductProvider>
     </AnimatePresence>
   );
 }

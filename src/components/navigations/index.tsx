@@ -1,5 +1,7 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { ProductContext } from '../../context/AppContext';
+import { ProductContextType } from '../../types/@types.product';
 import AppButton from '../button/AppButton';
 import Dropdown from '../dropdown';
 import ProfileDropdown from '../dropdown/profile-dropdown';
@@ -37,8 +39,11 @@ interface TopNavProps {
 
 const TopNav: React.FC<TopNavProps> = ({ onClick, toggle }) => {
   const hamburgerRef = useRef();
-  const [loggedIn, setLoggedIn] = useState(false);
   const [blur, setBlur] = useState(false);
+
+  const { onLoggedIn, loggedIn } = useContext(
+    ProductContext
+  ) as ProductContextType;
 
   const [selectedOption, setSelectedOption] = useState<{
     id: string;
@@ -102,10 +107,7 @@ const TopNav: React.FC<TopNavProps> = ({ onClick, toggle }) => {
               selectedOption={selectedOption}
             />
             <div className='bottom-wrapper' style={{ position: 'sticky' }}>
-              <AppButton
-                label='Sign in with Steam'
-                onClick={() => setLoggedIn(true)}
-              />
+              <AppButton label='Sign in with Steam' onClick={onLoggedIn} />
             </div>
           </div>
         )}

@@ -14,6 +14,7 @@ interface Props {
   isMockup?: boolean;
   discount?: boolean;
   disabled?: boolean;
+  onClick?: (event?: any) => void;
 }
 
 const TradeCard: React.FC<Props> = ({
@@ -29,6 +30,7 @@ const TradeCard: React.FC<Props> = ({
   isMockup,
   discount,
   disabled,
+  onClick,
 }) => {
   const [open, setOpen] = useState(false);
   const [select, setSelect] = useState(false);
@@ -45,7 +47,10 @@ const TradeCard: React.FC<Props> = ({
         select || selectedOption?.selected ? 'selected' : 'transparent'
       }`}
       onClick={() => {
-        if (!disabled) setSelect(!select);
+        if (!disabled) {
+          setSelect(!select);
+          if (onClick) onClick();
+        }
         if (isMockup) setSelect(false);
 
         // setSelectedOption({ ...option, selected: !selectedOption?.selected });

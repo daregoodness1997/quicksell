@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import React from 'react';
 import { TradeCard } from '../components/cards';
 import { CogIcon, KeyIcon } from '../components/icons';
-import { exchangeItems } from '../utils/data';
+import { Product } from '../types/@types.product';
 import EmptyExchange from './modal-views/EmptyExchange';
 
 interface Props {
   label?: string;
+  data: Product[];
+  empty: boolean;
 }
 
-const ExchangeView: React.FC<Props> = ({ label }) => {
-  const [empty, setEmpty] = useState(true);
+const ExchangeView: React.FC<Props> = ({ label, data, empty }) => {
   return (
     <div>
       <div className='trade-header'>
@@ -28,11 +30,11 @@ const ExchangeView: React.FC<Props> = ({ label }) => {
           {empty ? (
             <EmptyExchange />
           ) : (
-            <div className='exchange-section'>
-              {exchangeItems.map(item => (
-                <TradeCard onTrade={true} {...item} />
+            <motion.div layout className='exchange-section'>
+              {data.map(item => (
+                <TradeCard onTrade={true} {...item} isMockup={true} />
               ))}
-            </div>
+            </motion.div>
           )}
         </div>
         <div className='flex'>

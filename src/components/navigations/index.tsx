@@ -2,6 +2,8 @@ import React, { useRef, useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import AppButton from '../button/AppButton';
 import Dropdown from '../dropdown';
+import ProfileDropdown from '../dropdown/profile-dropdown';
+import { BellIcon } from '../icons';
 
 export const navItems = [
   { name: 'Home', link: '/' },
@@ -35,7 +37,7 @@ interface TopNavProps {
 
 const TopNav: React.FC<TopNavProps> = ({ onClick, toggle }) => {
   const hamburgerRef = useRef();
-  const [menu, setMenu] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [blur, setBlur] = useState(false);
 
   const [selectedOption, setSelectedOption] = useState<{
@@ -82,17 +84,31 @@ const TopNav: React.FC<TopNavProps> = ({ onClick, toggle }) => {
           </nav>
         </div>
 
-        <div className='button-group nav-group'>
-          {/* <div className='i18n-dropdown'>EN</div> */}
-          <Dropdown
-            list={i18nOptions}
-            setSelectedOption={setSelectedOption}
-            selectedOption={selectedOption}
-          />
-          <div className='bottom-wrapper' style={{ position: 'sticky' }}>
-            <AppButton label='Sign in with Steam' />
+        {loggedIn ? (
+          <div className='profile-flex gap-1'>
+            <Dropdown
+              list={i18nOptions}
+              setSelectedOption={setSelectedOption}
+              selectedOption={selectedOption}
+            />
+            <BellIcon />
+            <ProfileDropdown />
           </div>
-        </div>
+        ) : (
+          <div className='button-group nav-group'>
+            <Dropdown
+              list={i18nOptions}
+              setSelectedOption={setSelectedOption}
+              selectedOption={selectedOption}
+            />
+            <div className='bottom-wrapper' style={{ position: 'sticky' }}>
+              <AppButton
+                label='Sign in with Steam'
+                onClick={() => setLoggedIn(true)}
+              />
+            </div>
+          </div>
+        )}
       </div>
       <div className={`nav-ul ${toggle ? 'navigation' : ''}`}>
         {navItems.map((item, idx) => (

@@ -50,8 +50,6 @@ const Tooltip: React.FC<TooltipProps> = ({ open, setOpen, children, name }) => {
     };
   }, []);
 
-  console.log('Mouse Position', mousePos);
-
   return (
     <AnimatePresence>
       {open && (

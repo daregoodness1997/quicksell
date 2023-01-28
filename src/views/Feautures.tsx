@@ -188,7 +188,7 @@ const Feautures = () => {
 
       {/* Auctions Section */}
 
-      <div className='sub-section'>
+      <div className='sub-section auctions'>
         <div className='trade-header'>
           <div className='flex gap-2'>
             <AuctionIcon />

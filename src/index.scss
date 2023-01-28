@@ -905,8 +905,16 @@ h6 {
     }
   }
 
+  .auctions {
+    margin: -8rem auto !important;
+
+    @include mobile {
+      margin: -4rem auto !important;
+    }
+  }
+
   & .sub-section {
-    margin: 8rem auto;
+    margin: 6rem auto;
 
     @include mobile {
       margin: 4rem auto;

@@ -49,7 +49,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className='container flex'>
+      <div className='container flex copyright'>
         <p>© 2022 QuickStore. All rights reserved.</p>
         <div className='flex gap-2'>
           <DiscordIcon />

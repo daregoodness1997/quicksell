@@ -40,7 +40,6 @@ export const flyoutAnimation = {
   },
   exit: {
     right: '-100vw',
-    opacity: 0,
     transition: {
       duration: 0.1,
       type: 'spring',

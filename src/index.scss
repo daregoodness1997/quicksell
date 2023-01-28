@@ -214,6 +214,9 @@ h6 {
 .start {
   justify-content: flex-start !important;
 }
+.gap-1 {
+  gap: 2px;
+}
 .gap-2 {
   gap: 6px;
 }
@@ -1637,6 +1640,7 @@ h6 {
     align-items: center;
     cursor: pointer;
     justify-content: center;
+    flex-wrap: nowrap;
 
     & img {
       width: 24px;
@@ -2531,5 +2535,24 @@ h6 {
   }
   &-content {
     padding: 0.8rem;
+  }
+}
+
+// Profile
+
+.profile-flex {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.profile-btn {
+  background-color: transparent;
+  display: flex;
+  border: none;
+  width: 40px;
+
+  & img {
+    width: 24px !important;
   }
 }

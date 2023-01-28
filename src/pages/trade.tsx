@@ -80,10 +80,18 @@ const Trade = () => {
   setTimeout(() => {
     setLoading(false);
   }, 4000);
+
+  const handleGive = (id: string) => addToGive(id);
+  const handleGet = (id: string) => addToGet(id);
+
   const renderOurItems = () =>
-    products.map(item => <TradeCard onTrade={true} {...item} />);
+    products.map(item => (
+      <TradeCard onTrade={true} {...item} onClick={() => handleGive(item.id)} />
+    ));
   const renderYourItems = () =>
-    products.map(item => <TradeCard onTrade={true} {...item} />);
+    products.map(item => (
+      <TradeCard onTrade={true} {...item} onClick={() => handleGet(item.id)} />
+    ));
 
   const renderMocks = () => [...Array(16)].map(() => <SkeletalCard />);
 
@@ -119,7 +127,7 @@ const Trade = () => {
               loggedIn={true}
               className={`${display.ourItems && 'show'}`}
             >
-              {loading ? renderMocks() : renderOurItems()}
+              {loading ? renderMocks() : renderYourItems()}
             </TradeSection>
           )}
           {display?.exchange && (
@@ -130,10 +138,18 @@ const Trade = () => {
               className={`${display.exchange && 'show'}`}
             >
               {display?.showExchange?.youGive && (
-                <ExchangeView label='You Give' />
+                <ExchangeView
+                  label='You Give'
+                  empty={youGive.length > 0 ? false : true}
+                  data={youGive}
+                />
               )}
               {display?.showExchange?.youGet && (
-                <ExchangeView label='You Get' />
+                <ExchangeView
+                  label='You Get'
+                  empty={youGet.length > 0 ? false : true}
+                  data={youGet}
+                />
               )}
               <div className='button-group'>
                 <AppButton

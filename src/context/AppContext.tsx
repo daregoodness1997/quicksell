@@ -60,3 +60,5 @@ const ProductProvider: React.FC<Props> = ({ children }) => {
 };
 
 export default ProductProvider;
+
+// https://blog.logrocket.com/how-to-use-react-context-typescript/

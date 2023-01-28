@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import AppButton from '../components/button/AppButton';
 import { TradeCard } from '../components/cards';
 import SkeletalCard from '../components/cards/SkeletalCard';
@@ -11,6 +11,8 @@ import Successful from '../components/modal/views/Successful';
 import UnsuccessfulSold from '../components/modal/views/UnsuccessfulSold';
 
 import UnsuccessfulTrade from '../components/modal/views/UnsuccessfulTrade';
+import { ProductContext } from '../context/AppContext';
+import { ProductContextType } from '../types/@types.product';
 import { tradeItems } from '../utils/data';
 import ExchangeView from '../views/ExchangeView';
 import TradeAction from '../views/trades/TradeAction';
@@ -28,6 +30,16 @@ const Trade = () => {
   const [view, setView] = useState(showItems);
   const [display, setDisplay] = useState(view);
   const [loading, setLoading] = useState(true);
+  const {
+    products,
+    saveProduct,
+    addToGet,
+    addToGive,
+    youGive,
+    youGet,
+    onLoggedIn,
+    loggedIn,
+  } = useContext(ProductContext) as ProductContextType;
 
   const handleTradeClick = () => {
     setOpen(true);
@@ -69,9 +81,9 @@ const Trade = () => {
     setLoading(false);
   }, 4000);
   const renderOurItems = () =>
-    tradeItems.map(item => <TradeCard onTrade={true} {...item} />);
+    products.map(item => <TradeCard onTrade={true} {...item} />);
   const renderYourItems = () =>
-    tradeItems.map(item => <TradeCard onTrade={true} {...item} />);
+    products.map(item => <TradeCard onTrade={true} {...item} />);
 
   const renderMocks = () => [...Array(16)].map(() => <SkeletalCard />);
 
@@ -89,23 +101,23 @@ const Trade = () => {
         <TradeMobileNav setDisplay={setDisplay} display={display} />
         <TradeAction onClick={handleTradeClick} />
         <motion.div className='trade-container container'>
-          {display?.ourItems && (
+          {display?.yourItems && (
             <TradeSection
               size='lg'
               title='Your Items'
               buyer={true}
-              loggedIn={true}
-              className={`${display.ourItems && 'show'}`}
+              loggedIn={loggedIn}
+              className={`${display.yourItems && 'show'}`}
             >
               {loading ? renderMocks() : renderOurItems()}
             </TradeSection>
           )}
-          {display?.yourItems && (
+          {display?.ourItems && (
             <TradeSection
               size='lg'
               title='Our Items'
               loggedIn={true}
-              className={`${display.yourItems && 'show'}`}
+              className={`${display.ourItems && 'show'}`}
             >
               {loading ? renderMocks() : renderOurItems()}
             </TradeSection>

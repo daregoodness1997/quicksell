@@ -1502,26 +1502,18 @@ h6 {
   }
   &-section {
     padding: 1rem 0;
-    &.lg {
+    &.lg.lg {
       width: 40%;
-
-      @include tablet {
-        width: 42%;
-        padding: 0.4rem;
-      }
       @include mobile {
         width: 100%;
         padding: 0.4rem;
       }
     }
 
-    &.sm {
-      width: 16%;
+    &.sm.sm {
+      width: 60% !important;
       padding: 1rem 0;
 
-      @include tablet {
-        padding: 0.4rem;
-      }
       @include mobile {
         width: 100%;
         padding: 0.4rem;

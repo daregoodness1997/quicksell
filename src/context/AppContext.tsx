@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import { ProductContextType, Product } from '../types/@types.product';
 import { tradeItems } from '../utils/data';
 
@@ -13,6 +13,8 @@ const ProductProvider: React.FC<Props> = ({ children }) => {
   const [youGive, setYouGive] = useState<Product[]>([]);
   const [youGet, setYouGet] = useState<Product[]>([]);
   const [loggedIn, setLoggedIn] = useState<boolean>(false);
+  const [givecalculate, setGiveCalculate] = useState({});
+  const [getcalculate, setGetCalculate] = useState({});
 
   const saveProduct = (product: Product) => {
     const newProduct: Product = {
@@ -37,6 +39,22 @@ const ProductProvider: React.FC<Props> = ({ children }) => {
     });
   };
 
+  const calculateRefKeys = (data: Product[]) => {
+    let refs = 0;
+    let keys = 0;
+    for (let element of data) {
+      refs = refs + Number(element?.refs);
+      keys = keys + Number(element?.keys);
+    }
+
+    return { refs, keys };
+  };
+
+  useEffect(() => {
+    setGiveCalculate(calculateRefKeys(youGive));
+    setGetCalculate(calculateRefKeys(youGet));
+  }, [youGive, youGet]);
+
   const onLoggedIn = () => {
     setLoggedIn(true);
   };
@@ -52,6 +70,8 @@ const ProductProvider: React.FC<Props> = ({ children }) => {
         youGet,
         onLoggedIn,
         loggedIn,
+        givecalculate,
+        getcalculate,
       }}
     >
       {children}

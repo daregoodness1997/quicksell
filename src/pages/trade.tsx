@@ -39,6 +39,8 @@ const Trade = () => {
     youGet,
     onLoggedIn,
     loggedIn,
+    givecalculate,
+    getcalculate,
   } = useContext(ProductContext) as ProductContextType;
 
   const handleTradeClick = () => {
@@ -107,7 +109,7 @@ const Trade = () => {
       {/* <PriceChanges open={open} setOpen={setOpen} /> */}
       <div className='trade-global'>
         <TradeMobileNav setDisplay={setDisplay} display={display} />
-        <TradeAction onClick={handleTradeClick} />
+        {loggedIn && <TradeAction onClick={handleTradeClick} />}
         <motion.div className='trade-container container'>
           {display?.yourItems && (
             <TradeSection
@@ -142,6 +144,8 @@ const Trade = () => {
                   label='You Give'
                   empty={youGive.length > 0 ? false : true}
                   data={youGive}
+                  keys={givecalculate.keys}
+                  refs={givecalculate.refs}
                 />
               )}
               {display?.showExchange?.youGet && (
@@ -149,6 +153,8 @@ const Trade = () => {
                   label='You Get'
                   empty={youGet.length > 0 ? false : true}
                   data={youGet}
+                  keys={getcalculate.keys}
+                  refs={getcalculate.refs}
                 />
               )}
               <div className='button-group'>

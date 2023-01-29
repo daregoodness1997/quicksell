@@ -9,19 +9,21 @@ interface Props {
   label?: string;
   data: Product[];
   empty: boolean;
+  keys?: any;
+  refs?: any;
 }
 
-const ExchangeView: React.FC<Props> = ({ label, data, empty }) => {
+const ExchangeView: React.FC<Props> = ({ label, data, empty, keys, refs }) => {
   return (
     <div>
       <div className='trade-header'>
         <h5>{label}</h5>
         <div className='flex'>
           <button>
-            <KeyIcon /> 10 Keys
+            <KeyIcon /> {keys} Keys
           </button>
           <button>
-            <CogIcon /> Refs
+            <CogIcon /> {refs} Refs
           </button>
         </div>
       </div>

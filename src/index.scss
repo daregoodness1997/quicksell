@@ -2070,12 +2070,17 @@ h6 {
     // position: relative;
 
     width: 80px;
+
+    @include mobile {
+      width: 95%;
+    }
   }
+
   & .list {
     height: 100px;
 
     & img {
-      width: 100%;
+      width: 80%;
       height: 40px;
       border-radius: 4px;
     }
@@ -2088,7 +2093,7 @@ h6 {
     }
 
     & p {
-      font-size: 0.4rem;
+      font-size: 0.6rem;
       margin: 0;
     }
     & h3 {

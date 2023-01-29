@@ -11,9 +11,17 @@ interface Props {
   empty: boolean;
   keys?: any;
   refs?: any;
+  onClear?: (e?: any) => void;
 }
 
-const ExchangeView: React.FC<Props> = ({ label, data, empty, keys, refs }) => {
+const ExchangeView: React.FC<Props> = ({
+  label,
+  data,
+  empty,
+  keys,
+  refs,
+  onClear,
+}) => {
   return (
     <div>
       <div className='trade-header'>
@@ -41,7 +49,9 @@ const ExchangeView: React.FC<Props> = ({ label, data, empty, keys, refs }) => {
         </div>
         <div className='flex'>
           <button>Auto Select</button>
-          <button className='red'>Clear Items</button>
+          <button className='red' onClick={onClear}>
+            Clear Items
+          </button>
         </div>
       </div>
     </div>

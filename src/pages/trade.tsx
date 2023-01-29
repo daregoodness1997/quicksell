@@ -41,6 +41,8 @@ const Trade = () => {
     loggedIn,
     givecalculate,
     getcalculate,
+    clearGet,
+    clearGive,
   } = useContext(ProductContext) as ProductContextType;
 
   const handleTradeClick = () => {
@@ -146,6 +148,7 @@ const Trade = () => {
                   data={youGive}
                   keys={givecalculate.keys}
                   refs={givecalculate.refs}
+                  onClear={clearGive}
                 />
               )}
               {display?.showExchange?.youGet && (
@@ -155,6 +158,7 @@ const Trade = () => {
                   data={youGet}
                   keys={getcalculate.keys}
                   refs={getcalculate.refs}
+                  onClear={clearGet}
                 />
               )}
               <div className='button-group'>

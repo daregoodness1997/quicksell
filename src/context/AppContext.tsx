@@ -50,6 +50,13 @@ const ProductProvider: React.FC<Props> = ({ children }) => {
     return { refs, keys };
   };
 
+  const clearGet = () => {
+    setYouGet([]);
+  };
+  const clearGive = () => {
+    setYouGive([]);
+  };
+
   useEffect(() => {
     setGiveCalculate(calculateRefKeys(youGive));
     setGetCalculate(calculateRefKeys(youGet));
@@ -72,6 +79,8 @@ const ProductProvider: React.FC<Props> = ({ children }) => {
         loggedIn,
         givecalculate,
         getcalculate,
+        clearGet,
+        clearGive,
       }}
     >
       {children}

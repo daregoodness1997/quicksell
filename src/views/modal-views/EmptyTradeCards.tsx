@@ -15,7 +15,7 @@ const EmptyTradeCards = () => {
       </div>
 
       <img src='img/steps.png' className='step-img' />
-      <div className='button-group' style={{ marginTop: '1rem' }}>
+      <div style={{ marginTop: '1rem' }}>
         <AppButton
           label='Signin'
           size='md'

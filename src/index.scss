@@ -1545,7 +1545,7 @@ h6 {
       padding: 1rem 0;
 
       @include mobile {
-        width: 100%;
+        width: 100% !important;
         padding: 0.4rem;
       }
     }
@@ -2035,6 +2035,10 @@ h6 {
     grid-gap: 0.2rem;
   }
 }
+
+.exchange-container {
+  width: 93vw !important;
+}
 .exchange-wrapper {
   margin-bottom: 0.9rem;
 
@@ -2066,12 +2070,17 @@ h6 {
     // position: relative;
 
     width: 80px;
+
+    @include mobile {
+      width: 95%;
+    }
   }
+
   & .list {
     height: 100px;
 
     & img {
-      width: 100%;
+      width: 80%;
       height: 40px;
       border-radius: 4px;
     }
@@ -2084,7 +2093,7 @@ h6 {
     }
 
     & p {
-      font-size: 0.4rem;
+      font-size: 0.6rem;
       margin: 0;
     }
     & h3 {

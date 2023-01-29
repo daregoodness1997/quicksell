@@ -9,19 +9,29 @@ interface Props {
   label?: string;
   data: Product[];
   empty: boolean;
+  keys?: any;
+  refs?: any;
+  onClear?: (e?: any) => void;
 }
 
-const ExchangeView: React.FC<Props> = ({ label, data, empty }) => {
+const ExchangeView: React.FC<Props> = ({
+  label,
+  data,
+  empty,
+  keys,
+  refs,
+  onClear,
+}) => {
   return (
     <div>
       <div className='trade-header'>
         <h5>{label}</h5>
         <div className='flex'>
           <button>
-            <KeyIcon /> 10 Keys
+            <KeyIcon /> {keys} Keys
           </button>
           <button>
-            <CogIcon /> Refs
+            <CogIcon /> {refs} Refs
           </button>
         </div>
       </div>
@@ -39,7 +49,9 @@ const ExchangeView: React.FC<Props> = ({ label, data, empty }) => {
         </div>
         <div className='flex'>
           <button>Auto Select</button>
-          <button className='red'>Clear Items</button>
+          <button className='red' onClick={onClear}>
+            Clear Items
+          </button>
         </div>
       </div>
     </div>

@@ -14,6 +14,7 @@ interface Props {
   isMockup?: boolean;
   discount?: boolean;
   disabled?: boolean;
+  isExchange?: boolean;
   onClick?: (event?: any) => void;
 }
 
@@ -31,6 +32,7 @@ const TradeCard: React.FC<Props> = ({
   discount,
   disabled,
   onClick,
+  isExchange,
 }) => {
   const [open, setOpen] = useState(false);
   const [select, setSelect] = useState(false);
@@ -67,7 +69,7 @@ const TradeCard: React.FC<Props> = ({
       <div
         className={`card trade-card ${onTrade && 'list'} ${
           isMockup && 'mock'
-        } ${disabled && 'disabled'}  `}
+        } ${disabled && 'disabled'} ${isExchange && 'item-exchange'}  `}
       >
         {discount && <div className='discount'>-125%</div>}
         <img src={imageUrl || 'assets/img/qc-logo.png'} alt='' />

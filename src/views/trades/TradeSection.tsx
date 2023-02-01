@@ -55,7 +55,11 @@ const TradeSection: React.FC<TradeSectionProps> = ({
                 {children}
               </motion.div>
               {buyer && (
-                <motion.div layout className='trade-section-footer'>
+                <motion.div
+                  layout
+                  className='trade-section-footer'
+                  style={{ opacity: 0.2 }}
+                >
                   <h4>Your Items are worth</h4>
                   <div className='flex'>
                     <button className='icon'>

@@ -32,12 +32,10 @@ const Trade = () => {
   const [loading, setLoading] = useState(true);
   const {
     products,
-    saveProduct,
     addToGet,
     addToGive,
     youGive,
     youGet,
-    onLoggedIn,
     loggedIn,
     givecalculate,
     getcalculate,

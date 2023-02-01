@@ -42,7 +42,7 @@ const ExchangeView: React.FC<Props> = ({
           ) : (
             <motion.div layout className='exchange-section'>
               {data.map(item => (
-                <TradeCard onTrade={true} {...item} isMockup={true} />
+                <TradeCard onTrade={true} {...item} isExchange={true} />
               ))}
             </motion.div>
           )}

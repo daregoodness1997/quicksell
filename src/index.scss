@@ -92,6 +92,9 @@ input[type='checkbox']:checked {
   color: #6fcf97;
 }
 
+input:focus {
+  outline: 1px solid #6fcf97 !important;
+}
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -106,8 +109,9 @@ h1 {
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #6fcf97;
   border-radius: 4px;
+  background-color: transparent;
+  border-top: 60px solid #6fcf97;
 }
 
 @media (prefers-color-scheme: light) {
@@ -350,12 +354,15 @@ h6 {
   display: inline-block;
   padding: 10px;
   transition: color 200ms ease-in-out;
-  font-size: 90%;
+  font-size: 70%;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 .nav-item-active {
   color: #6fcf97;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 .nav-item:hover {
@@ -1005,6 +1012,10 @@ h6 {
 
   &.mock {
     background: #32323a;
+    margin-right: 1rem;
+  }
+  &.item-exchange {
+    background: #1f2124;
     margin-right: 1rem;
   }
 
@@ -1691,7 +1702,6 @@ h6 {
 
     & .dropdown-list-item {
       padding: 0.4rem 0.6rem;
-      border-radius: 6px;
       transition: all 0.2s ease-in-out;
       margin-bottom: 0.6rem;
       display: flex;
@@ -2227,7 +2237,6 @@ h6 {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 2000;
   }
 
   &-wrapper {
@@ -2240,7 +2249,7 @@ h6 {
     right: 0;
     bottom: 0;
     width: 320px;
-    z-index: 2000;
+    z-index: 20000;
 
     @include mobile {
       width: 90%;

@@ -284,10 +284,10 @@ h6 {
   right: 0;
   backdrop-filter: blur(60px);
   -webkit-backdrop-filter: blur(60px);
-  z-index: 100;
+  z-index: 10000;
 
   &.blur {
-    background: rgba(16, 17, 19, 0.6);
+    background: rgba(16, 17, 19, 0.25);
   }
 
   @include tablet {
@@ -1528,7 +1528,7 @@ h6 {
     padding: 1rem 0;
 
     &::-webkit-scrollbar {
-      display: none;
+      // display: none;
     }
     &.lg.lg {
       width: 40%;
@@ -1969,7 +1969,7 @@ h6 {
 
 .trade-section {
   & .trade-heading {
-    background-color: rgba(22, 23, 27, 0.4);
+    // background-color: rgba(22, 23, 27, 0.4);
     backdrop-filter: blur(60px);
     -webkit-backdrop-filter: blur(60px);
     position: sticky;

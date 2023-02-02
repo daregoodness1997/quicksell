@@ -16,7 +16,7 @@ const tradeOptions = [
     id: '1',
     title: 'TF2',
     selected: false,
-    icon: 'assets/svg/select-icon-1.svg',
+    icon: 'assets/svg/tf2.svg',
   },
   {
     id: '2',
@@ -48,7 +48,7 @@ const TradeHeader: React.FC<TradeHeaderProps> = ({ title, onReload, type }) => {
     id: '1',
     title: 'TF2',
     selected: false,
-    icon: 'assets/svg/select-icon-1.svg',
+    icon: 'assets/svg/tf2.svg',
   });
   const [open, setOpen] = useState<boolean>(false);
 
@@ -80,7 +80,7 @@ const TradeHeader: React.FC<TradeHeaderProps> = ({ title, onReload, type }) => {
               <SortDropdown />
             </div>
             <div className='filter'>
-              <Input />
+              <Input placeholder='Search' />
             </div>
           </div>
         </div>

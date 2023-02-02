@@ -83,7 +83,6 @@ const SortDropdown: React.FC<DropdownProps> = ({
               }}
             >
               {item.title} {item.selected && 'checked'}
-              <img src='' alt='' />
             </button>
           ))}
         </motion.div>

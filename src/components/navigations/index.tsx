@@ -25,9 +25,9 @@ export const navItems = [
 
 export const i18nOptions = [
   { id: '1', title: 'EN', selected: false, icon: 'img/flags/flag-en.png' },
-  { id: '2', title: 'FR', selected: false },
-  { id: '3', title: 'RU', selected: false },
-  { id: '4', title: 'DE', selected: false },
+  { id: '2', title: 'FR', selected: false, icon: 'img/flags/flag-fr.png' },
+  { id: '3', title: 'RU', selected: false, icon: 'img/flags/flag-ru.png' },
+  { id: '4', title: 'DE', selected: false, icon: 'img/flags/flag-de.png' },
 ];
 
 let activeClassName = 'nav-item-active';
@@ -70,7 +70,7 @@ const TopNav: React.FC<TopNavProps> = ({ onClick, toggle }) => {
           </button>
 
           <Link to='/'>
-            <img src='assets/img/qc-logo.png' className='logo' />
+            <img src='assets/svg/qc-logo.svg' className='logo' />
           </Link>
           <nav>
             {navItems.map((item, idx) => (

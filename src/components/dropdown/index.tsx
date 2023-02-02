@@ -66,9 +66,7 @@ const Dropdown: React.FC<DropdownProps> = ({
         <img src={selectedOption?.icon} />
 
         <div className='dropdown-header-title'>
-          <div>
-            {selectedOption?.title} <img src='' alt='' />
-          </div>
+          <div>{selectedOption?.title}</div>
         </div>
         <ChevronIcon />
       </button>

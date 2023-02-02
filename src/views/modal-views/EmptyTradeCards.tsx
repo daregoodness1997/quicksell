@@ -17,7 +17,7 @@ const EmptyTradeCards = () => {
       <img src='img/steps.png' className='step-img' />
       <div style={{ marginTop: '1rem' }}>
         <AppButton
-          label='Signin'
+          label='Signin with Steam'
           size='md'
           variant='solid'
           onClick={onLoggedIn}

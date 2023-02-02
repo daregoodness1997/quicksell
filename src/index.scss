@@ -1696,6 +1696,12 @@ h6 {
     border-radius: 6px;
     padding: 0.4rem;
 
+    & img {
+      width: 24px;
+      border-radius: 20px;
+      margin-right: 0.32rem;
+    }
+
     &.sort-list {
       width: 200px;
     }
@@ -2484,7 +2490,7 @@ h6 {
     padding: 0.1rem !important;
   }
   &-card-wrapper {
-    transition: all 0.5s ease-in-out;
+    transition: all 0.1s ease-in-out;
     position: relative;
     border-radius: 8px;
 

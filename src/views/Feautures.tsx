@@ -183,6 +183,14 @@ const Feautures = () => {
           <div className='box-1 image'>
             <img src='assets/img/trades-mockup.png' alt='Trades Mockup' />
           </div>
+
+          {/* Montages */}
+          <div className='montage left'>
+            <img src='img/montage-left.png' />
+          </div>
+          <div className='montage right'>
+            <img src='img/montage-right.png' />
+          </div>
         </div>
       </div>
 

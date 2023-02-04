@@ -80,7 +80,7 @@ const TradeHeader: React.FC<TradeHeaderProps> = ({ title, onReload, type }) => {
               <SortDropdown />
             </div>
             <div className='filter'>
-              <Input placeholder='Search' />
+              <Input placeholder='Search' hasSearch={true} />
             </div>
           </div>
         </div>

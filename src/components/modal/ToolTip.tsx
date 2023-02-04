@@ -8,6 +8,8 @@ interface TooltipProps {
   children?: React.ReactNode;
   name?: string;
   status?: 'pending' | 'failed' | 'complete';
+  refs?: any;
+  keys?: any;
 }
 const TooltipAnimation = {
   hidden: {

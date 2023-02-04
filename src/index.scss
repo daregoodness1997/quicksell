@@ -224,6 +224,9 @@ h6 {
   width: 100%;
 }
 
+.align-center {
+  align-items: center;
+}
 .start {
   justify-content: flex-start !important;
 }
@@ -2389,8 +2392,8 @@ h6 {
     @include mobile {
       width: 80%;
       left: 50% !important;
-      top: 50% !important;
-      transform: translate(-50%, 50%) !important;
+      top: 30% !important;
+      transform: translate(-50%, 0%) !important;
     }
   }
 

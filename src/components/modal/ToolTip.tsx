@@ -8,8 +8,8 @@ interface TooltipProps {
   children?: React.ReactNode;
   name?: string;
   status?: 'pending' | 'failed' | 'complete';
-  refs?: any;
-  keys?: any;
+  refs: any;
+  keys: any;
 }
 const TooltipAnimation = {
   hidden: {
@@ -38,7 +38,14 @@ const TooltipAnimation = {
   },
 };
 
-const Tooltip: React.FC<TooltipProps> = ({ open, setOpen, children, name }) => {
+const Tooltip: React.FC<TooltipProps> = ({
+  open,
+  setOpen,
+  children,
+  name,
+  keys,
+  refs,
+}) => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   useEffect(() => {
     const handleMouseMove = (event: any) => {
@@ -66,10 +73,35 @@ const Tooltip: React.FC<TooltipProps> = ({ open, setOpen, children, name }) => {
           <div className='tooltip-header'>
             <h4>{name}</h4>
           </div>
-          <p>
-            You have <span>443 Keys</span> available! Select some items and
-            currency will automatically be added to the trade
-          </p>
+          <div>
+            <h3>
+              {keys} Keys {refs} Refs
+            </h3>
+            <p style={{ marginTop: '-0.75rem' }}>
+              {keys * 1 - 4} Keys and {refs * 1 - 4} Ref with our bonus
+            </p>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0px' }}>
+            <div className='flex space-between align-center'>
+              <h5>Class</h5>
+              <p>Heavy</p>
+            </div>
+            <div className='flex space-between align-center'>
+              <h5>Hallowen Spell</h5>
+              <p>Special Spectrum</p>
+            </div>
+            <div className='flex space-between align-center'>
+              <h5>Sheen</h5>
+              <p>Villianous Violet</p>
+            </div>
+            <div
+              className='flex space-between align-center'
+              style={{ marginTop: '-0.5rem' }}
+            >
+              <h5>Kill Streaker</h5>
+              <p>Incirator</p>
+            </div>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>

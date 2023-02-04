@@ -62,7 +62,13 @@ const TradeCard: React.FC<Props> = ({
       }}
       onMouseLeave={handleMousLeave}
     >
-      <Tooltip open={open} setOpen={setOpen} name={name}>
+      <Tooltip
+        open={open}
+        setOpen={setOpen}
+        name={name}
+        keys={keys}
+        refs={refs}
+      >
         <p>Test Modal</p>
       </Tooltip>
 

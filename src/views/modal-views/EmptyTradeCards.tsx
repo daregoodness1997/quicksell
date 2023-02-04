@@ -14,7 +14,7 @@ const EmptyTradeCards = () => {
         <p>Select some items first</p>
       </div>
 
-      <img src='img/steps.png' className='step-img' />
+      <img src='img/Steps.svg' className='step-img' />
       <div style={{ marginTop: '1rem' }}>
         <AppButton
           label='Signin with Steam'

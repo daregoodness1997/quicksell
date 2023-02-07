@@ -89,11 +89,11 @@ button {
 }
 
 input[type='checkbox']:checked {
-  color: #6fcf97;
+  accent-color: #6fcf97;
 }
 
 input:focus {
-  outline: 1px solid #6fcf97 !important;
+  outline: 1px solid #2a6d46 !important;
 }
 h1 {
   font-size: 3.2em;
@@ -101,7 +101,7 @@ h1 {
 }
 
 *::-webkit-scrollbar {
-  width: 9px;
+  width: 6px;
 }
 
 /* Track */
@@ -129,6 +129,11 @@ h1 {
 
 * {
   box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+  padding: 0;
 }
 
 @mixin tablet {

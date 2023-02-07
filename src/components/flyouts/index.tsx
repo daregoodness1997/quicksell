@@ -14,6 +14,7 @@ import DualSlider from '../dual-slider';
 import DualRangeSlider from '../dual-slider/DualRangeSlider';
 import Accordion from '../accordion';
 import Input from '../inputs';
+import PriceInput from '../inputs/PriceInput';
 
 interface ModalProps {
   open?: boolean;
@@ -98,8 +99,8 @@ const FlyOuts: React.FC<ModalProps> = ({
                       borderRadius: '4px',
                     }}
                   >
-                    <Input />
-                    <Input />
+                    <PriceInput price label='Keys' />
+                    <PriceInput price label='Refs' />
                   </div>
                 </Accordion>
 
@@ -119,14 +120,14 @@ const FlyOuts: React.FC<ModalProps> = ({
                       borderRadius: '4px',
                     }}
                   >
-                    <Input />
-                    <Input />
+                    <PriceInput price label='Keys' />
+                    <PriceInput price label='Refs' />
                   </div>
                 </Accordion>
                 <Accordion header='Class' icon={<ClassIcon />}>
                   <div className='accordion-content'>
                     <div>
-                      <Input placeholder='Search here' />
+                      <Input placeholder='Search here' hasSearch />
                       <div className='flex start gap-2 mt-4'>
                         <input type='checkbox' />
                         <p>Scout</p>
@@ -145,7 +146,7 @@ const FlyOuts: React.FC<ModalProps> = ({
                 <Accordion header='Quality' icon={<QualityIcon />}>
                   <div className='accordion-content'>
                     <div>
-                      <Input placeholder='Search here' />
+                      <Input placeholder='Search here' hasSearch />
                       <div className='flex start gap-2 mt-4'>
                         <input type='checkbox' />
                         <p>Scout</p>
@@ -164,7 +165,7 @@ const FlyOuts: React.FC<ModalProps> = ({
                 <Accordion header='Type' icon={<TypeIcon />}>
                   <div className='accordion-content'>
                     <div>
-                      <Input placeholder='Search here' />
+                      <Input placeholder='Search here' hasSearch />
                       <div className='flex start gap-2 mt-4'>
                         <input type='checkbox' />
                         <p>Scout</p>
@@ -183,7 +184,7 @@ const FlyOuts: React.FC<ModalProps> = ({
                 <Accordion header='Effects' icon={<EffectIcon />}>
                   <div className='accordion-content'>
                     <div>
-                      <Input placeholder='Search here' />
+                      <Input placeholder='Search here' hasSearch />
                       <div className='flex start gap-2 mt-4'>
                         <input type='checkbox' />
                         <p>Scout</p>

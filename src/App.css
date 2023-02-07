@@ -15,3 +15,13 @@
     animation: App-logo-spin infinite 1.2s linear;
   }
 }
+
+.multi-range-slider .thumb::before {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.multi-range-slider .bar-inner {
+  border: none !important;
+  box-shadow: none !important;
+}

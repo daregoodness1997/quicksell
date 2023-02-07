@@ -81,25 +81,67 @@ const Tooltip: React.FC<TooltipProps> = ({
               {keys * 1 - 4} Keys and {refs * 1 - 4} Ref with our bonus
             </p>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0px' }}>
-            <div className='flex space-between align-center'>
-              <h5>Class</h5>
-              <p>Heavy</p>
-            </div>
-            <div className='flex space-between align-center'>
-              <h5>Hallowen Spell</h5>
-              <p>Special Spectrum</p>
-            </div>
-            <div className='flex space-between align-center'>
-              <h5>Sheen</h5>
-              <p>Villianous Violet</p>
+          <div
+            style={{
+              padding: '0px ',
+              margin: '0px ',
+            }}
+          >
+            <div
+              style={{
+                padding: '4px 0px',
+                margin: '0px ',
+                fontSize: '12px',
+                lineHeight: '12px',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}
+            >
+              <span>Class</span>
+              <span>Heavy</span>
             </div>
             <div
-              className='flex space-between align-center'
-              style={{ marginTop: '-0.5rem' }}
+              style={{
+                padding: '4px 0px',
+                margin: '0px ',
+                fontSize: '12px',
+                lineHeight: '12px',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}
             >
-              <h5>Kill Streaker</h5>
-              <p>Incirator</p>
+              <span>Hallowen Spell</span>
+              <span>Special Spectrum</span>
+            </div>
+            <div
+              style={{
+                padding: '4px 0px',
+                margin: '0px ',
+                fontSize: '12px',
+                lineHeight: '12px',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}
+            >
+              <span>Sheen</span>
+              <span>Villianous Violet</span>
+            </div>
+            <div
+              style={{
+                padding: '4px 0px',
+                margin: '0px ',
+                fontSize: '12px',
+                lineHeight: '12px',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}
+            >
+              <span>Kill Streaker</span>
+              <span>Incirator</span>
             </div>
           </div>
         </motion.div>

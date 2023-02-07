@@ -89,11 +89,11 @@ button {
 }
 
 input[type='checkbox']:checked {
-  color: #6fcf97;
+  accent-color: #6fcf97;
 }
 
 input:focus {
-  outline: 1px solid #6fcf97 !important;
+  outline: 1px solid #2a6d46 !important;
 }
 h1 {
   font-size: 3.2em;
@@ -101,17 +101,20 @@ h1 {
 }
 
 *::-webkit-scrollbar {
-  width: 0.4em;
+  width: 6px;
 }
 
+/* Track */
 *::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.3);
+  border: 4px solid transparent;
+  background-clip: content-box; // this is important
 }
 
+/* Handle */
 *::-webkit-scrollbar-thumb {
-  border-radius: 4px;
-  background-color: transparent;
-  border-top: 60px solid #6fcf97;
+  background: #6fcf97;
+  border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 @media (prefers-color-scheme: light) {
@@ -126,6 +129,11 @@ h1 {
 
 * {
   box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+  padding: 0;
 }
 
 @mixin tablet {
@@ -198,6 +206,19 @@ h6 {
 .form-control {
   width: 100%;
   position: relative;
+  &-price {
+    & span {
+      position: relative;
+      top: 28px;
+      left: 16px;
+      z-index: 20px;
+      font-size: 70%;
+      font-weight: 500;
+    }
+    & .input {
+      padding: 1.3rem 1rem 0.55rem !important;
+    }
+  }
 }
 
 .search-icon {
@@ -1573,7 +1594,7 @@ h6 {
 
     &.sm.sm {
       width: 60% !important;
-      padding: 1rem 0;
+      padding: 1rem;
 
       @include mobile {
         width: 100% !important;
@@ -2009,6 +2030,7 @@ h6 {
 .trade-section {
   & .trade-heading {
     // background-color: rgba(22, 23, 27, 0.4);
+    background-color: transparent;
     backdrop-filter: blur(60px);
     -webkit-backdrop-filter: blur(60px);
     position: sticky;
@@ -2052,6 +2074,7 @@ h6 {
 }
 
 .trade-global {
+  width: 100%;
   @include mobile {
     position: absolute;
     top: 75px;
@@ -2568,16 +2591,17 @@ h6 {
   height: 160px;
   background-color: #1f2124;
   border-radius: 4px;
-  padding: 1rem 3rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 1.4rem 0;
   opacity: 0.6;
+  text-align: center;
 
   & h3 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
   }
 

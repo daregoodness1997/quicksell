@@ -206,6 +206,19 @@ h6 {
 .form-control {
   width: 100%;
   position: relative;
+  &-price {
+    & span {
+      position: relative;
+      top: 28px;
+      left: 16px;
+      z-index: 20px;
+      font-size: 70%;
+      font-weight: 500;
+    }
+    & .input {
+      padding: 1.3rem 1rem 0.55rem !important;
+    }
+  }
 }
 
 .search-icon {

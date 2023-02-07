@@ -3,11 +3,19 @@ import { SearchIcon } from '../icons';
 interface Props {
   placeholder?: string;
   hasSearch?: boolean;
+  price?: boolean;
+  label?: string;
 }
 
-const Input: React.FC<Props> = ({ placeholder, hasSearch }) => {
+const PriceInput: React.FC<Props> = ({
+  placeholder,
+  hasSearch,
+  price,
+  label,
+}) => {
   return (
-    <div className={`form-control `}>
+    <div className={`form-control-price`}>
+      {price && <span>{label}</span>}
       <input className='input' placeholder={placeholder} />
       {hasSearch && (
         <div className='search-icon'>
@@ -18,4 +26,4 @@ const Input: React.FC<Props> = ({ placeholder, hasSearch }) => {
   );
 };
 
-export default Input;
+export default PriceInput;

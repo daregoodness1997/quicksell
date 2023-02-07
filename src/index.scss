@@ -1567,7 +1567,7 @@ h6 {
     padding: 1rem 0;
 
     &::-webkit-scrollbar {
-      // display: none;
+      display: none;
     }
     &.lg.lg {
       width: 40%;
@@ -1581,7 +1581,7 @@ h6 {
 
     &.sm.sm {
       width: 60% !important;
-      padding: 1rem 0;
+      padding: 1rem;
 
       @include mobile {
         width: 100% !important;
@@ -2061,6 +2061,7 @@ h6 {
 }
 
 .trade-global {
+  width: 100%;
   @include mobile {
     position: absolute;
     top: 75px;

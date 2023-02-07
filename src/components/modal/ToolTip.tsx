@@ -83,13 +83,13 @@ const Tooltip: React.FC<TooltipProps> = ({
           </div>
           <div
             style={{
-              padding: '0px ',
+              padding: '6px 0  ',
               margin: '0px ',
             }}
           >
             <div
               style={{
-                padding: '4px 0px',
+                padding: '6px 0px',
                 margin: '0px ',
                 fontSize: '12px',
                 lineHeight: '12px',
@@ -98,12 +98,12 @@ const Tooltip: React.FC<TooltipProps> = ({
                 alignItems: 'center',
               }}
             >
-              <span>Class</span>
+              <span style={{ fontWeight: '600' }}>Class</span>
               <span>Heavy</span>
             </div>
             <div
               style={{
-                padding: '4px 0px',
+                padding: '6px 0px',
                 margin: '0px ',
                 fontSize: '12px',
                 lineHeight: '12px',
@@ -112,12 +112,12 @@ const Tooltip: React.FC<TooltipProps> = ({
                 alignItems: 'center',
               }}
             >
-              <span>Hallowen Spell</span>
+              <span style={{ fontWeight: '600' }}>Hallowen Spell</span>
               <span>Special Spectrum</span>
             </div>
             <div
               style={{
-                padding: '4px 0px',
+                padding: '6px 0px',
                 margin: '0px ',
                 fontSize: '12px',
                 lineHeight: '12px',
@@ -126,12 +126,12 @@ const Tooltip: React.FC<TooltipProps> = ({
                 alignItems: 'center',
               }}
             >
-              <span>Sheen</span>
+              <span style={{ fontWeight: '600' }}>Sheen</span>
               <span>Villianous Violet</span>
             </div>
             <div
               style={{
-                padding: '4px 0px',
+                padding: '6px 0px',
                 margin: '0px ',
                 fontSize: '12px',
                 lineHeight: '12px',
@@ -140,7 +140,7 @@ const Tooltip: React.FC<TooltipProps> = ({
                 alignItems: 'center',
               }}
             >
-              <span>Kill Streaker</span>
+              <span style={{ fontWeight: '600' }}>Kill Streaker</span>
               <span>Incirator</span>
             </div>
           </div>

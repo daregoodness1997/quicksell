@@ -6,12 +6,16 @@ const SkeletalCard = () => {
     <div
       style={{ padding: '0.4rem', background: '#1f2124', borderRadius: '6px' }}
     >
-      <SkeletalLoader width={'100%'} height={'60px'} />
-      <div style={{ marginTop: '-1.6rem' }}>
-        <SkeletalLoader height={'6px'} />
+      <SkeletalLoader width={'100%'} height={'70px'} />
+      <div style={{ marginTop: '0.2rem' }}>
+        <SkeletalLoader height={'8px'} />
       </div>
-      <SkeletalLoader height={'8px'} />
-      <SkeletalLoader />
+      <div style={{ marginTop: '-0.69rem' }}>
+        <SkeletalLoader height={'8px'} />
+      </div>
+      <div style={{ marginTop: '-0.69rem' }}>
+        <SkeletalLoader height={'8px'} />
+      </div>
     </div>
   );
 };

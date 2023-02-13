@@ -2141,6 +2141,10 @@ h6 {
   & .trade-card-wrapper {
     // position: relative;
 
+    @media (min-width: 1508px) {
+      width: 96px;
+    }
+
     width: 80px;
 
     @include mobile {

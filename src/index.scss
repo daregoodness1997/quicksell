@@ -94,6 +94,7 @@ input[type='checkbox']:checked {
 
 input:focus {
   outline: 1px solid #2a6d46 !important;
+  color: #fff;
 }
 h1 {
   font-size: 3.2em;
@@ -214,9 +215,11 @@ h6 {
       z-index: 20px;
       font-size: 70%;
       font-weight: 500;
+      color: #a8a9aa;
     }
     & .input {
       padding: 1.3rem 1rem 0.55rem !important;
+      color: #a8a9aa;
     }
   }
 }
@@ -234,6 +237,7 @@ h6 {
   border: 0.12px solid rgba(242, 242, 242, 0.6);
   border-radius: 4px;
   width: 100%;
+  color: #fff;
 
   &:focus {
     border: 0.2px solid #6fcf97;
@@ -1020,6 +1024,7 @@ h6 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   cursor: pointer;
 
   &.disabled {
@@ -2033,8 +2038,8 @@ h6 {
     background-color: transparent;
     backdrop-filter: blur(60px);
     -webkit-backdrop-filter: blur(60px);
-    position: sticky;
-    top: -20px;
+    position: relative;
+    top: 0px;
     width: 100%;
     z-index: 10;
     padding: 0.8rem 1rem;
@@ -2087,7 +2092,12 @@ h6 {
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 0.4rem;
+  grid-gap: 0.5rem;
+
+  @media (min-width: 1508px) {
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 0.4rem;
+  }
   @include tablet {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 0.2rem;
@@ -2130,6 +2140,10 @@ h6 {
 
   & .trade-card-wrapper {
     // position: relative;
+
+    @media (min-width: 1508px) {
+      width: 96px;
+    }
 
     width: 80px;
 

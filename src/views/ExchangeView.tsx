@@ -36,7 +36,7 @@ const ExchangeView: React.FC<Props> = ({
         </div>
       </div>
       <div className='exchange-wrapper'>
-        <div>
+        <div style={{ height: '200px' }}>
           {empty ? (
             <EmptyExchange />
           ) : (

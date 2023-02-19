@@ -51,34 +51,36 @@ const TradeSection: React.FC<TradeSectionProps> = ({
             </motion.div>
           ) : (
             <>
-              <motion.div layout className={`${hasGrid && 'grid'}`}>
-                {children}
-              </motion.div>
-              {buyer && (
-                <motion.div
-                  layout
-                  className='trade-section-footer'
-                  style={{ opacity: 0.2 }}
-                >
-                  <h4>Your Items are worth</h4>
-                  <div className='flex'>
-                    <button className='icon'>
-                      <KeyIcon /> 1940 Keys
-                    </button>
-                    <button className='icon'>
-                      <CogIcon /> 200 Refs
-                    </button>
-                  </div>
-                  <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <AppButton label='Sell All' logo={false} />
-                  </div>
+              <div className='section-container'>
+                <motion.div layout className={`${hasGrid && 'grid'} `}>
+                  {children}
                 </motion.div>
-              )}
+                {buyer && (
+                  <motion.div
+                    layout
+                    className='trade-section-footer'
+                    style={{ opacity: 0.2 }}
+                  >
+                    <h4>Your Items are worth</h4>
+                    <div className='flex'>
+                      <button className='icon'>
+                        <KeyIcon /> 1940 Keys
+                      </button>
+                      <button className='icon'>
+                        <CogIcon /> 200 Refs
+                      </button>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                      <AppButton label='Sell All' logo={false} />
+                    </div>
+                  </motion.div>
+                )}
+              </div>
             </>
           )}
         </>
       ) : (
-        <motion.div layout className={`${hasGrid && 'grid'}`}>
+        <motion.div layout className={`${hasGrid && 'grid'} `}>
           {children}
         </motion.div>
       )}

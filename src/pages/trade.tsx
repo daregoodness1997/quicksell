@@ -137,7 +137,7 @@ const Trade = () => {
               size='sm'
               type='exchange'
               hasGrid={false}
-              className={`${display.exchange && 'show'}`}
+              className={`${display.exchange && 'show'} exchange`}
             >
               {display?.showExchange?.youGive && (
                 <ExchangeView

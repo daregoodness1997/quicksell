@@ -4,7 +4,7 @@ import AppButton from '../../components/button/AppButton';
 import { modalAnimation } from '../../components/modal';
 
 interface Props {
-  onClick: (e: any) => void;
+  onClick?: (e: any) => void;
 }
 
 const TradeAction: React.FC<Props> = ({ onClick }) => {

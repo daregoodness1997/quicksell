@@ -8,9 +8,10 @@ const SkeletalCard = () => {
         padding: '0.2rem 0.4rem',
         background: '#1f2124',
         borderRadius: '6px',
+        height: '135px',
       }}
     >
-      <SkeletalLoader width={'100%'} height={'70px'} />
+      <SkeletalLoader width={'100%'} height={'80px'} />
       <div style={{ marginTop: '0.2rem' }}>
         <SkeletalLoader height={'8px'} />
       </div>

@@ -66,7 +66,7 @@ const TradeHeader: React.FC<TradeHeaderProps> = ({ title, onReload, type }) => {
           </button>
         </div>
 
-        <div className='trade-header'>
+        <div className='trade-header bottom'>
           <Dropdown
             list={tradeOptions}
             setSelectedOption={setSelectedOption}

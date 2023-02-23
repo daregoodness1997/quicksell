@@ -1030,6 +1030,10 @@ h6 {
   height: 135px;
   cursor: pointer;
 
+  @media (min-width: 1508px) {
+    height: 170px;
+    justify-content: space-around;
+  }
   &.disabled {
     opacity: 0.3;
     cursor: not-allowed;
@@ -2069,6 +2073,19 @@ h6 {
     flex-direction: row;
     margin-bottom: 0.4rem;
 
+    &.bottom {
+      @include tablet {
+      }
+      & .flex {
+        &.filters {
+          display: flex;
+          flex-wrap: nowrap;
+
+          justify-content: space-between;
+        }
+      }
+    }
+
     & button {
       background-color: transparent;
       border: none;
@@ -2108,7 +2125,7 @@ h6 {
   grid-gap: 0.5rem;
 
   @media (min-width: 1508px) {
-    grid-template-columns: repeat(5, 1fr);
+    // grid-template-columns: repeat(5, 1fr);
     grid-gap: 0.4rem;
   }
   @include tablet {

@@ -4,6 +4,7 @@ import { TradeCard } from '../components/cards';
 import { CogIcon, KeyIcon } from '../components/icons';
 import { Product } from '../types/@types.product';
 import EmptyExchange from './modal-views/EmptyExchange';
+import TradeAction from './trades/TradeAction';
 
 interface Props {
   label?: string;
@@ -48,12 +49,14 @@ const ExchangeView: React.FC<Props> = ({
           )}
         </div>
         <div className='flex'>
-          <button>Auto Select</button>
-          <button className='red' onClick={onClear}>
+          <button style={{ fontSize: '70%' }}>Auto Select</button>
+          <button style={{ fontSize: '70%' }} className='red' onClick={onClear}>
             Clear Items
           </button>
         </div>
       </div>
+
+      <TradeAction />
     </div>
   );
 };

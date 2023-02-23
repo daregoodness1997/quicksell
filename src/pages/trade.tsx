@@ -109,7 +109,7 @@ const Trade = () => {
       {/* <PriceChanges open={open} setOpen={setOpen} /> */}
       <div className='trade-global'>
         <TradeMobileNav setDisplay={setDisplay} display={display} />
-        {loggedIn && <TradeAction onClick={handleTradeClick} />}
+        {/* {loggedIn && <TradeAction onClick={handleTradeClick} />} */}
         <motion.div className='trade-container container'>
           {display?.yourItems && (
             <TradeSection

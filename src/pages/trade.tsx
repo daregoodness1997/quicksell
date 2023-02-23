@@ -61,12 +61,14 @@ const Trade = () => {
         showExchange: { youGive: true, youGet: true },
       });
     } else {
-      setDisplay({
-        yourItems: true,
-        ourItems: false,
-        exchange: false,
-        showExchange: { youGive: false, youGet: false },
-      });
+      setDisplay(
+        display || {
+          yourItems: true,
+          ourItems: false,
+          exchange: false,
+          showExchange: { youGive: false, youGet: false },
+        }
+      );
     }
   };
 

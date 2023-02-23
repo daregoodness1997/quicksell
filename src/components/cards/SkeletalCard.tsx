@@ -11,7 +11,7 @@ const SkeletalCard = () => {
         height: '135px',
       }}
     >
-      <SkeletalLoader width={'100%'} height={'80px'} />
+      <SkeletalLoader width={'100%'} height={'75px'} />
       <div style={{ marginTop: '0.2rem' }}>
         <SkeletalLoader height={'8px'} />
       </div>

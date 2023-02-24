@@ -2146,8 +2146,6 @@ h6 {
   width: 93vw !important;
 }
 .exchange-wrapper {
-  margin-bottom: 0.6rem;
-
   & .flex {
     margin-top: 0.4rem;
   }
@@ -2163,13 +2161,12 @@ h6 {
   grid-template-columns: repeat(3, 1fr);
   align-items: flex-start;
 
-  height: 175px;
+  height: 160px;
   gap: 0.01rem;
   width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  margin: 1.2rem 0;
-  // padding: 0 0.4rem;
+  margin: 1.4rem 0 0.5rem;
 
   & .trade-card {
     width: 100%;
@@ -2659,7 +2656,7 @@ h6 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 1.4rem 0;
+  margin: 1.4rem 0 0.5rem;
   opacity: 0.6;
   text-align: center;
 

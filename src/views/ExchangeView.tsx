@@ -24,7 +24,7 @@ const ExchangeView: React.FC<Props> = ({
   onClear,
 }) => {
   return (
-    <div>
+    <div style={{ marginBottom: '3rem' }}>
       <div className='trade-header'>
         <h5>{label}</h5>
         <div className='flex'>
@@ -37,7 +37,7 @@ const ExchangeView: React.FC<Props> = ({
         </div>
       </div>
       <div className='exchange-wrapper'>
-        <div style={{ height: '200px' }}>
+        <div style={{ height: 'auto' }}>
           {empty ? (
             <EmptyExchange />
           ) : (

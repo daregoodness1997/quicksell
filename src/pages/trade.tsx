@@ -62,12 +62,12 @@ const Trade = () => {
       });
     } else {
       setDisplay(
-        display || {
+        {
           yourItems: true,
           ourItems: false,
           exchange: false,
           showExchange: { youGive: false, youGet: false },
-        }
+        } || display
       );
     }
   };

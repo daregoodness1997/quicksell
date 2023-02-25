@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100&display=swap');
 // Predefined Break-points
+$D4KDef: 3840px;
+$HDDef: 2560px;
 $desktop: 1260px;
 $tablet: 1308px;
 $mobile: 480px;
@@ -59,6 +61,40 @@ $m-05: #bf80a9;
   border-radius: $radius;
 }
 
+@mixin D4KDef {
+  @media (min-width: #{$D4KDef}) {
+    @content;
+  }
+}
+
+@mixin HDDef {
+  @media (min-width: #{$HDDef}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+@mixin extraSmall {
+  @media (max-width: #{$extraSmall}) {
+    @content;
+  }
+}
+
 :root {
   font-family: 'Lato', Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -68,7 +104,6 @@ $m-05: #bf80a9;
   color-scheme: light dark;
   color: #fff;
   background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -137,29 +172,6 @@ p {
   padding: 0;
 }
 
-@mixin tablet {
-  @media (max-width: #{$tablet}) {
-    @content;
-  }
-}
-
-@mixin desktop {
-  @media (min-width: #{$desktop}) {
-    @content;
-  }
-}
-
-@mixin mobile {
-  @media (max-width: #{$mobile}) {
-    @content;
-  }
-}
-@mixin extraSmall {
-  @media (max-width: #{$extraSmall}) {
-    @content;
-  }
-}
-
 body {
   padding: 0;
   margin: 0;
@@ -201,6 +213,10 @@ h6 {
     padding: 1rem 2rem;
   }
   @include mobile {
+    padding: 1rem;
+  }
+
+  @include HDDef() {
     padding: 1rem;
   }
 }
@@ -365,12 +381,19 @@ h6 {
   text-overflow: ellipsis;
   line-height: 120%;
   margin-bottom: 2px;
+
+  @include HDDef() {
+    font-size: 1.2rem !important;
+  }
 }
 .prices {
   width: 90px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  @include HDDef() {
+    width: 90%;
+  }
 }
 
 .left-navigation {
@@ -1030,6 +1053,9 @@ h6 {
   height: 135px;
   cursor: pointer;
 
+  @include HDDef() {
+  }
+
   @media (min-width: 1508px) {
     height: 170px;
     justify-content: space-around;
@@ -1080,11 +1106,18 @@ h6 {
 
   & p {
     font-size: 0.75rem;
+    @include HDDef() {
+      font-size: 1.6rem;
+    }
   }
   & h3 {
     font-size: 1rem;
     @include mobile {
       font-size: 0.7rem !important;
+    }
+
+    @include HDDef() {
+      font-size: 1.2rem !important;
     }
   }
 
@@ -2005,6 +2038,10 @@ h6 {
     height: 60vh;
     overflow-y: auto;
     overflow-x: hidden;
+
+    @include HDDef() {
+      height: 80vh;
+    }
   }
   @include mobile {
     display: none;
@@ -2123,6 +2160,11 @@ h6 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 0.5rem;
+
+  @include HDDef() {
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 0.5rem;
+  }
 
   @media (min-width: 1508px) {
     // grid-template-columns: repeat(5, 1fr);

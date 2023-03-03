@@ -1058,6 +1058,7 @@ h6 {
   align-items: center;
   height: 135px;
   cursor: pointer;
+  width: 100%;
 
   @include HDDef() {
   }
@@ -1636,8 +1637,8 @@ h6 {
   &-section {
     padding: 1rem 0;
 
-    &::-webkit-scrollbar {
-      // display: none;
+    & .grid {
+      overflow-x: auto;
     }
     &.lg.lg {
       width: 40%;

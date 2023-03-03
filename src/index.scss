@@ -4,6 +4,7 @@ $D4KDef: 3840px;
 $HDDef: 2560px;
 $desktop: 1260px;
 $tablet: 1308px;
+$tab: 1040px;
 $mobile: 480px;
 $extraSmall: 280px;
 
@@ -79,6 +80,11 @@ $m-05: #bf80a9;
   }
 }
 @mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+@mixin tab {
   @media (max-width: #{$tablet}) {
     @content;
   }
@@ -1648,6 +1654,10 @@ h6 {
       width: 65% !important;
       padding: 1rem;
 
+      @include tab {
+        width: 100% !important;
+      }
+
       @include mobile {
         width: 100% !important;
         padding: 0.4rem;
@@ -2098,6 +2108,7 @@ h6 {
     z-index: 10;
     padding: 0.8rem 1rem;
     border-radius: 8px;
+
     @include mobile {
       padding: 0 0.6rem;
     }
@@ -2171,7 +2182,7 @@ h6 {
     grid-gap: 0.4rem;
   }
   @include tablet {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-gap: 0.2rem;
   }
   @include mobile {
@@ -2202,6 +2213,7 @@ h6 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: flex-start;
+  justify-content: flex-start;
 
   height: 160px;
   gap: 0.01rem;
@@ -2210,6 +2222,13 @@ h6 {
   overflow-x: hidden;
   margin: 1.4rem 0 0.5rem;
 
+  @include tab {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  @include mobile {
+    grid-template-columns: repeat(3, 1fr);
+  }
   & .trade-card {
     width: 100%;
     height: 100px !important;
@@ -2549,6 +2568,9 @@ h6 {
     & button {
       background-color: transparent;
       border: none;
+    }
+    @include tab {
+      display: block;
     }
     @include mobile {
       display: block;

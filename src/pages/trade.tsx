@@ -51,7 +51,7 @@ const Trade = () => {
   const [mobile, setMobile] = useState(false);
   const handleWindowSizeChange = () => {
     setWidth(window.innerWidth);
-    isMobile = window.innerWidth < 700 ? true : false;
+    isMobile = window.innerWidth < 1040 ? true : false;
     setMobile(isMobile);
     if (!mobile) {
       setDisplay({

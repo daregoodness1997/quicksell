@@ -213,8 +213,13 @@ h6 {
 /* Global styles */
 
 .container {
-  padding: 1rem 6rem;
+  padding: 1rem 2rem;
+  width: 100%;
+  margin: auto;
 
+  @include HDDef() {
+    width: 75%;
+  }
   @include tablet {
     padding: 1rem 2rem;
   }
@@ -2174,7 +2179,7 @@ h6 {
   grid-gap: 0.5rem;
 
   @include HDDef() {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 0.5rem;
   }
 

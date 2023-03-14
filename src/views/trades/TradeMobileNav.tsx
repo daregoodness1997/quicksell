@@ -6,11 +6,13 @@ interface TradeMobileNavProps {
   onReload?: (e?: any) => void;
   display?: any;
   setDisplay: any;
+  setView?: any;
 }
 const TradeMobileNav: React.FC<TradeMobileNavProps> = ({
   onReload,
   display,
   setDisplay,
+  setView,
 }) => {
   return (
     <div className='trade-mobile-nav'>
@@ -19,12 +21,16 @@ const TradeMobileNav: React.FC<TradeMobileNavProps> = ({
           className={`flex tab trade-tab ${
             display?.exchange?.youGive && 'active'
           }`}
-          onClick={() =>
+          onClick={() => {
             setDisplay({
               exchange: { youGive: true },
               showExchange: { youGive: true },
-            })
-          }
+            });
+            setView({
+              exchange: { youGive: true },
+              showExchange: { youGive: true },
+            });
+          }}
         >
           <h5>You Give</h5>
           <div className='trade-flex'>
@@ -42,12 +48,16 @@ const TradeMobileNav: React.FC<TradeMobileNavProps> = ({
           className={`flex tab trade-tab ${
             display?.exchange?.youGet && 'active'
           }`}
-          onClick={() =>
+          onClick={() => {
             setDisplay({
               exchange: { youGet: true },
               showExchange: { youGet: true },
-            })
-          }
+            });
+            setView({
+              exchange: { youGet: true },
+              showExchange: { youGet: true },
+            });
+          }}
         >
           <h5>You Get</h5>
           <div className='trade-flex'>
@@ -62,19 +72,23 @@ const TradeMobileNav: React.FC<TradeMobileNavProps> = ({
       <div className='flex items'>
         <div
           className={`item-tab ${display?.ourItems && 'active'} `}
-          onClick={() => setDisplay({ ourItems: true })}
+          onClick={() => {
+            setDisplay({ ourItems: true });
+            setView({ ourItems: true });
+          }}
         >
           Our Items
         </div>
         <div
           className={`item-tab ${display?.yourItems && 'active'} `}
-          onClick={() => setDisplay({ yourItems: true })}
+          onClick={() => {
+            setDisplay({ yourItems: true });
+            setView({ yourItems: true });
+          }}
         >
           Your Items
         </div>
       </div>
-
-     
     </div>
   );
 };

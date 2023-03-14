@@ -6,6 +6,7 @@ $desktop: 1260px;
 $tablet: 1308px;
 $tab: 1040px;
 $mobile: 480px;
+$small: 360px;
 $extraSmall: 280px;
 
 $m-01: #6fcf97;
@@ -92,6 +93,11 @@ $m-05: #bf80a9;
 
 @mixin mobile {
   @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+@mixin small {
+  @media (max-width: #{$small}) {
     @content;
   }
 }
@@ -1097,6 +1103,7 @@ h6 {
 
   &.mock {
     background: #32323a;
+    width: 90%;
     margin-right: 1rem;
     height: 180px !important;
 
@@ -2590,6 +2597,11 @@ h6 {
       width: 150px;
       border-radius: 4px;
       transition: all 0.4s ease-in-out;
+
+      @include small() {
+        width: 140px;
+        padding: 0.4rem 0.2rem !important;
+      }
 
       &.active {
         background-color: #6fcf97;

@@ -46,12 +46,12 @@ const Trade = () => {
   const handleTradeClick = () => {
     setOpen(true);
   };
-  let isMobile = true;
+  let isMobile;
   const [width, setWidth] = useState(window.innerWidth); // check width size of the window
   const [mobile, setMobile] = useState(false);
   const handleWindowSizeChange = () => {
     setWidth(window.innerWidth);
-    isMobile = window.innerWidth < 1040 ? true : false;
+    isMobile = window.innerWidth < 1072 ? true : false;
     setMobile(isMobile);
     if (!mobile) {
       setDisplay({

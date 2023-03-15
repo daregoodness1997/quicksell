@@ -22,7 +22,7 @@ const Feautures = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 6,
+          slidesToShow: 8,
           slidesToScroll: 1,
           infinite: true,
           dots: true,

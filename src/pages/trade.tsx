@@ -72,7 +72,6 @@ const Trade = () => {
     }
   };
 
-  console.log('Mobile', mobile);
 
   // call your useEffect
   useEffect(() => {

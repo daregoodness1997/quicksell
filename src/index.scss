@@ -5,6 +5,7 @@ $HDDef: 2560px;
 $desktop: 1260px;
 $tablet: 1308px;
 $midTab: 1072px;
+$smallTab: 840;
 $tab: 1040px;
 $mobile: 480px;
 $small: 360px;
@@ -88,6 +89,11 @@ $m-05: #bf80a9;
 }
 @mixin midTab {
   @media (max-width: #{$midTab}) {
+    @content;
+  }
+}
+@mixin smallTab {
+  @media (max-width: #{$smallTab}) {
     @content;
   }
 }
@@ -2591,7 +2597,7 @@ h6 {
   }
   &-mobile-nav {
     width: 100%;
-    display: none;
+    // display: none;
 
     & .mobile {
       padding: 0.2rem 1rem !important;
@@ -2602,7 +2608,10 @@ h6 {
       border: none;
     }
     @include tab {
-      display: none;
+      // display: none;
+    }
+    @include smallTab() {
+      display: block;
     }
     @include mobile {
       display: block;

@@ -17,6 +17,7 @@ interface TradeSectionProps {
   className?: string;
   loggedIn?: boolean;
   buyer?: boolean;
+  isMobile?: boolean;
 }
 
 const TradeSection: React.FC<TradeSectionProps> = ({
@@ -30,6 +31,7 @@ const TradeSection: React.FC<TradeSectionProps> = ({
   className,
   loggedIn,
   buyer,
+  isMobile,
 }) => {
   return (
     <motion.div
@@ -40,7 +42,11 @@ const TradeSection: React.FC<TradeSectionProps> = ({
       className={`trade-section ${size} ${className} `}
     >
       {type !== 'exchange' && (
-        <TradeHeader title={title} onReload={onReload} type={type} />
+        <>
+          {isMobile ? null : (
+            <TradeHeader title={title} onReload={onReload} type={type} />
+          )}
+        </>
       )}
 
       {type !== 'exchange' ? (

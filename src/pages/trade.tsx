@@ -72,6 +72,7 @@ const Trade = () => {
     }
   };
 
+
   // call your useEffect
   useEffect(() => {
     window.addEventListener('resize', handleWindowSizeChange);
@@ -110,11 +111,14 @@ const Trade = () => {
       {/* <UnsuccessfulSold open={open} setOpen={setOpen} /> */}
       {/* <PriceChanges open={open} setOpen={setOpen} /> */}
       <div className='trade-global'>
-        <TradeMobileNav
-          setDisplay={setDisplay}
-          display={display}
-          setView={setView}
-        />
+        {mobile ? (
+          <TradeMobileNav
+            setDisplay={setDisplay}
+            display={display}
+            setView={setView}
+          />
+        ) : null}
+
         {/* {loggedIn && <TradeAction onClick={handleTradeClick} />} */}
         <motion.div className='trade-container container'>
           {display?.yourItems && (
@@ -124,6 +128,7 @@ const Trade = () => {
               buyer={true}
               loggedIn={loggedIn}
               className={`${display.yourItems && 'show'}`}
+              isMobile={mobile}
             >
               {loading ? renderMocks() : renderOurItems()}
             </TradeSection>
@@ -134,6 +139,7 @@ const Trade = () => {
               title='Our Items'
               loggedIn={true}
               className={`${display.ourItems && 'show'}`}
+              isMobile={mobile}
             >
               {loading ? renderMocks() : renderYourItems()}
             </TradeSection>
@@ -144,6 +150,7 @@ const Trade = () => {
               type='exchange'
               hasGrid={false}
               className={`${display.exchange && 'show'} exchange`}
+              isMobile={mobile}
             >
               {display?.showExchange?.youGive && (
                 <ExchangeView

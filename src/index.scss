@@ -230,6 +230,15 @@ h6 {
 
 /* Global styles */
 
+.container-content {
+  width: 80%;
+  margin: auto;
+
+  @include mobile {
+    width: 95%;
+  }
+}
+
 .container {
   padding: 1rem 2rem;
   width: 100%;
@@ -871,6 +880,9 @@ h6 {
     }
 
     & h1 {
+      @include HDDef() {
+        font-size: 4rem;
+      }
       @include tablet {
         font-size: 2.4rem;
       }
@@ -1386,8 +1398,9 @@ h6 {
   text-align: left;
 
   @include mobile {
-    width: 150px;
+    width: 140px;
     height: 200px;
+    margin-right: 0.4rem;
     padding: 0.4rem;
   }
   & .giveaway-cta {

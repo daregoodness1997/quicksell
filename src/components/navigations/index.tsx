@@ -63,7 +63,7 @@ const TopNav: React.FC<TopNavProps> = ({ onClick, toggle }) => {
 
   return (
     <>
-      <div className={`top-navigation ${blur && 'blur'}`}>
+      <div className={`top-navigation ${blur && 'blur'} `}>
         <div className={`left-navigation ${toggle ? 'navigation' : ''}`}>
           <button className='menu-btn'>
             <div id='burgerBtn' onClick={onClick}></div>

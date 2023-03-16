@@ -20,7 +20,7 @@ const footerNavigation = [
 const Footer = () => {
   return (
     <div className='conntainer'>
-      <div className='container-content footer flex'>
+      <div className='footer flex'>
         <div className='left-navigation'>
           <Link to='/'>
             <img src='assets/img/qc-logo.png' />
@@ -50,7 +50,7 @@ const Footer = () => {
       </div>
 
       <div className='container  copyright'>
-        <div className='container-content flex'>
+        <div className='flex'>
           <p>© 2022 QuickStore. All rights reserved.</p>
           <div className='flex gap-2'>
             <DiscordIcon />

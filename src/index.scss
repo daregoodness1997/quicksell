@@ -1358,10 +1358,9 @@ h6 {
     }
 
     @include mobile {
-      margin-top: 0.2rem;
-      margin: 0 !important;
+      margin: 0 ;
       padding: 0 !important;
-      margin-top: 0.4rem !important;
+      margin-top: 0.2rem ;
     }
     & .auction-avatar {
       width: 24px;

@@ -119,7 +119,7 @@ const Trade = () => {
         ) : null}
 
         {/* {loggedIn && <TradeAction onClick={handleTradeClick} />} */}
-        <motion.div className='trade-container container'>
+        <motion.div className='trade-container '>
           {display?.yourItems && (
             <TradeSection
               size='lg'

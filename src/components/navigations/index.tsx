@@ -62,7 +62,7 @@ const TopNav: React.FC<TopNavProps> = ({ onClick, toggle }) => {
   window.addEventListener('scroll', changeBackground);
 
   return (
-    <>
+    <div className='container-content'>
       <div className={`top-navigation ${blur && 'blur'} `}>
         <div className={`left-navigation ${toggle ? 'navigation' : ''}`}>
           <button className='menu-btn'>
@@ -124,7 +124,7 @@ const TopNav: React.FC<TopNavProps> = ({ onClick, toggle }) => {
           </NavLink>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

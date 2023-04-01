@@ -19,7 +19,7 @@ const footerNavigation = [
 
 const Footer = () => {
   return (
-    <div className='container'>
+    <div className='container-content'>
       <div className='footer flex'>
         <div className='left-navigation'>
           <Link to='/'>
@@ -49,7 +49,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className='  copyright'>
+      <div className='container  copyright'>
         <div className='flex'>
           <p>© 2022 QuickStore. All rights reserved.</p>
           <div className='flex gap-2'>

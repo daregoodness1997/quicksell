@@ -230,6 +230,14 @@ h6 {
 
 /* Global styles */
 
+.main-trade {
+  @media (min-width: 1928px) {
+    transform: scale(1.1);
+    max-width: 90rem;
+    margin: 0 auto;
+  }
+}
+
 .container-content {
   width: 100%;
   max-width: 80rem;

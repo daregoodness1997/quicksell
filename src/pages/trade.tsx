@@ -100,7 +100,7 @@ const Trade = () => {
   const renderMocks = () => [...Array(16)].map(() => <SkeletalCard />);
 
   return (
-    <>
+    <div className='main-trade'>
       {/* <UnsuccessfulTrade open={open} setOpen={setOpen} /> */}
 
       {/* <AlreadySelected open={open} setOpen={setOpen} /> */}
@@ -183,7 +183,7 @@ const Trade = () => {
           )}
         </motion.div>
       </div>
-    </>
+    </div>
   );
 };
 

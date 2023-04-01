@@ -19,7 +19,7 @@ const footerNavigation = [
 
 const Footer = () => {
   return (
-    <div className='conntainer'>
+    <div className='container-content'>
       <div className='footer flex'>
         <div className='left-navigation'>
           <Link to='/'>
